@@ -1,3 +1,6 @@
+import '../entities/post_match_comparison_entity.dart';
+import '../entities/prediction_entity.dart';
+
 /// Base contract for prediction use cases.
 abstract class UseCase<Type, Params> {
   Type call(Params params);
@@ -32,10 +35,30 @@ class ComparisonParams {
     required this.prediction,
     required this.actualHomeScore,
     required this.actualAwayScore,
+    this.actualCorners,
+    this.actualCards,
   });
   final MatchPredictionEntity prediction;
   final int actualHomeScore;
   final int actualAwayScore;
+  final int? actualCorners;
+  final int? actualCards;
+}
+
+/// Parameters for persisting a post-match comparison.
+class SaveComparisonParams {
+  const SaveComparisonParams({
+    required this.userId,
+    required this.comparison,
+  });
+  final String userId;
+  final PostMatchComparisonEntity comparison;
+}
+
+/// Parameters for fetching stored comparisons.
+class GetComparisonsParams {
+  const GetComparisonsParams({this.limit = 20});
+  final int limit;
 }
 
 /// Parameters for saving a prediction to history.

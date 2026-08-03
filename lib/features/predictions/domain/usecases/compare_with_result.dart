@@ -13,6 +13,8 @@ class CompareWithResult implements UseCase<PostMatchComparisonEntity, Comparison
       prediction: params.prediction,
       actualHomeScore: params.actualHomeScore,
       actualAwayScore: params.actualAwayScore,
+      actualCorners: params.actualCorners,
+      actualCards: params.actualCards,
     );
   }
 }

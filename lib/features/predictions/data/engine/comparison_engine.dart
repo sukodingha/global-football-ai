@@ -5,15 +5,24 @@ import '../../domain/entities/prediction_entity.dart';
 ///
 /// Each sub-market is evaluated independently and flagged as correct or
 /// incorrect. The overall accuracy is the fraction of correct markets.
+///
+/// Corners and cards markets are evaluated only when the corresponding
+/// actual data is supplied (`actualCorners`, `actualCards`). When absent,
+/// they are excluded from the running total.
 class ComparisonEngine {
   const ComparisonEngine();
 
   /// Compares [prediction] against the actual [actualHomeScore] and
   /// [actualAwayScore] and returns a detailed breakdown.
+  ///
+  /// [actualCorners] and [actualCards] are optional; when either is given
+  /// the corresponding market is evaluated against the actual totals.
   PostMatchComparisonEntity compare({
     required MatchPredictionEntity prediction,
     required int actualHomeScore,
     required int actualAwayScore,
+    int? actualCorners,
+    int? actualCards,
   }) {
     // Determine the actual winner.
     final actualOutcome = _outcomeOf(actualHomeScore, actualAwayScore);
@@ -33,7 +42,11 @@ class ComparisonEngine {
 
     // 3. BTTS.
     final bttsCorrect = prediction.btts != null &&
-        _bttsMatches(prediction.btts!.prediction, actualHomeScore, actualAwayScore);
+        _bttsMatches(
+          prediction.btts!.prediction,
+          actualHomeScore,
+          actualAwayScore,
+        );
 
     // 4. Correct score.
     final correctScoreCorrect = prediction.correctScore != null &&
@@ -47,26 +60,35 @@ class ComparisonEngine {
           actualHomeScore + actualAwayScore,
         );
 
-    // Corners and cards are not available from the bare scoreline; set to null
-    // so they are excluded from the running total.
+    // 6. Corners (evaluated only when actual corners are supplied).
     final bool? cornersCorrect;
-    final bool? cardsCorrect;
-    if (prediction.cornersPrediction != null && prediction.cardsPrediction != null) {
-      // Without corner/card data we cannot evaluate them automatically.
-      cornersCorrect = null;
-      cardsCorrect = null;
+    if (prediction.cornersPrediction != null && actualCorners != null) {
+      cornersCorrect = prediction.cornersPrediction!.prediction
+          ? actualCorners > 9
+          : actualCorners <= 9;
     } else {
       cornersCorrect = null;
+    }
+
+    // 7. Cards (evaluated only when actual cards are supplied).
+    final bool? cardsCorrect;
+    if (prediction.cardsPrediction != null && actualCards != null) {
+      cardsCorrect = prediction.cardsPrediction!.prediction
+          ? actualCards > 4
+          : actualCards <= 4;
+    } else {
       cardsCorrect = null;
     }
 
-    // Count the evaluated markets.
+    // Count only the markets that were evaluated.
     final evaluated = <bool>[
       matchWinnerCorrect,
       doubleChanceCorrect,
       bttsCorrect,
       correctScoreCorrect,
       overUnderCorrect,
+      if (cornersCorrect != null) cornersCorrect,
+      if (cardsCorrect != null) cardsCorrect,
     ];
     final correctCount = evaluated.where((b) => b).length;
     final totalCount = evaluated.length;
@@ -115,7 +137,11 @@ class ComparisonEngine {
     return topMarket.contains(actualOutcomeLetter(actual));
   }
 
-  String _topDoubleChance(double homeOrDraw, double homeOrAway, double drawOrAway) {
+  String _topDoubleChance(
+    double homeOrDraw,
+    double homeOrAway,
+    double drawOrAway,
+  ) {
     if (homeOrDraw >= homeOrAway && homeOrDraw >= drawOrAway) return '1X';
     if (homeOrAway >= homeOrDraw && homeOrAway >= drawOrAway) return '12';
     return 'X2';

@@ -5,6 +5,7 @@ import 'features/auth/application/auth_notifier.dart';
 import 'features/home/application/home_providers.dart';
 import 'features/home/presentation/pages/home_page.dart';
 import 'features/livescore/presentation/pages/live_scores_page.dart';
+import 'features/predictions/presentation/pages/predictions_page.dart';
 
 /// Post-login authenticated shell with bottom navigation.
 class HomeShell extends ConsumerStatefulWidget {
@@ -27,7 +28,7 @@ class _HomeShellState extends ConsumerState<HomeShell> {
 children: const [
           HomePage(),
           LiveScoresPage(),
-          _PlaceholderPage(title: 'Predictions'),
+          PredictionsPage(),
           _PlaceholderPage(title: 'Profile'),
         ],
       ),

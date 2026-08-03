@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../../core/errors/exceptions.dart';
+import '../../domain/entities/post_match_comparison_entity.dart';
 import '../../domain/entities/prediction_entity.dart';
 import '../../domain/entities/prediction_history_entity.dart';
 import '../../domain/entities/user_vote_entity.dart';
-import '../../domain/entities/post_match_comparison_entity.dart';
+import '../models/post_match_comparison_model.dart';
 import '../models/prediction_history_model.dart';
 import '../models/prediction_model.dart';
 
@@ -146,6 +147,75 @@ class PredictionLocalDataSource {
       return (counts, myVote);
     } catch (e) {
       throw CacheException('Unable to load vote state: $e');
+    }
+  }
+
+  // ─── Comparisons ──────────────────────────────────────────────────
+
+  CollectionReference<Map<String, dynamic>> _userComparisons(String userId) =>
+      _firestore.collection('users').doc(userId).collection('comparisons');
+
+  Future<void> saveComparison({
+    required String userId,
+    required PostMatchComparisonEntity comparison,
+  }) async {
+    try {
+      final model = PostMatchComparisonModel.fromEntity(
+        entity: comparison,
+        userId: userId,
+      );
+      await _userComparisons(userId).doc(model.id).set(model.toJson());
+    } catch (e) {
+      throw CacheException('Unable to save comparison: $e');
+    }
+  }
+
+  Future<List<PostMatchComparisonEntity>> getComparisons(
+    String userId, {
+    int limit = 20,
+  }) async {
+    try {
+      final snapshot = await _userComparisons(userId)
+          .orderBy('comparisonDate', descending: true)
+          .limit(limit)
+          .get();
+      return snapshot.docs
+          .map((doc) => PostMatchComparisonModel.fromJson(doc.data()).toEntity())
+          .toList();
+    } catch (e) {
+      throw CacheException('Unable to load comparisons: $e');
+    }
+  }
+
+  /// Auto-resolves the 'correct' field on a history record using the
+  /// comparison accuracy. Predictions with overallAccuracy >= 50 are
+  /// considered correct, otherwise they are marked as lost. Pending
+  /// predictions with an explicit actual scoreline are resolved directly.
+  Future<void> resolvePendingPredictions(String userId) async {
+    try {
+      final snapshot = await _userHistory(userId)
+          .where('status', isEqualTo: 'pending')
+          .get();
+      for (final doc in snapshot.docs) {
+        final data = doc.data();
+        final actualHome = data['actualHomeScore'] as int?;
+        final actualAway = data['actualAwayScore'] as int?;
+        if (actualHome == null || actualAway == null) continue;
+
+        final isCorrect = actualHome > actualAway
+            ? data['prediction']?['matchWinner']?['predictedOutcome'] == 'home'
+            : actualAway > actualHome
+                ? data['prediction']?['matchWinner']?['predictedOutcome'] ==
+                    'away'
+                : data['prediction']?['matchWinner']?['predictedOutcome'] ==
+                    'draw';
+        await doc.reference.update({
+          'status': isCorrect ? 'won' : 'lost',
+          'isCorrect': isCorrect,
+        });
+      }
+    } catch (e) {
+      throw CacheException('Unable to resolve pending predictions: $e');
     }
   }
 

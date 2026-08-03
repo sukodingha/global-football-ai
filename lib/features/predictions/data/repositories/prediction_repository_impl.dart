@@ -187,13 +187,41 @@ class PredictionRepositoryImpl implements PredictionRepository {
     required MatchPredictionEntity prediction,
     required int actualHomeScore,
     required int actualAwayScore,
+    int? actualCorners,
+    int? actualCards,
   }) async {
     return _safeCall(() async {
       return _comparisonEngine.compare(
         prediction: prediction,
         actualHomeScore: actualHomeScore,
         actualAwayScore: actualAwayScore,
+        actualCorners: actualCorners,
+        actualCards: actualCards,
       );
+    });
+  }
+
+  @override
+  Future<void> saveComparison({
+    required String userId,
+    required PostMatchComparisonEntity comparison,
+  }) async {
+    return _safeCall(() async {
+      await _localDataSource.saveComparison(
+        userId: userId,
+        comparison: comparison,
+      );
+    });
+  }
+
+  @override
+  Future<List<PostMatchComparisonEntity>> getComparisons({
+    String? userId,
+    int limit = 20,
+  }) async {
+    return _safeCall(() async {
+      final uid = userId ?? await _currentUserId();
+      return _localDataSource.getComparisons(uid, limit: limit);
     });
   }
 

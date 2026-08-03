@@ -42,10 +42,27 @@ abstract class PredictionRepository {
   });
 
   /// Compares an AI prediction against the actual match result.
+  ///
+  /// [actualCorners] and [actualCards] are optional. When provided, the
+  /// corners and cards markets are also evaluated against the actual data.
   Future<PostMatchComparisonEntity> compareWithResult({
     required MatchPredictionEntity prediction,
     required int actualHomeScore,
     required int actualAwayScore,
+    int? actualCorners,
+    int? actualCards,
+  });
+
+  /// Persists a post-match comparison for the authenticated user.
+  Future<void> saveComparison({
+    required String userId,
+    required PostMatchComparisonEntity comparison,
+  });
+
+  /// Loads the user's stored post-match comparisons, newest first.
+  Future<List<PostMatchComparisonEntity>> getComparisons({
+    String? userId,
+    int limit = 20,
   });
 
   /// Computes overall accuracy statistics from the user's history.
