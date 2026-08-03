@@ -1,0 +1,19 @@
+{
+  "flutter": {
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "firebase": {
+    "project": "global-football-ai",
+    "app": {
+      "android": {
+        "package_name": "com.globalfootball.ai"
+      },
+      "ios": {
+        "bundle_id": "com.globalfootball.ai"
+      }
+    }
+  }
+}

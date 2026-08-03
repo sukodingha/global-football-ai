@@ -1,0 +1,42 @@
+# Miscellaneous
+*.log
+*.lock
+.DS_Store
+
+# Dart / Flutter
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+pubspec.lock
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.vscode/launch.json
+
+# Android
+android/.gradle/
+android/app/google-services.json
+android/local.properties
+android/key.properties
+*.jks
+*.keystore
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/GoogleService-Info.plist
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# Env
+.env
+.env.*
+*.env
