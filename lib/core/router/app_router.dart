@@ -20,6 +20,8 @@ import '../../features/fantasy/presentation/pages/fantasy_hub_page.dart';
 import '../../features/fantasy/presentation/pages/league_detail_page.dart';
 import '../../features/fantasy/presentation/pages/player_stats_hub_page.dart';
 import '../../features/fantasy/presentation/pages/team_management_page.dart';
+import '../../features/notifications/presentation/pages/notification_preferences_page.dart';
+import '../../features/notifications/presentation/pages/notifications_page.dart';
 import '../../features/payments/presentation/pages/profile_page.dart';
 import '../../features/settings/presentation/pages/settings_page.dart';
 import '../../home_shell.dart';
@@ -171,10 +173,20 @@ GoRoute(
         name: 'fantasy-team',
         builder: (context, state) => const TeamManagementPage(),
       ),
-      GoRoute(
+GoRoute(
         path: AppConstants.routeFantasyPlayerStats,
         name: 'fantasy-player-stats',
         builder: (context, state) => const PlayerStatsHubPage(),
+      ),
+      GoRoute(
+        path: AppConstants.routeNotifications,
+        name: 'notifications',
+        builder: (context, state) => const NotificationsPage(),
+      ),
+      GoRoute(
+        path: AppConstants.routeNotificationPreferences,
+        name: 'notification-preferences',
+        builder: (context, state) => const NotificationPreferencesPage(),
       ),
     ],
   );

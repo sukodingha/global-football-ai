@@ -30,6 +30,9 @@ dependencies:
   local_auth: ^2.2.0
   flutter_secure_storage: ^9.2.0
 
+  # Local Notifications (foreground display)
+  flutter_local_notifications: ^17.2.1
+
   # Local Preferences
   shared_preferences: ^2.2.3
 

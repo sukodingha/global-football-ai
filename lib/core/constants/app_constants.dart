@@ -25,7 +25,9 @@ static const String routePremium = '/premium';
   static const String routeFantasyHub = '/fantasy';
   static const String routeFantasyLeague = '/fantasy/league';
   static const String routeFantasyTeam = '/fantasy/team';
-  static const String routeFantasyPlayerStats = '/fantasy/players';
+static const String routeFantasyPlayerStats = '/fantasy/players';
+  static const String routeNotifications = '/notifications';
+  static const String routeNotificationPreferences = '/notifications/preferences';
 
   /// Validation regexes.
   static final RegExp emailRegex = RegExp(
