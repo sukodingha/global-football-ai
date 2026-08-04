@@ -64,6 +64,12 @@ lib/
   - Standings table (`StandingsView`)
   - Fixtures list (`FixturesView`)
 
+### Phase 5: Live Scores, Community & Payments
+- **Multi-sport live feed** (`SportsFeedPage`) for Football, Tennis, and Basketball via API-Sports, with automatic score/status updates (Live, Halftime, Full Time) and polling streams.
+- **Community wall** (`CommunityPage`) — a Facebook-style feed with real-time likes, comments, and user profile badges stored in Firestore.
+- **Paystack integration** (`PremiumPage`, `DonationSheet`, `CheckoutLauncherPage`) — hosted checkout for premium subscriptions and donations, with transaction verification and premium permission updates in Firestore.
+- **Profile page** (`ProfilePage`) — premium status, donation entry, transaction history, and sign-out.
+
 ## 🚀 Getting Started
 
 1. Install Flutter SDK

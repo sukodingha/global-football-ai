@@ -21,19 +21,19 @@
 - [x] Add DI for community
 
 ## C. Paystack Integration (Donations & Premium)
-- [ ] Add `PaymentPlanEntity`, `TransactionEntity`, `SubscriptionEntity` (domain)
-- [ ] Add `PaymentRepository` contract (domain)
-- [ ] Add `PaystackApi` REST data source (initialize/verify)
-- [ ] Add `PaymentLocalDataSource` (Firestore: subscription/permissions)
-- [ ] Add `PaymentRepositoryImpl` (data)
-- [ ] Add use cases (data/domain)
-- [ ] Add `PaymentNotifier`/`State`/`Providers` (application)
-- [ ] Add `ProfilePage` + Premium upsell + Donation sheet + Checkout screen (presentation)
-- [ ] Add DI for payments
+- [x] Add `PaymentPlanEntity`, `TransactionEntity`, `SubscriptionEntity` (domain)
+- [x] Add `PaymentRepository` contract (domain)
+- [x] Add `PaystackApi` REST data source (initialize/verify)
+- [x] Add `PaymentLocalDataSource` (Firestore: subscription/permissions)
+- [x] Add `PaymentRepositoryImpl` (data)
+- [x] Add use cases (data/domain)
+- [x] Add `PaymentNotifier`/`State`/`Providers` (application)
+- [x] Add `ProfilePage` + Premium upsell + Donation sheet + Checkout screen (presentation)
+- [x] Add DI for payments
 
 ## D. UI/UX & State Management
-- [ ] Update `AppConfig` (Paystack + API-Sports keys)
-- [ ] Update `AppConstants` (routes)
-- [ ] Update `AppRouter` (community/profile/premium/checkout routes)
-- [ ] Update `HomeShell` (5-tab nav)
-- [ ] README/SETUP notes for Paystack & API-Sports keys
+- [x] Update `AppConfig` (Paystack + API-Sports keys)
+- [x] Update `AppConstants` (routes)
+- [x] Update `AppRouter` (community/profile/premium/checkout routes)
+- [x] Update `HomeShell` (5-tab nav, multi-sport feed + profile)
+- [x] README/SETUP notes for Paystack & API-Sports keys

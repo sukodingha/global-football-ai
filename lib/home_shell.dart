@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'features/auth/application/auth_notifier.dart';
 import 'features/community/presentation/pages/community_page.dart';
 import 'features/home/application/home_providers.dart';
 import 'features/home/presentation/pages/home_page.dart';
-import 'features/livescore/presentation/pages/live_scores_page.dart';
+import 'features/livescore/presentation/pages/sports_feed_page.dart';
+import 'features/payments/presentation/pages/profile_page.dart';
 import 'features/predictions/presentation/pages/predictions_page.dart';
 
 /// Post-login authenticated shell with bottom navigation.
@@ -28,10 +28,10 @@ class _HomeShellState extends ConsumerState<HomeShell> {
         index: _currentIndex,
         children: const [
           HomePage(),
-          LiveScoresPage(),
+          SportsFeedPage(),
           PredictionsPage(),
           CommunityPage(),
-          _PlaceholderPage(title: 'Profile'),
+          ProfilePage(),
         ],
       ),
       bottomNavigationBar: NavigationBar(
@@ -64,35 +64,6 @@ class _HomeShellState extends ConsumerState<HomeShell> {
             label: 'Profile',
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _PlaceholderPage extends StatelessWidget {
-  const _PlaceholderPage({required this.title});
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        actions: [
-          IconButton(
-            tooltip: 'Appearance',
-            icon: const Icon(Icons.dark_mode_outlined),
-            onPressed: () {
-              // Toggle saved already via themeModeProvider.
-            },
-          ),
-        ],
-      ),
-      body: Center(
-        child: Text(
-          '$title coming soon',
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
       ),
     );
   }

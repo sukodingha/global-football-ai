@@ -89,6 +89,31 @@ Live scores and match details are powered by [football-data.org](https://www.foo
 - Live matches are available under `/v4/matches?status=LIVE`
 - Match detail supports timeline, lineups, and standings
 
+## 11. Configure API-Sports (Multi-Sport Live Feed — Phase 5)
+
+The multi-sport live feed (Football, Tennis, Basketball) is powered by [API-Sports](https://www.api-sports.io/).
+
+1. Register for an API key: https://www.api-sports.io/
+2. Set your key in `lib/core/config/app_config.dart`:
+   ```dart
+   static const String apiSportsKey = 'YOUR_REAL_API_KEY';
+   ```
+3. The feed polls `/v1/football`, `/v1/tennis`, and `/v1/basketball` endpoints for live events with automatic score/status updates.
+
+## 12. Configure Paystack (Donations & Premium — Phase 5)
+
+Donations and premium subscriptions are handled via the [Paystack](https://paystack.com/) hosted checkout.
+
+1. Create a Paystack account and get your **public** and **secret** keys from the dashboard.
+2. Set both keys in `lib/core/config/app_config.dart`:
+   ```dart
+   static const String paystackPublicKey = 'YOUR_PUBLIC_KEY';
+   static const String paystackSecretKey = 'YOUR_SECRET_KEY';
+   ```
+3. The app initializes a transaction (hosted checkout), opens the Paystack authorization URL, and verifies the payment on return. On success, premium permissions / contributor badges are written to Firestore under the user's profile.
+
+> **Security note:** The Paystack secret key should normally be used **server-side only**. For a production deployment, move transaction verification to a Cloud Function to avoid embedding the secret key in the client.
+
 ## Troubleshooting
 
 - **Google Sign-In not working**: Ensure the SHA-1 fingerprint is registered in the Firebase console.

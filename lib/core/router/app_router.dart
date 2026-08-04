@@ -10,9 +10,13 @@ import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/auth/presentation/pages/otp_verification_page.dart';
 import '../../features/auth/presentation/pages/phone_login_page.dart';
 import '../../features/auth/presentation/pages/register_page.dart';
+import '../../features/community/presentation/pages/community_page.dart';
 import '../../features/home/presentation/pages/home_page.dart';
 import '../../features/livescore/presentation/pages/live_scores_page.dart';
 import '../../features/livescore/presentation/pages/match_detail_page.dart';
+import '../../features/payments/presentation/pages/checkout_page.dart';
+import '../../features/payments/presentation/pages/premium_page.dart';
+import '../../features/payments/presentation/pages/profile_page.dart';
 import '../../home_shell.dart';
 import 'splash_screen.dart';
 
@@ -107,7 +111,7 @@ GoRoute(
         name: 'live-scores',
         builder: (context, state) => const LiveScoresPage(),
       ),
-      GoRoute(
+GoRoute(
         path: '${AppConstants.routeMatchDetail}/:matchId',
         name: 'match-detail',
         builder: (context, state) {
@@ -117,6 +121,28 @@ GoRoute(
             competitionId: state.extra is int ? state.extra as int : null,
           );
         },
+      ),
+      GoRoute(
+        path: AppConstants.routeCommunity,
+        name: 'community',
+        builder: (context, state) => const CommunityPage(),
+      ),
+      GoRoute(
+        path: AppConstants.routeProfile,
+        name: 'profile',
+        builder: (context, state) => const ProfilePage(),
+      ),
+      GoRoute(
+        path: AppConstants.routePremium,
+        name: 'premium',
+        builder: (context, state) => const PremiumPage(),
+      ),
+      GoRoute(
+        path: AppConstants.routeCheckout,
+        name: 'checkout',
+        builder: (context, state) => CheckoutLauncherPage(
+          transaction: state.extra as dynamic,
+        ),
       ),
     ],
   );
