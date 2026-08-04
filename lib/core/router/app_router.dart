@@ -16,6 +16,10 @@ import '../../features/livescore/presentation/pages/live_scores_page.dart';
 import '../../features/livescore/presentation/pages/match_detail_page.dart';
 import '../../features/payments/presentation/pages/checkout_page.dart';
 import '../../features/payments/presentation/pages/premium_page.dart';
+import '../../features/fantasy/presentation/pages/fantasy_hub_page.dart';
+import '../../features/fantasy/presentation/pages/league_detail_page.dart';
+import '../../features/fantasy/presentation/pages/player_stats_hub_page.dart';
+import '../../features/fantasy/presentation/pages/team_management_page.dart';
 import '../../features/payments/presentation/pages/profile_page.dart';
 import '../../features/settings/presentation/pages/settings_page.dart';
 import '../../home_shell.dart';
@@ -149,6 +153,28 @@ GoRoute(
         path: AppConstants.routeSettings,
         name: 'settings',
         builder: (context, state) => const SettingsPage(),
+      ),
+      GoRoute(
+        path: AppConstants.routeFantasyHub,
+        name: 'fantasy-hub',
+        builder: (context, state) => const FantasyHubPage(),
+      ),
+      GoRoute(
+        path: '${AppConstants.routeFantasyLeague}/:leagueId',
+        name: 'fantasy-league',
+        builder: (context, state) => LeagueDetailPage(
+          leagueId: state.pathParameters['leagueId'] ?? '',
+        ),
+      ),
+      GoRoute(
+        path: AppConstants.routeFantasyTeam,
+        name: 'fantasy-team',
+        builder: (context, state) => const TeamManagementPage(),
+      ),
+      GoRoute(
+        path: AppConstants.routeFantasyPlayerStats,
+        name: 'fantasy-player-stats',
+        builder: (context, state) => const PlayerStatsHubPage(),
       ),
     ],
   );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'features/community/presentation/pages/community_page.dart';
+import 'features/fantasy/presentation/pages/fantasy_hub_page.dart';
 import 'features/home/application/home_providers.dart';
 import 'features/home/presentation/pages/home_page.dart';
 import 'features/livescore/presentation/pages/sports_feed_page.dart';
@@ -31,6 +32,7 @@ class _HomeShellState extends ConsumerState<HomeShell> {
           SportsFeedPage(),
           PredictionsPage(),
           CommunityPage(),
+          FantasyHubPage(),
           ProfilePage(),
         ],
       ),
@@ -57,6 +59,11 @@ class _HomeShellState extends ConsumerState<HomeShell> {
             icon: Icon(Icons.forum_outlined),
             selectedIcon: Icon(Icons.forum),
             label: 'Community',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.emoji_events_outlined),
+            selectedIcon: Icon(Icons.emoji_events),
+            label: 'Fantasy',
           ),
           NavigationDestination(
             icon: Icon(Icons.person_outline),

@@ -22,6 +22,10 @@ static const String routeHome = '/home';
 static const String routePremium = '/premium';
   static const String routeCheckout = '/checkout';
   static const String routeSettings = '/settings';
+  static const String routeFantasyHub = '/fantasy';
+  static const String routeFantasyLeague = '/fantasy/league';
+  static const String routeFantasyTeam = '/fantasy/team';
+  static const String routeFantasyPlayerStats = '/fantasy/players';
 
   /// Validation regexes.
   static final RegExp emailRegex = RegExp(
