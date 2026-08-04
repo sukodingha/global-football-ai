@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/widgets/responsive_layout.dart';
+import '../../../../core/widgets/state_views.dart';
 import '../../../auth/application/auth_providers.dart';
 import '../../application/community_providers.dart';
 import '../../application/community_state.dart';
@@ -82,32 +84,30 @@ class _FeedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RefreshIndicator(
+return RefreshIndicator(
       onRefresh: () async {},
-      child: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        children: [
-          const PostComposer(),
-          const SizedBox(height: 4),
-          if (posts.isEmpty)
-            const Padding(
-              padding: EdgeInsets.all(40),
-              child: Center(
-                child: Text(
-                  'No posts yet. Be the first to share!',
-                  style: TextStyle(color: Colors.grey),
+      child: ResponsiveContainer(
+        child: ListView(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          children: [
+            const PostComposer(),
+            const SizedBox(height: 4),
+            if (posts.isEmpty)
+              const EmptyStateView(
+                icon: Icons.forum_outlined,
+                title: 'No posts yet',
+                message: 'Be the first to share with the community!',
+              )
+            else
+              for (final post in posts)
+                CommunityPostCard(
+                  post: post,
+                  currentUserId: currentUserId,
+                  onLike: () => onLike(post),
+                  onCommentTap: () => onCommentTap(post),
                 ),
-              ),
-            )
-          else
-            for (final post in posts)
-              CommunityPostCard(
-                post: post,
-                currentUserId: currentUserId,
-                onLike: () => onLike(post),
-                onCommentTap: () => onCommentTap(post),
-              ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -117,24 +117,11 @@ class _ErrorView extends StatelessWidget {
   const _ErrorView({required this.message});
   final String message;
 
-  @override
+@override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.error_outline, size: 48, color: Colors.grey),
-            const SizedBox(height: 12),
-            Text(
-              message,
-              textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.grey),
-            ),
-          ],
-        ),
-      ),
+    return ErrorStateView(
+      message: message,
+      onRetry: () {},
     );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/widgets/responsive_layout.dart';
+import '../../../../core/widgets/state_views.dart';
 import '../../../home/application/home_providers.dart';
 import '../../../home/application/home_state.dart';
 import '../../../home/domain/entities/match_entity.dart';
@@ -115,19 +117,21 @@ class _PredictionView extends ConsumerWidget {
   const _PredictionView({required this.prediction});
   final MatchPredictionEntity prediction;
 
-  @override
+@override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(predictionNotifierProvider);
     final isSaving = state is PredictionLoaded && state.isSaving;
-    return ListView(
-      padding: const EdgeInsets.only(bottom: 24),
-      children: [
-        PredictionBreakdownCard(prediction: prediction),
-        const SizedBox(height: 8),
-        _ActionsCard(isSaving: isSaving),
-        const SizedBox(height: 8),
-        const ComparisonInputCard(),
-      ],
+    return ResponsiveContainer(
+      child: ListView(
+        padding: const EdgeInsets.only(bottom: 24),
+        children: [
+          PredictionBreakdownCard(prediction: prediction),
+          const SizedBox(height: 8),
+          _ActionsCard(isSaving: isSaving),
+          const SizedBox(height: 8),
+          const ComparisonInputCard(),
+        ],
+      ),
     );
   }
 }
@@ -208,13 +212,15 @@ class _HistoryTab extends ConsumerWidget {
       );
     }
 
-    return ListView(
-      padding: const EdgeInsets.only(bottom: 24),
-      children: [
-        if (accuracy != null)
-          _AccuracySummaryCard(accuracy: accuracy),
-        ...history.map((h) => HistoryCard(history: h)),
-      ],
+return ResponsiveContainer(
+      child: ListView(
+        padding: const EdgeInsets.only(bottom: 24),
+        children: [
+          if (accuracy != null)
+            _AccuracySummaryCard(accuracy: accuracy),
+          ...history.map((h) => HistoryCard(history: h)),
+        ],
+      ),
     );
   }
 }
@@ -237,13 +243,15 @@ class _AccuracyTab extends ConsumerWidget {
       );
     }
 
-    return ListView(
-      padding: const EdgeInsets.only(bottom: 24),
-      children: [
-        if (accuracy != null)
-          _AccuracySummaryCard(accuracy: accuracy),
-        ...comparisons.map((c) => ComparisonCard(comparison: c)),
-      ],
+return ResponsiveContainer(
+      child: ListView(
+        padding: const EdgeInsets.only(bottom: 24),
+        children: [
+          if (accuracy != null)
+            _AccuracySummaryCard(accuracy: accuracy),
+          ...comparisons.map((c) => ComparisonCard(comparison: c)),
+        ],
+      ),
     );
   }
 }
@@ -293,27 +301,29 @@ class _MatchPicker extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
-    return ListView(
-      padding: const EdgeInsets.all(16),
-      children: [
-        Text('Select a match to generate its AI prediction',
-            style: theme.textTheme.titleMedium),
-        const SizedBox(height: 12),
-        ...matches.map(
-          (m) => Card(
-            margin: const EdgeInsets.symmetric(vertical: 6),
-            child: ListTile(
-              leading: const Icon(Icons.sports_soccer_outlined),
-              title: Text('${m.homeTeam.name} vs ${m.awayTeam.name}'),
-              subtitle: Text(m.competitionName ?? 'Match'),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () => ref
-                  .read(predictionNotifierProvider.notifier)
-                  .loadPredictionForMatch(m.id),
+return ResponsiveContainer(
+      child: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          Text('Select a match to generate its AI prediction',
+              style: theme.textTheme.titleMedium),
+          const SizedBox(height: 12),
+          ...matches.map(
+            (m) => Card(
+              margin: const EdgeInsets.symmetric(vertical: 6),
+              child: ListTile(
+                leading: const Icon(Icons.sports_soccer_outlined),
+                title: Text('${m.homeTeam.name} vs ${m.awayTeam.name}'),
+                subtitle: Text(m.competitionName ?? 'Match'),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => ref
+                    .read(predictionNotifierProvider.notifier)
+                    .loadPredictionForMatch(m.id),
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -344,26 +354,12 @@ class _EmptyState extends StatelessWidget {
   final String title;
   final String message;
 
-  @override
+@override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(32),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(icon, size: 64, color: Colors.grey),
-            const SizedBox(height: 16),
-            Text(title, style: Theme.of(context).textTheme.titleMedium),
-            const SizedBox(height: 8),
-            Text(
-              message,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-          ],
-        ),
-      ),
+    return EmptyStateView(
+      icon: icon,
+      title: title,
+      message: message,
     );
   }
 }
@@ -372,31 +368,12 @@ class _ErrorView extends ConsumerWidget {
   const _ErrorView({required this.message});
   final String message;
 
-  @override
+@override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.error_outline, size: 64, color: Colors.redAccent),
-            const SizedBox(height: 16),
-            Text(
-              message,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            const SizedBox(height: 24),
-            FilledButton.icon(
-              onPressed: () =>
-                  ref.read(predictionNotifierProvider.notifier).loadDashboard(),
-              icon: const Icon(Icons.refresh),
-              label: const Text('Retry'),
-            ),
-          ],
-        ),
-      ),
+    return ErrorStateView(
+      message: message,
+      onRetry: () =>
+          ref.read(predictionNotifierProvider.notifier).loadDashboard(),
     );
   }
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../../core/widgets/responsive_layout.dart';
+import '../../../../core/widgets/state_views.dart';
 import '../../application/sports_feed_notifier.dart';
 import '../../application/sports_feed_providers.dart';
 import '../../application/sports_feed_state.dart';
@@ -113,13 +115,15 @@ class _FeedBody extends ConsumerWidget {
           Expanded(
             child: events.isEmpty
                 ? _EmptyView(sport: selectedSport)
-                : ListView.builder(
-                    physics: const AlwaysScrollableScrollPhysics(),
-                    itemCount: events.length,
-                    itemBuilder: (context, index) {
-                      final event = events[index];
-                      return SportEventCard(event: event);
-                    },
+                : ResponsiveContainer(
+                    child: ListView.builder(
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      itemCount: events.length,
+                      itemBuilder: (context, index) {
+                        final event = events[index];
+                        return SportEventCard(event: event);
+                      },
+                    ),
                   ),
           ),
         ],
@@ -173,28 +177,10 @@ class _ErrorView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.cloud_off, size: 48, color: Colors.grey),
-            const SizedBox(height: 12),
-            Text(
-              message,
-              textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.grey),
-            ),
-            const SizedBox(height: 16),
-            FilledButton.icon(
-              onPressed: onRetry,
-              icon: const Icon(Icons.refresh),
-              label: const Text('Retry'),
-            ),
-          ],
-        ),
-      ),
+    return ErrorStateView(
+      message: message,
+      onRetry: onRetry,
+      icon: Icons.cloud_off,
     );
   }
 }
@@ -210,18 +196,10 @@ class _EmptyView extends StatelessWidget {
       SportType.tennis => Icons.sports_tennis,
       SportType.basketball => Icons.sports_basketball,
     };
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(icon, size: 48, color: Colors.grey),
-          const SizedBox(height: 12),
-          Text(
-            'No live ${sport.label.toLowerCase()} events right now.',
-            style: const TextStyle(color: Colors.grey),
-          ),
-        ],
-      ),
+    return EmptyStateView(
+      icon: icon,
+      title: 'No live ${sport.label.toLowerCase()} events right now',
+      message: 'Check back shortly — live events will appear here.',
     );
   }
 }

@@ -114,6 +114,37 @@ Donations and premium subscriptions are handled via the [Paystack](https://payst
 
 > **Security note:** The Paystack secret key should normally be used **server-side only**. For a production deployment, move transaction verification to a Cloud Function to avoid embedding the secret key in the client.
 
+## 13. Configure Push Notifications (FCM — Phase 6)
+
+Push notifications are powered by **Firebase Cloud Messaging**.
+
+1. In the Firebase Console, your project must have **Cloud Messaging** enabled (it is enabled by default for new projects).
+2. The `NotificationService` (`lib/core/services/notification_service.dart`) requests notification permission, retrieves the FCM token, and syncs it to the user's Firestore document under `users/{uid}/fcmTokens`.
+3. The app subscribes/unsubscribes to FCM **topics** based on the user's notification toggles in Settings:
+   - `match_reminders`
+   - `breaking_news`
+   - `community_replies`
+   - `promotions`
+4. To send a targeted push, publish a message to the relevant topic from your backend or the Firebase Console. Example via the REST API:
+   ```bash
+   curl -X POST -H "Authorization: key=YOUR_SERVER_KEY" -H "Content-Type: application/json" \
+     -d '{"to":"/topics/breaking_news","notification":{"title":"Big News","body":"..."}}' \
+     https://fcm.googleapis.com/fcm/send
+   ```
+   > **Note:** The server key is for server-side use only and should never be embedded in the client.
+
+## 14. Analytics & Performance Tracking (Phase 6)
+
+- **Firebase Analytics** logs screen views and custom events automatically via `AnalyticsService`.
+- **Firebase Performance** traces API operations for latency monitoring.
+Both are enabled once the Firebase project and config files are wired up. No additional setup is required beyond the Firebase configuration in sections 4–6.
+
+## 15. Offline Caching (Phase 6)
+
+- **News** is cached locally (SharedPreferences) with a 3-hour TTL via `NewsCacheService`.
+- **Live scores** are cached locally (SharedPreferences) with a 5-minute TTL via `LiveScoresCacheService`.
+No additional configuration is required; caching is best-effort and transparent to the user.
+
 ## Troubleshooting
 
 - **Google Sign-In not working**: Ensure the SHA-1 fingerprint is registered in the Firebase console.

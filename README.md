@@ -12,10 +12,10 @@ lib/
 │   ├── constants/           # App-wide constants
 │   ├── errors/              # Failures & exceptions
 │   ├── router/              # Go Router configuration
-│   ├── services/            # Secure storage & biometric services
+│   ├── services/            # Secure storage, biometric, notification, analytics & cache services
 │   ├── theme/               # App theme
 │   ├── utils/               # Validators & helpers
-│   └── widgets/             # Reusable UI widgets
+│   └── widgets/             # Reusable UI widgets (ResponsiveContainer, EmptyStateView, ErrorStateView)
 └── features/
     ├── auth/                # Authentication feature
     │   ├── application/     # Riverpod state & controllers
@@ -70,6 +70,13 @@ lib/
 - **Paystack integration** (`PremiumPage`, `DonationSheet`, `CheckoutLauncherPage`) — hosted checkout for premium subscriptions and donations, with transaction verification and premium permission updates in Firestore.
 - **Profile page** (`ProfilePage`) — premium status, donation entry, transaction history, and sign-out.
 
+### Phase 6: Profile Settings, Notifications, Analytics & Polish
+- **User Profile & Custom Settings** — `SettingsPage` lets users update display name, favorite teams, notification preferences, and theme mode. Persisted in real time to Firestore and cached locally for offline access.
+- **Push Notifications (FCM)** — `NotificationService` handles permission requests, FCM token retrieval, token sync to Firestore, and topic subscriptions. Notification toggles in Settings subscribe/unsubscribe the device to FCM topics (`match_reminders`, `breaking_news`, `community_replies`, `promotions`).
+- **Advanced Analytics & Performance** — `AnalyticsService` wraps Firebase Analytics (screen views, custom events) and Firebase Performance (operation traces/latency).
+- **Offline Caching** — `NewsCacheService` and `LiveScoresCacheService` persist news and live scores locally (SharedPreferences) with TTLs so key screens render instantly and work offline.
+- **Responsive & Accessible UI** — Reusable `ResponsiveContainer`/breakpoint helpers and shared `EmptyStateView`/`ErrorStateView` widgets applied across Home, Settings, Profile, Sports Feed, Predictions, and Community screens.
+
 ## 🚀 Getting Started
 
 1. Install Flutter SDK
@@ -83,9 +90,12 @@ lib/
 - `flutter_riverpod` — State management
 - `go_router` — Navigation
 - `firebase_core`, `firebase_auth` — Authentication
+- `firebase_messaging` — Push notifications
+- `firebase_analytics`, `firebase_performance` — Analytics & performance tracking
 - `google_sign_in`, `sign_in_with_apple` — Social auth
 - `local_auth` — Biometric
 - `flutter_secure_storage` — Secure session storage
+- `shared_preferences` — Lightweight local caching (news, live scores)
 - `equatable` — Value equality
 - `http` — HTTP client for football data APIs
 - `intl` — Date formatting
