@@ -42,6 +42,20 @@ class ArticleModel {
     );
   }
 
+/// Serializes back to a JSON map (for caching).
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'summary': summary,
+      'publishedAt': publishedAt.toIso8601String(),
+      'source': source,
+      'imageUrl': imageUrl,
+      'url': url,
+      'category': category,
+    };
+  }
+
   /// Converts to a domain entity.
   ArticleEntity toEntity() {
     return ArticleEntity(

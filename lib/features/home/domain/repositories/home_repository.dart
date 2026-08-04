@@ -22,8 +22,11 @@ abstract class HomeRepository {
   /// Fetches trending matches.
   Future<List<MatchEntity>> getTrendingMatches();
 
-  /// Fetches the football news feed.
-  Future<List<ArticleEntity>> getNews();
+/// Fetches the football news feed.
+  ///
+  /// When [refresh] is true, fresh data is always fetched from the network,
+  /// bypassing the local cache.
+  Future<List<ArticleEntity>> getNews({bool refresh = false});
 
   /// Fetches today's AI predictions summary.
   Future<PredictionSummaryEntity> getTodayPredictions();

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/widgets/responsive_layout.dart';
+import '../../../../core/widgets/state_views.dart';
 import '../../application/home_providers.dart';
 import '../../application/home_state.dart';
 import '../../domain/entities/article_entity.dart';
@@ -63,28 +65,9 @@ class _ErrorView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.error_outline, size: 64, color: Colors.redAccent),
-            const SizedBox(height: 16),
-            Text(
-              message,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            const SizedBox(height: 24),
-            FilledButton.icon(
-              onPressed: () => ref.read(homeNotifierProvider.notifier).refresh(),
-              icon: const Icon(Icons.refresh),
-              label: const Text('Retry'),
-            ),
-          ],
-        ),
-      ),
+    return ErrorStateView(
+      message: message,
+      onRetry: () => ref.read(homeNotifierProvider.notifier).refresh(),
     );
   }
 }
@@ -105,54 +88,56 @@ class _DashboardView extends ConsumerWidget {
 
     return RefreshIndicator(
       onRefresh: () => ref.read(homeNotifierProvider.notifier).refresh(),
-      child: ListView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        padding: const EdgeInsets.all(16),
-        children: [
-          PredictionSummaryCard(predictions: predictions),
-          const SizedBox(height: 16),
-
-          if (liveMatches.isNotEmpty) ...[
-            const _SectionTitle('Live Matches'),
-            const SizedBox(height: 8),
-            ...liveMatches.map((m) => LiveMatchCard(match: m)),
+      child: ResponsiveContainer(
+        child: ListView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          padding: const EdgeInsets.all(16),
+          children: [
+            PredictionSummaryCard(predictions: predictions),
             const SizedBox(height: 16),
-          ],
 
-          if (upcomingMatches.isNotEmpty) ...[
-            const _SectionTitle('Upcoming Matches'),
-            const SizedBox(height: 8),
-            ...upcomingMatches.take(5).map((m) => MatchCard(match: m)),
-            const SizedBox(height: 16),
-          ],
+            if (liveMatches.isNotEmpty) ...[
+              const _SectionTitle('Live Matches'),
+              const SizedBox(height: 8),
+              ...liveMatches.map((m) => LiveMatchCard(match: m)),
+              const SizedBox(height: 16),
+            ],
 
-          if (trendingMatches.isNotEmpty) ...[
-            const _SectionTitle('Trending'),
-            const SizedBox(height: 8),
-            ...trendingMatches.take(5).map((m) => MatchCard(match: m)),
-            const SizedBox(height: 16),
-          ],
+            if (upcomingMatches.isNotEmpty) ...[
+              const _SectionTitle('Upcoming Matches'),
+              const SizedBox(height: 8),
+              ...upcomingMatches.take(5).map((m) => MatchCard(match: m)),
+              const SizedBox(height: 16),
+            ],
 
-          if (competitions.isNotEmpty) ...[
-            const _SectionTitle('Competitions'),
-            const SizedBox(height: 8),
-            _CompetitionCarousel(competitions: competitions),
-            const SizedBox(height: 16),
-          ],
+            if (trendingMatches.isNotEmpty) ...[
+              const _SectionTitle('Trending'),
+              const SizedBox(height: 8),
+              ...trendingMatches.take(5).map((m) => MatchCard(match: m)),
+              const SizedBox(height: 16),
+            ],
 
-          if (playerOfTheDay != null) ...[
-            const _SectionTitle('Player of the Day'),
-            const SizedBox(height: 8),
-            PlayerOfDayCard(player: playerOfTheDay),
-            const SizedBox(height: 16),
-          ],
+            if (competitions.isNotEmpty) ...[
+              const _SectionTitle('Competitions'),
+              const SizedBox(height: 8),
+              _CompetitionCarousel(competitions: competitions),
+              const SizedBox(height: 16),
+            ],
 
-          if (news.isNotEmpty) ...[
-            const _SectionTitle('Latest News'),
-            const SizedBox(height: 8),
-            ...news.take(5).map((n) => NewsCard(article: n)),
+            if (playerOfTheDay != null) ...[
+              const _SectionTitle('Player of the Day'),
+              const SizedBox(height: 8),
+              PlayerOfDayCard(player: playerOfTheDay),
+              const SizedBox(height: 16),
+            ],
+
+            if (news.isNotEmpty) ...[
+              const _SectionTitle('Latest News'),
+              const SizedBox(height: 8),
+              ...news.take(5).map((n) => NewsCard(article: n)),
+            ],
           ],
-        ],
+        ),
       ),
     );
   }

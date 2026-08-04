@@ -17,6 +17,7 @@ import '../../features/livescore/presentation/pages/match_detail_page.dart';
 import '../../features/payments/presentation/pages/checkout_page.dart';
 import '../../features/payments/presentation/pages/premium_page.dart';
 import '../../features/payments/presentation/pages/profile_page.dart';
+import '../../features/settings/presentation/pages/settings_page.dart';
 import '../../home_shell.dart';
 import 'splash_screen.dart';
 
@@ -137,12 +138,17 @@ GoRoute(
         name: 'premium',
         builder: (context, state) => const PremiumPage(),
       ),
-      GoRoute(
+GoRoute(
         path: AppConstants.routeCheckout,
         name: 'checkout',
         builder: (context, state) => CheckoutLauncherPage(
           transaction: state.extra as dynamic,
         ),
+      ),
+      GoRoute(
+        path: AppConstants.routeSettings,
+        name: 'settings',
+        builder: (context, state) => const SettingsPage(),
       ),
     ],
   );

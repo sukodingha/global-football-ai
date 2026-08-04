@@ -1,5 +1,6 @@
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/errors/failures.dart';
+import '../../../../core/services/news_cache_service.dart';
 import '../../domain/entities/article_entity.dart';
 import '../../domain/entities/competition_entity.dart';
 import '../../domain/entities/match_entity.dart';
@@ -9,11 +10,18 @@ import '../../domain/repositories/home_repository.dart';
 import '../datasources/home_remote_data_source.dart';
 
 /// Implementation of [HomeRepository] backed by the football-data.org API.
+///
+/// The news feed is cached locally via [NewsCacheService] so it renders
+/// instantly offline and reduces redundant network calls.
 class HomeRepositoryImpl implements HomeRepository {
-  HomeRepositoryImpl({required HomeRemoteDataSource remoteDataSource})
-      : _remoteDataSource = remoteDataSource;
+  HomeRepositoryImpl({
+    required HomeRemoteDataSource remoteDataSource,
+    NewsCacheService? newsCache,
+  })  : _remoteDataSource = remoteDataSource,
+        _newsCache = newsCache;
 
   final HomeRemoteDataSource _remoteDataSource;
+  final NewsCacheService? _newsCache;
 
   // ── Helpers ────────────────────────────────────────────────────────
 
@@ -82,11 +90,37 @@ class HomeRepositoryImpl implements HomeRepository {
     });
   }
 
-  @override
-  Future<List<ArticleEntity>> getNews() async {
+@override
+  Future<List<ArticleEntity>> getNews({bool refresh = false}) async {
+    final cache = _newsCache;
+
+    // Serve from cache first when present (unless a refresh is requested).
+    if (!refresh && cache != null) {
+      final cached = await cache.getCachedNews('home');
+      if (cached != null) {
+        try {
+          return cached
+              .map(ArticleModel.fromJson)
+              .map((m) => m.toEntity())
+              .toList();
+        } catch (_) {
+          // Fall through to remote fetch if cache is corrupt.
+        }
+      }
+    }
+
     return _safeCall(() async {
       final models = await _remoteDataSource.getNews();
-      return models.map((m) => m.toEntity()).toList();
+      final entities = models.map((m) => m.toEntity()).toList();
+
+      // Persist the fresh feed to cache for offline / instant load.
+      if (cache != null) {
+        await cache.cacheNews(
+          'home',
+          models.map((m) => m.toJson()).toList(),
+        );
+      }
+      return entities;
     });
   }
 

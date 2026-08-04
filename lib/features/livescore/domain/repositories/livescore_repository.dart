@@ -10,7 +10,10 @@ import '../entities/standings_entity.dart';
 /// Abstract contract for the live scores repository.
 abstract class LivescoreRepository {
   /// Fetches live matches currently in play.
-  Future<List<MatchEntity>> getLiveMatches();
+  ///
+  /// When [refresh] is true, fresh data is always fetched from the network,
+  /// bypassing the local cache.
+  Future<List<MatchEntity>> getLiveMatches({bool refresh = false});
 
   /// Fetches a single match's full detail.
   Future<MatchDetailEntity> getMatchDetail(int matchId);

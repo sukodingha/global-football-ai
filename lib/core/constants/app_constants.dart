@@ -19,8 +19,9 @@ static const String routeHome = '/home';
   static const String routeMatchDetail = '/match';
   static const String routeCommunity = '/community';
   static const String routeProfile = '/profile';
-  static const String routePremium = '/premium';
+static const String routePremium = '/premium';
   static const String routeCheckout = '/checkout';
+  static const String routeSettings = '/settings';
 
   /// Validation regexes.
   static final RegExp emailRegex = RegExp(

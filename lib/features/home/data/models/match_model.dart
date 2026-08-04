@@ -59,7 +59,36 @@ class MatchModel {
     );
   }
 
-  /// Converts to a domain entity.
+/// Serializes back to a JSON map (for caching).
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'status': _statusToApi(status),
+      'utcDate': utcDate.toIso8601String(),
+      'homeTeam': {
+        'id': homeTeam.id,
+        'name': homeTeam.name,
+        'shortName': homeTeam.shortName,
+        'crest': homeTeam.crest,
+      },
+      'awayTeam': {
+        'id': awayTeam.id,
+        'name': awayTeam.name,
+        'shortName': awayTeam.shortName,
+        'crest': awayTeam.crest,
+      },
+      'score': {
+        'fullTime': {'home': homeScore, 'away': awayScore},
+        'minute': minute,
+      },
+      'competition': {
+        'name': competitionName,
+        'emblem': competitionEmblem,
+      },
+    };
+  }
+
+/// Converts to a domain entity.
   MatchEntity toEntity() {
     return MatchEntity(
       id: id,
@@ -73,5 +102,19 @@ class MatchModel {
       competitionEmblem: competitionEmblem,
       minute: minute,
     );
+  }
+
+  /// Maps a [MatchStatus] to its football-data.org API string.
+  static String _statusToApi(MatchStatus s) {
+    return switch (s) {
+      MatchStatus.scheduled => 'SCHEDULED',
+      MatchStatus.timed => 'TIMED',
+      MatchStatus.inPlay => 'IN_PLAY',
+      MatchStatus.paused => 'PAUSED',
+      MatchStatus.finished => 'FINISHED',
+      MatchStatus.postponed => 'POSTPONED',
+      MatchStatus.cancelled => 'CANCELLED',
+      MatchStatus.awarded => 'AWARDED',
+    };
   }
 }

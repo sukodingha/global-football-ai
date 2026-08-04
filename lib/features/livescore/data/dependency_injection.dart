@@ -2,6 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/api/football_api_client.dart';
 import '../../../core/api/football_data_provider.dart';
+import '../../../core/services/dependency_injection.dart';
+import '../../../core/services/live_scores_cache_service.dart';
 import '../datasources/api_sports_data_source.dart';
 import '../datasources/livescore_remote_data_source.dart';
 import '../providers/football_data_org_provider.dart';
@@ -34,7 +36,11 @@ final livescoreRemoteDataSourceProvider =
 /// Livescore repository.
 final livescoreRepositoryProvider = Provider<LivescoreRepository>((ref) {
   final remoteDataSource = ref.watch(livescoreRemoteDataSourceProvider);
-  return LivescoreRepositoryImpl(remoteDataSource: remoteDataSource);
+  final liveScoresCache = ref.watch(liveScoresCacheServiceProvider);
+  return LivescoreRepositoryImpl(
+    remoteDataSource: remoteDataSource,
+    liveScoresCache: liveScoresCache,
+  );
 });
 
 /// Multi-sport (API-Sports) data source.

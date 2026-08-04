@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import 'package:go_router/go_router.dart';
+
+import '../../../../core/constants/app_constants.dart';
+import '../../../../core/widgets/responsive_layout.dart';
+import '../../../../core/widgets/state_views.dart';
 import '../../../auth/application/auth_providers.dart';
 import '../../../auth/domain/entities/user_entity.dart';
 import '../../application/payment_providers.dart';
@@ -42,13 +47,13 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
     final paymentState = ref.watch(paymentNotifierProvider);
 
     return Scaffold(
-      appBar: AppBar(
+appBar: AppBar(
         title: const Text('Profile'),
         actions: [
           IconButton(
-            tooltip: 'Appearance',
-            icon: const Icon(Icons.dark_mode_outlined),
-            onPressed: () {},
+            tooltip: 'Settings',
+            icon: const Icon(Icons.settings_outlined),
+            onPressed: () => context.push(AppConstants.routeSettings),
           ),
         ],
       ),
@@ -105,7 +110,8 @@ class _ProfileView extends StatelessWidget {
     final theme = Theme.of(context);
     final transactions = state.transactions;
 
-    return ListView(
+return ResponsiveContainer(
+      child: ListView(
       padding: const EdgeInsets.symmetric(vertical: 8),
       children: [
         _UserHeader(user: user),
@@ -142,22 +148,18 @@ class _ProfileView extends StatelessWidget {
             style: theme.textTheme.titleMedium,
           ),
         ),
-        const SizedBox(height: 8),
+const SizedBox(height: 8),
         if (transactions.isEmpty)
-          const Padding(
-            padding: EdgeInsets.all(32),
-            child: Center(
-              child: Text(
-                'No transactions yet.',
-                style: TextStyle(color: Colors.grey),
-              ),
-            ),
+          const EmptyStateView(
+            icon: Icons.receipt_long_outlined,
+            title: 'No transactions yet',
+            message: 'Your donation and purchase history will appear here.',
           )
         else
           ...transactions.map(
             (tx) => _TransactionTile(transaction: tx),
           ),
-        const SizedBox(height: 16),
+const SizedBox(height: 16),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: OutlinedButton.icon(
@@ -171,6 +173,7 @@ class _ProfileView extends StatelessWidget {
         ),
         const SizedBox(height: 16),
       ],
+      ),
     );
   }
 }
@@ -310,28 +313,9 @@ class _ErrorView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.cloud_off, size: 48, color: Colors.grey),
-            const SizedBox(height: 12),
-            Text(
-              message,
-              textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.grey),
-            ),
-            const SizedBox(height: 16),
-            FilledButton.icon(
-              onPressed: onRetry,
-              icon: const Icon(Icons.refresh),
-              label: const Text('Retry'),
-            ),
-          ],
-        ),
-      ),
+    return ErrorStateView(
+      message: message,
+      onRetry: onRetry,
     );
   }
 }

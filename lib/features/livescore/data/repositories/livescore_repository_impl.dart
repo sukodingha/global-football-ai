@@ -1,5 +1,7 @@
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/errors/failures.dart';
+import '../../../../core/services/live_scores_cache_service.dart';
+import '../../../home/data/models/match_model.dart';
 import '../../../home/domain/entities/match_entity.dart';
 import '../../domain/entities/fixture_entity.dart';
 import '../../domain/entities/heatmap_entity.dart';
@@ -13,14 +15,20 @@ import '../datasources/livescore_remote_data_source.dart';
 
 /// Implementation of [LivescoreRepository] combining remote data source
 /// and the real-time update stream.
+///
+/// Live matches are cached locally via [LiveScoresCacheService] so the live
+/// scores UI can render instantly from cache while fresh data is fetched.
 class LivescoreRepositoryImpl implements LivescoreRepository {
   LivescoreRepositoryImpl({
     required LivescoreRemoteDataSource remoteDataSource,
     LiveUpdateStream? liveUpdateStream,
+    LiveScoresCacheService? liveScoresCache,
   })  : _remoteDataSource = remoteDataSource,
-        _liveUpdateStream = liveUpdateStream;
+        _liveUpdateStream = liveUpdateStream,
+        _liveScoresCache = liveScoresCache;
 
   final LivescoreRemoteDataSource _remoteDataSource;
+  final LiveScoresCacheService? _liveScoresCache;
   LiveUpdateStream? _liveUpdateStream;
 
   /// The pool interval used when lazily creating the live stream.
@@ -62,9 +70,35 @@ class LivescoreRepositoryImpl implements LivescoreRepository {
 
   // ── LivescoreRepository ────────────────────────────────────────────
 
-  @override
-  Future<List<MatchEntity>> getLiveMatches() async {
-    return _safeCall(() => _remoteDataSource.getLiveMatches());
+@override
+  Future<List<MatchEntity>> getLiveMatches({bool refresh = false}) async {
+    final cache = _liveScoresCache;
+
+    // Serve from cache first unless a refresh is explicitly requested.
+    if (!refresh && cache != null) {
+      final cached = await cache.getCachedLiveMatches();
+      if (cached != null && cached.isNotEmpty) {
+        try {
+          return cached
+              .map(MatchModel.fromJson)
+              .map((m) => m.toEntity())
+              .toList();
+        } catch (_) {
+          // Fall through to remote fetch if cache is corrupt.
+        }
+      }
+    }
+
+    return _safeCall(() async {
+      final models = await _remoteDataSource.getLiveMatches();
+      final entities = models.map((m) => m.toEntity()).toList();
+
+      // Persist the fresh live scores for offline / instant rendering.
+      if (cache != null) {
+        await cache.cacheLiveMatches(models.map((m) => m.toJson()).toList());
+      }
+      return entities;
+    });
   }
 
   @override

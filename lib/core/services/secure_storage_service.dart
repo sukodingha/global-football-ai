@@ -64,12 +64,39 @@ class SecureStorageService {
     }
   }
 
-  /// Reads the cached user JSON.
+/// Reads the cached user JSON.
   Future<String?> getCachedUser() async {
     try {
       return await _storage.read(key: AppConstants.storageUserKey);
     } catch (_) {
       return null;
+    }
+  }
+
+  /// Writes an arbitrary key/value to secure storage.
+  Future<void> writeRaw(String key, String value) async {
+    try {
+      await _storage.write(key: key, value: value);
+    } catch (_) {
+      throw const CacheException('Unable to write secure data.');
+    }
+  }
+
+  /// Reads an arbitrary key from secure storage.
+  Future<String?> readRaw(String key) async {
+    try {
+      return await _storage.read(key: key);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /// Deletes an arbitrary key from secure storage.
+  Future<void> deleteRaw(String key) async {
+    try {
+      await _storage.delete(key: key);
+    } catch (_) {
+      // Best-effort delete.
     }
   }
 

@@ -1,39 +1,32 @@
-# Phase 5 Implementation Progress
+# Phase 6 Implementation Progress
 
-## A. Multi-Sport Live Scores & Real-Time Feeds
-- [x] Add `SportEventEntity` + `SportType` + `SportStatus` (domain)
-- [x] Add `MultiSportRepository` contract (domain)
-- [x] Add `ApiSportsProvider` REST data source (data)
-- [x] Add `MultiSportRepositoryImpl` (data)
-- [x] Add `MultiSportFeedStream` (real-time polling)
-- [x] Add `SportsFeedNotifier`/`State`/`Providers` (application)
-- [x] Add `SportsFeedPage` + `SportEventCard` (presentation)
-- [x] Add DI for sports feed
+## A. User Profile Management & Custom Settings
+- [x] Add `UserSettingsEntity` (domain)
+- [x] Add `SettingsRepository` contract (domain)
+- [x] Add `SettingsRemoteDataSource` (Firestore)
+- [x] Add `SettingsLocalDataSource` (secure storage)
+- [x] Add `SettingsModel`
+- [x] Add `SettingsRepositoryImpl` (data)
+- [x] Add use cases (domain)
+- [x] Add `SettingsNotifier`/`State`/`Providers` (application)
+- [x] Add `SettingsPage` (presentation)
+- [x] Wire Settings entry from `ProfilePage`
+- [x] Add settings route to `AppRouter`
 
-## B. Community & Social Feed (Firestore)
-- [x] Add `CommunityPostEntity`, `CommentEntity`, `UserBadgeEntity` (domain)
-- [x] Add `CommunityRepository` contract (domain)
-- [x] Add Firestore data source with real-time feed/likes/comments/badges (data)
-- [x] Add `CommunityRepositoryImpl` (data)
-- [x] Add use cases (data/domain)
-- [x] Add `CommunityNotifier`/`State`/`Providers` (application)
-- [x] Add `CommunityPage` + `PostCard` + `CommentSheet` + composer (presentation)
-- [x] Add DI for community
+## B. Push Notifications & Alerts (FCM)
+- [x] Add `firebase_messaging` dependency
+- [x] Add `NotificationService` (core)
+- [x] Add FCM token sync to Firestore
+- [x] Wire notification toggles in Settings
 
-## C. Paystack Integration (Donations & Premium)
-- [x] Add `PaymentPlanEntity`, `TransactionEntity`, `SubscriptionEntity` (domain)
-- [x] Add `PaymentRepository` contract (domain)
-- [x] Add `PaystackApi` REST data source (initialize/verify)
-- [x] Add `PaymentLocalDataSource` (Firestore: subscription/permissions)
-- [x] Add `PaymentRepositoryImpl` (data)
-- [x] Add use cases (data/domain)
-- [x] Add `PaymentNotifier`/`State`/`Providers` (application)
-- [x] Add `ProfilePage` + Premium upsell + Donation sheet + Checkout screen (presentation)
-- [x] Add DI for payments
+## C. Advanced Analytics & Performance Tracking
+- [x] Add `firebase_performance` + `shared_preferences` dependencies
+- [x] Add `AnalyticsService` (core)
+- [x] Add `NewsCacheService` + `LiveScoresCacheService` (core)
+- [x] Wire caching into Home + Livescore data sources
 
-## D. UI/UX & State Management
-- [x] Update `AppConfig` (Paystack + API-Sports keys)
-- [x] Update `AppConstants` (routes)
-- [x] Update `AppRouter` (community/profile/premium/checkout routes)
-- [x] Update `HomeShell` (5-tab nav, multi-sport feed + profile)
-- [x] README/SETUP notes for Paystack & API-Sports keys
+## D. Final UI/UX Polish, Accessibility & Deployment Prep
+- [x] Add `ResponsiveLayout` helpers
+- [x] Add `EmptyStateView` / `ErrorStateView` widgets
+- [x] Audit all screens for responsive design
+- [x] Update docs (README, SETUP, TODO)
