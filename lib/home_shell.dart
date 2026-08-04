@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'features/auth/application/auth_notifier.dart';
+import 'features/community/presentation/pages/community_page.dart';
 import 'features/home/application/home_providers.dart';
 import 'features/home/presentation/pages/home_page.dart';
 import 'features/livescore/presentation/pages/live_scores_page.dart';
@@ -25,10 +26,11 @@ class _HomeShellState extends ConsumerState<HomeShell> {
     return Scaffold(
       body: IndexedStack(
         index: _currentIndex,
-children: const [
+        children: const [
           HomePage(),
           LiveScoresPage(),
           PredictionsPage(),
+          CommunityPage(),
           _PlaceholderPage(title: 'Profile'),
         ],
       ),
@@ -50,6 +52,11 @@ children: const [
             icon: Icon(Icons.trending_up_outlined),
             selectedIcon: Icon(Icons.trending_up),
             label: 'Predictions',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.forum_outlined),
+            selectedIcon: Icon(Icons.forum),
+            label: 'Community',
           ),
           NavigationDestination(
             icon: Icon(Icons.person_outline),

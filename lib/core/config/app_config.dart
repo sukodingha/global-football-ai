@@ -47,6 +47,24 @@ class AppConfig {
   /// Obtain a free key at https://www.football-data.org/client/register
   static const String footballDataApiKey = 'YOUR_FOOTBALL_DATA_API_KEY';
 
-  /// News API key (optional). Set this to a real key.
+/// News API key (optional). Set this to a real key.
   static const String newsApiKey = 'YOUR_NEWS_API_KEY';
+
+  /// API-Sports (api-sports.io) base URL for multi-sport live feeds.
+  static const String apiSportsBaseUrl = 'https://v1.api-sports.io';
+
+  /// API-Sports key. Obtain at https://www.api-sports.io.
+  static const String apiSportsKey = 'YOUR_API_SPORTS_KEY';
+
+  /// Paystack public (publishable) key for client-side checkout.
+  static const String paystackPublicKey = 'YOUR_PAYSTACK_PUBLIC_KEY';
+
+  /// Paystack secret key for server-side verification.
+  static const String paystackSecretKey = 'YOUR_PAYSTACK_SECRET_KEY';
+
+  /// Paystack API base URL.
+  static const String paystackBaseUrl = 'https://api.paystack.co';
+
+  /// Paystack checkout base URL.
+  static const String paystackCheckoutUrl = 'https://checkout.paystack.com';
 }

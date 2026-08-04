@@ -14,9 +14,13 @@ class AppConstants {
   static const String routeForgotPassword = '/forgot-password';
   static const String routePhoneLogin = '/phone-login';
 static const String routeOtpVerification = '/otp-verification';
-  static const String routeHome = '/home';
+static const String routeHome = '/home';
   static const String routeLiveScores = '/live-scores';
   static const String routeMatchDetail = '/match';
+  static const String routeCommunity = '/community';
+  static const String routeProfile = '/profile';
+  static const String routePremium = '/premium';
+  static const String routeCheckout = '/checkout';
 
   /// Validation regexes.
   static final RegExp emailRegex = RegExp(
