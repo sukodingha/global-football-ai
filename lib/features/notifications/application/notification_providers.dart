@@ -1,7 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/services/dependency_injection.dart';
 import '../../../core/services/notification_alert_engine.dart';
+import '../../../core/services/notification_service.dart';
 import '../../auth/application/auth_providers.dart';
+import '../../livescore/data/dependency_injection.dart';
 import '../data/dependency_injection.dart';
 import '../domain/entities/notification_alert_entity.dart';
 import '../domain/entities/notification_preferences_entity.dart';
@@ -12,7 +15,11 @@ import 'notification_state.dart';
 final notificationNotifierProvider =
     StateNotifierProvider<NotificationNotifier, NotificationState>((ref) {
   final repository = ref.watch(notificationRepositoryProvider);
-  return NotificationNotifier(repository: repository);
+  final notificationService = ref.watch(notificationServiceProvider);
+  return NotificationNotifier(
+    repository: repository,
+    notificationService: notificationService,
+  );
 });
 
 /// Live alert engine (detects match events from live snapshots).
@@ -20,6 +27,12 @@ final notificationAlertEngineProvider =
     Provider<NotificationAlertEngine>((ref) {
   final engine = NotificationAlertEngine();
   ref.onDispose(engine.dispose);
+
+  // Wire the engine to the real-time live match stream so Goal/Kickoff/
+  // HalfTime/FullTime/Result alerts are detected automatically.
+  final livescoreRepository = ref.watch(livescoreRepositoryProvider);
+  engine.startListening(livescoreRepository.watchLiveScores());
+
   return engine;
 });
 

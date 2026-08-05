@@ -25,6 +25,7 @@ import '../../features/notifications/presentation/pages/notifications_page.dart'
 import '../../features/payments/presentation/pages/profile_page.dart';
 import '../../features/settings/presentation/pages/settings_page.dart';
 import '../../home_shell.dart';
+import 'navigator_key.dart';
 import 'splash_screen.dart';
 
 /// A [ChangeNotifier] that notifies when the auth state changes,
@@ -44,8 +45,9 @@ final routerProvider = Provider<GoRouter>((ref) {
   final refreshNotifier = AuthRefreshNotifier(ref);
   ref.onDispose(refreshNotifier.dispose);
 
-  final router = GoRouter(
-      initialLocation: AppConstants.routeSplash,
+final router = GoRouter(
+    navigatorKey: appNavigatorKey,
+    initialLocation: AppConstants.routeSplash,
     refreshListenable: refreshNotifier,
     redirect: (context, state) {
       final authState = ref.read(authNotifierProvider);

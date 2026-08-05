@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../core/constants/app_constants.dart';
 import '../../../../core/widgets/responsive_layout.dart';
 import '../../../../core/widgets/state_views.dart';
 import '../../../auth/application/auth_providers.dart';
@@ -142,6 +144,13 @@ return ResponsiveContainer(
             'Notifications',
             style: theme.textTheme.titleMedium,
           ),
+        ),
+        ListTile(
+          leading: const Icon(Icons.notifications_active_outlined),
+          title: const Text('Notification Center'),
+          subtitle: const Text('Granular alerts, live match events & news'),
+          trailing: const Icon(Icons.chevron_right),
+          onTap: () => context.push(AppConstants.routeNotifications),
         ),
         SwitchListTile(
           secondary: const Icon(Icons.notifications_active_outlined),

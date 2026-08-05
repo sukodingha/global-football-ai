@@ -14,6 +14,10 @@
 	<string>Global Football AI uses Face ID to securely sign you in.</string>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>Global Football AI</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
