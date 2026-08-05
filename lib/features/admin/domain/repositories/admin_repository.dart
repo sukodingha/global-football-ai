@@ -1,7 +1,9 @@
 import '../../../core/errors/failures.dart';
+import '../entities/admin_analytics_entity.dart';
 import '../entities/admin_audit_log_entity.dart';
 import '../entities/admin_competition_entity.dart';
 import '../entities/admin_prediction_entity.dart';
+import '../entities/admin_revenue_entity.dart';
 import '../entities/admin_user_entity.dart';
 
 /// Contract for the admin dashboard repository.
