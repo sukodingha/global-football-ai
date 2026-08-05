@@ -15,5 +15,8 @@
         "bundle_id": "com.globalfootball.ai"
       }
     }
+  },
+  "firestore": {
+    "rules": "firestore.rules"
   }
 }

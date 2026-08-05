@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../constants/app_constants.dart';
+import '../../features/admin/application/admin_providers.dart';
+import '../../features/admin/presentation/pages/admin_dashboard_page.dart';
 import '../../features/auth/application/auth_providers.dart';
 import '../../features/auth/application/auth_state.dart';
 import '../../features/auth/presentation/pages/forgot_password_page.dart';
@@ -70,9 +72,17 @@ final router = GoRouter(
         return AppConstants.routeLogin;
       }
 
-      if (isAuthenticated && isAuthRoute) {
+if (isAuthenticated && isAuthRoute) {
         // Redirect authenticated users away from auth pages.
         return AppConstants.routeHome;
+      }
+
+// RBAC: protect the admin dashboard route.
+      if (state.matchedLocation == AppConstants.routeAdminDashboard) {
+        final isAdmin = ref.read(isAdminProvider);
+        if (!isAuthenticated || !isAdmin) {
+          return AppConstants.routeHome;
+        }
       }
 
       return null;
@@ -185,10 +195,15 @@ GoRoute(
         name: 'notifications',
         builder: (context, state) => const NotificationsPage(),
       ),
-      GoRoute(
+GoRoute(
         path: AppConstants.routeNotificationPreferences,
         name: 'notification-preferences',
         builder: (context, state) => const NotificationPreferencesPage(),
+      ),
+      GoRoute(
+        path: AppConstants.routeAdminDashboard,
+        name: 'admin-dashboard',
+        builder: (context, state) => const AdminDashboardPage(),
       ),
     ],
   );

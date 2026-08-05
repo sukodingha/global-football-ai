@@ -1,47 +1,100 @@
-# Push Notifications Feature - Implementation Steps
+# TODO - Global Football AI
 
-## Phase 0: Core Services
-- [x] **0a**: Add `flutter_local_notifications` dependency to `pubspec.yaml`
-- [x] **0b**: Extend `NotificationService` with foreground local notification display, init, and click routing
-- [x] **0c**: Create `NotificationAlertEngine` to detect match events (Goal/Kickoff/HalfTime/FullTime/Result) from live streams
+## Phase 6 & 7: Fantasy Football ✅
 
-## Phase A: Domain Layer
-- [x] **A1**: Create `lib/features/notifications/domain/entities/notification_preferences_entity.dart`
-- [x] **A2**: Create `lib/features/notifications/domain/entities/notification_alert_entity.dart`
-- [x] **A3**: Create `lib/features/notifications/domain/repositories/notification_repository.dart`
-- [x] **A4**: Create `lib/features/notifications/domain/usecases/usecase.dart`
-- [x] **A5**: Create `lib/features/notifications/domain/usecases/get_notification_preferences.dart`
-- [x] **A6**: Create `lib/features/notifications/domain/usecases/watch_notification_preferences.dart`
-- [x] **A7**: Create `lib/features/notifications/domain/usecases/save_notification_preferences.dart`
+### Phase 0: Setup & Planning
+- [x] Analyze existing codebase architecture (Clean Architecture, Riverpod, Firestore)
+- [x] Review existing feature patterns (community, predictions, livescore)
+- [x] Plan fantasy feature structure
 
-## Phase B: Data Layer
-- [x] **B1**: Create `lib/features/notifications/data/models/notification_preferences_model.dart`
-- [x] **B2**: Create `lib/features/notifications/data/datasources/notification_remote_data_source.dart`
-- [x] **B3**: Create `lib/features/notifications/data/repositories/notification_repository_impl.dart`
-- [x] **B4**: Create `lib/features/notifications/data/dependency_injection.dart`
+### Phase A: Domain Layer
+- [x] Create `fantasy_league_entity.dart`
+- [x] Create `fantasy_player_entity.dart`
+- [x] Create `fantasy_team_entity.dart`
+- [x] Create `leaderboard_entry_entity.dart`
+- [x] Create `scoring_rule_entity.dart`
+- [x] Create `fantasy_repository.dart` (repository interface + result wrapper + params)
 
-## Phase C: Application Layer
-- [x] **C1**: Create `lib/features/notifications/application/notification_state.dart`
-- [x] **C2**: Create `lib/features/notifications/application/notification_notifier.dart`
-- [x] **C3**: Create `lib/features/notifications/application/notification_providers.dart`
+### Phase B: Data Layer
+- [x] Create `fantasy_league_model.dart`
+- [x] Create `fantasy_player_model.dart`
+- [x] Create `fantasy_team_model.dart`
+- [x] Create `leaderboard_entry_model.dart`
+- [x] Create `scoring_engine.dart` (automated scoring)
+- [x] Create `fantasy_remote_data_source.dart` (Firestore-backed, real-time)
+- [x] Create `fantasy_repository_impl.dart`
+- [x] Create `dependency_injection.dart`
 
-## Phase D: Presentation Layer
-- [x] **D1**: Create `lib/features/notifications/presentation/widgets/preference_toggle_tile.dart`
-- [x] **D2**: Create `lib/features/notifications/presentation/widgets/preference_section.dart`
-- [x] **D3**: Create `lib/features/notifications/presentation/widgets/alert_banner.dart`
-- [x] **D4**: Create `lib/features/notifications/presentation/pages/notification_preferences_page.dart`
+### Phase C: Application Layer
+- [x] Create `fantasy_state.dart` (sealed states)
+- [x] Create `fantasy_notifier.dart` (StateNotifier)
+- [x] Create `fantasy_providers.dart` (providers + selectors)
 
-## Phase E: Integration & Platform Config
-- [x] **E1**: Update `lib/core/constants/app_constants.dart` — add notifications route
-- [x] **E2**: Update `lib/core/router/app_router.dart` — add notifications route
-- [x] **E3**: Update `lib/core/services/dependency_injection.dart` — add alert engine + local notifications providers
-- [x] **E4**: Update `lib/main.dart` — init local notifications + global background handler
-- [x] **E5**: Update `lib/features/settings/presentation/pages/settings_page.dart` — add notification preference center entry
-- [x] **E6**: Update `android/app/src/main/AndroidManifest.xml` — POST_NOTIFICATIONS permission + icon
-- [x] **E7**: Update `ios/Runner/Info.plist` — APNs / notification notes
+### Phase D: Presentation Layer
+- [x] Create `fantasy_hub_page.dart` (main hub)
+- [x] Create `league_detail_page.dart`
+- [x] Create `team_management_page.dart` (roster, transfers, captain/vc)
+- [x] Create `player_stats_hub_page.dart` (player stats hub)
+- [x] Create widgets (league_card, team_card, player_pick_card, leaderboard_table, points_breakdown, captain_badge, create/join dialogs)
 
-## Phase F: Verification
-- [ ] **F1**: Run `flutter pub get` (from the IDE Flutter toolchain — flutter binary not on System terminal PATH)
-- [ ] **F2**: Run `flutter analyze` and fix any issues
-- [ ] **F3**: Run `flutter build` / test verification
+### Phase E: Integration & Production Readiness
+- [x] Add fantasy routes to `app_constants.dart`
+- [x] Add fantasy routes to `app_router.dart`
+- [x] Add Fantasy tab to `home_shell.dart`
+- [x] Add secure Firestore rules for league data (`firestore.rules`)
+- [x] Link Firestore rules in `firebase.json`
 
+## Phase 9: Admin Dashboard (Part 1 - Core Management) ✅
+
+### Phase 0: Setup & Planning
+- [x] Analyze existing codebase architecture (Clean Architecture, Riverpod, Firestore)
+- [x] Review existing entities (User, Subscription, Competition, CommunityPost, MatchPrediction)
+- [x] Review existing data source patterns (Firestore remote data sources)
+- [x] Plan admin feature structure
+
+### Phase A: Domain Layer
+- [x] Create `admin_user_entity.dart` (AdminUser, UserRole enum)
+- [x] Create `admin_competition_entity.dart` (AdminCompetition)
+- [x] Create `admin_prediction_entity.dart` (AdminPrediction, PredictionStatus)
+- [x] Create `admin_audit_log_entity.dart` (AdminAuditLog)
+- [x] Create `admin_repository.dart` (repository interface + result wrapper)
+
+### Phase B: Data Layer
+- [x] Create `admin_roles.dart` (RBAC role constants + helpers)
+- [x] Create `admin_user_model.dart`
+- [x] Create `admin_competition_model.dart`
+- [x] Create `admin_prediction_model.dart`
+- [x] Create `admin_audit_log_model.dart`
+- [x] Create `admin_remote_data_source.dart` (Firestore-backed)
+- [x] Create `admin_repository_impl.dart`
+- [x] Create `dependency_injection.dart`
+
+### Phase C: Application Layer
+- [x] Create `admin_state.dart` (sealed states)
+- [x] Create `admin_notifier.dart` (StateNotifier)
+- [x] Create `admin_providers.dart` (providers + RBAC guard)
+
+### Phase D: Presentation Layer
+- [x] Create `admin_scaffold.dart` (widget)
+- [x] Create `user_tile.dart` (widget)
+- [x] Create `role_badge.dart` (widget)
+- [x] Create `subscription_tile.dart` (widget)
+- [x] Create `competition_tile.dart` (widget)
+- [x] Create `prediction_audit_tile.dart` (widget)
+- [x] Create `post_moderation_tile.dart` (widget)
+- [x] Create `admin_dashboard_page.dart` (main hub)
+- [x] Create `admin_users_page.dart`
+- [x] Create `admin_subscriptions_page.dart`
+- [x] Create `admin_competitions_page.dart`
+- [x] Create `admin_predictions_page.dart`
+- [x] Create `admin_moderation_page.dart`
+
+### Phase E: Integration & Production Readiness
+- [x] Add admin routes to `app_constants.dart`
+- [x] Add admin routes + RBAC redirect to `app_router.dart`
+- [x] Add admin entry point (settings menu)
+- [x] Add Firestore RBAC rules documentation
+
+### Phase F: Verification
+- [ ] Run `flutter analyze`
+- [ ] Verify build
