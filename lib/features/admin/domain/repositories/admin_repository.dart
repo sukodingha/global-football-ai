@@ -104,8 +104,38 @@ abstract class AdminRepository {
     String? details,
   });
 
-  /// Fetches recent audit log entries.
+/// Fetches recent audit log entries.
   Future<List<AdminAuditLogEntity>> listAuditLogs({int limit = 50});
+
+  // ─── Analytics & Insights ─────────────────────────────────────────
+
+  /// Builds and returns the platform analytics snapshot (users, engagement,
+  /// prediction accuracy).
+  Future<AdminAnalyticsEntity> getAnalytics();
+
+  /// Builds and returns the revenue dashboard snapshot (subscription metrics,
+  /// payment volumes, growth).
+  Future<AdminRevenueEntity> getRevenue();
+
+  /// Fetches the centralized moderation log (flagged posts, banned users,
+  /// reported content).
+  Future<List<ModerationLogEntity>> listModerationLogs({int limit = 100});
+
+  /// Records a moderation action to the log (best-effort).
+  Future<void> logModeration({
+    required String type,
+    required String subject,
+    required String details,
+    String? reportedById,
+    String status = 'open',
+    String? actionTaken,
+  });
+
+  /// Generates a CSV report string from the provided analytics/revenue data.
+  String generateReport({
+    required AdminAnalyticsEntity analytics,
+    required AdminRevenueEntity revenue,
+  });
 }
 
 /// Lightweight moderation view of a community post.

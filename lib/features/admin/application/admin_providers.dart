@@ -4,8 +4,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../auth/application/auth_providers.dart';
 import '../data/dependency_injection.dart';
 import '../data/roles/admin_roles.dart';
+import '../domain/entities/admin_analytics_entity.dart';
 import '../domain/entities/admin_competition_entity.dart';
 import '../domain/entities/admin_prediction_entity.dart';
+import '../domain/entities/admin_revenue_entity.dart';
 import '../domain/entities/admin_user_entity.dart';
 import '../domain/repositories/admin_repository.dart';
 import 'admin_notifier.dart';
@@ -50,6 +52,28 @@ final adminPostsProvider = Provider<List<CommunityModerationView>>((ref) {
 final adminAuditLogsProvider = Provider<List<dynamic>>((ref) {
   final state = ref.watch(adminNotifierProvider);
   if (state is AdminLoaded) return state.auditLogs;
+  return const [];
+});
+
+/// Selector for the analytics snapshot.
+final adminAnalyticsProvider = Provider<AdminAnalyticsEntity?>((ref) {
+  final state = ref.watch(adminNotifierProvider);
+  if (state is AdminLoaded) return state.analytics;
+  return null;
+});
+
+/// Selector for the revenue snapshot.
+final adminRevenueProvider = Provider<AdminRevenueEntity?>((ref) {
+  final state = ref.watch(adminNotifierProvider);
+  if (state is AdminLoaded) return state.revenue;
+  return null;
+});
+
+/// Selector for the centralized moderation log.
+final adminModerationLogsProvider =
+    Provider<List<ModerationLogEntity>>((ref) {
+  final state = ref.watch(adminNotifierProvider);
+  if (state is AdminLoaded) return state.moderationLogs;
   return const [];
 });
 

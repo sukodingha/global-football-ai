@@ -1,8 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/errors/failures.dart';
+import '../domain/entities/admin_analytics_entity.dart';
 import '../domain/entities/admin_competition_entity.dart';
 import '../domain/entities/admin_prediction_entity.dart';
+import '../domain/entities/admin_revenue_entity.dart';
 import '../domain/entities/admin_user_entity.dart';
 import '../domain/repositories/admin_repository.dart';
 import 'admin_state.dart';
@@ -27,7 +29,7 @@ class AdminNotifier extends StateNotifier<AdminState> {
     _adminName = adminName;
   }
 
-  /// Loads everything for the dashboard.
+/// Loads everything for the dashboard.
   Future<void> loadDashboard() async {
     state = const AdminLoading();
     try {
@@ -37,19 +39,56 @@ class AdminNotifier extends StateNotifier<AdminState> {
         _repository.listPredictions(),
         _repository.listPostsForModeration(),
         _repository.listAuditLogs(),
+        _repository.getAnalytics(),
+        _repository.getRevenue(),
+        _repository.listModerationLogs(),
       ]);
       state = AdminLoaded(
         users: results[0] as List<AdminUserEntity>,
         competitions: results[1] as List<AdminCompetitionEntity>,
         predictions: results[2] as List<AdminPredictionEntity>,
         posts: results[3] as List<CommunityModerationView>,
-        auditLogs: results[4] as List<dynamic>.cast(),
+        auditLogs: results[4] as List<AdminAuditLogEntity>,
+        analytics: results[5] as AdminAnalyticsEntity,
+        revenue: results[6] as AdminRevenueEntity,
+        moderationLogs: results[7] as List<ModerationLogEntity>,
       );
     } on Failure catch (f) {
       state = AdminError(message: f.message);
     } catch (_) {
       state = const AdminError(message: 'Unable to load admin dashboard.');
     }
+  }
+
+  /// Refreshes only the analytics + revenue + moderation logs (lightweight).
+  Future<void> refreshInsights() async {
+    if (state is! AdminLoaded) return;
+    try {
+      final results = await Future.wait([
+        _repository.getAnalytics(),
+        _repository.getRevenue(),
+        _repository.listModerationLogs(),
+      ]);
+      state = (state as AdminLoaded).copyWith(
+        analytics: results[0] as AdminAnalyticsEntity,
+        revenue: results[1] as AdminRevenueEntity,
+        moderationLogs: results[2] as List<ModerationLogEntity>,
+      );
+    } on Failure catch (f) {
+      state = AdminError(message: f.message);
+    } catch (_) {
+      state = const AdminError(message: 'Unable to refresh insights.');
+    }
+  }
+
+  /// Generates a downloadable CSV report from the current insights.
+  String generateReport() {
+    if (state is! AdminLoaded) return '';
+    final loaded = state as AdminLoaded;
+    final analytics = loaded.analytics;
+    final revenue = loaded.revenue;
+    if (analytics == null || revenue == null) return '';
+    return _repository.generateReport(analytics: analytics, revenue: revenue);
   }
 
   void _setBusy(bool busy) {

@@ -1,11 +1,14 @@
 import '../../../core/errors/exceptions.dart';
 import '../../../core/errors/failures.dart';
+import '../../domain/entities/admin_analytics_entity.dart';
 import '../../domain/entities/admin_audit_log_entity.dart';
 import '../../domain/entities/admin_competition_entity.dart';
 import '../../domain/entities/admin_prediction_entity.dart';
+import '../../domain/entities/admin_revenue_entity.dart';
 import '../../domain/entities/admin_user_entity.dart';
 import '../../domain/repositories/admin_repository.dart';
 import '../datasources/admin_remote_data_source.dart';
+import '../engine/analytics_engine.dart';
 
 /// Implementation of [AdminRepository] backed by Firestore.
 class AdminRepositoryImpl implements AdminRepository {
@@ -181,8 +184,105 @@ class AdminRepositoryImpl implements AdminRepository {
         details: details));
   }
 
-  @override
+@override
   Future<List<AdminAuditLogEntity>> listAuditLogs({int limit = 50}) {
     return _safeCall(() => _dataSource.listAuditLogs(limit: limit));
+  }
+
+  // ─── Analytics & Revenue ──────────────────────────────────────────
+
+  @override
+  Future<AdminAnalyticsEntity> getAnalytics() {
+    return _safeCall(() async {
+      final raw = await _dataSource.fetchAnalyticsRawData();
+      return const AdminAnalyticsEngine().buildAnalytics(
+        users: raw.users,
+        posts: raw.posts,
+        predictions: raw.predictions,
+        actions: raw.actions,
+        totalLeagues: raw.totalLeagues,
+        totalTeams: raw.totalTeams,
+      );
+    });
+  }
+
+  @override
+  Future<AdminRevenueEntity> getRevenue() {
+    return _safeCall(() async {
+      final raw = await _dataSource.fetchRevenueRawData();
+      return const AdminAnalyticsEngine().buildRevenue(
+        transactions: raw.transactions,
+        subscriptions: raw.subscriptions,
+      );
+    });
+  }
+
+  @override
+  Future<List<ModerationLogEntity>> listModerationLogs({int limit = 100}) {
+    return _safeCall(() => _dataSource.listModerationLogs(limit: limit));
+  }
+
+  @override
+  Future<void> logModeration({
+    required String type,
+    required String subject,
+    required String details,
+    String? reportedById,
+    String status = 'open',
+    String? actionTaken,
+  }) {
+    return _safeCall(() => _dataSource.logModeration(
+          type: type,
+          subject: subject,
+          details: details,
+          reportedById: reportedById,
+          status: status,
+          actionTaken: actionTaken,
+        ));
+  }
+
+  @override
+  String generateReport({
+    required AdminAnalyticsEntity analytics,
+    required AdminRevenueEntity revenue,
+  }) {
+    final buffer = StringBuffer();
+    buffer.writeln('Global Football AI - Platform Report');
+    buffer.writeln('Generated: ${DateTime.now().toIso8601String()}');
+    buffer.writeln();
+    buffer.writeln('=== ANALYTICS ===');
+    buffer.writeln('Total users,${analytics.totalUsers}');
+    buffer.writeln('Daily active users,${analytics.dailyActiveUsers}');
+    buffer.writeln('Monthly active users,${analytics.monthlyActiveUsers}');
+    buffer.writeln('Total predictions,${analytics.totalPredictions}');
+    buffer.writeln('Correct predictions,${analytics.correctPredictions}');
+    buffer.writeln('Prediction accuracy %,${analytics.accuracyRate.toStringAsFixed(2)}');
+    buffer.writeln('Total posts,${analytics.totalPosts}');
+    buffer.writeln('Total comments,${analytics.totalComments}');
+    buffer.writeln('Total leagues,${analytics.totalLeagues}');
+    buffer.writeln('Total teams,${analytics.totalTeams}');
+    buffer.writeln();
+    buffer.writeln('=== REVENUE ===');
+    buffer.writeln('Total revenue (NGN),${revenue.totalRevenueNaira.toStringAsFixed(2)}');
+    buffer.writeln('Total transactions,${revenue.totalTransactions}');
+    buffer.writeln('Successful transactions,${revenue.successfulTransactions}');
+    buffer.writeln('Success rate %,${revenue.successRate.toStringAsFixed(2)}');
+    buffer.writeln('Active subscriptions,${revenue.activeSubscriptions}');
+    buffer.writeln('New subscriptions this month,${revenue.newSubscriptionsThisMonth}');
+    buffer.writeln('Average transaction (NGN),${revenue.averageTransactionNaira.toStringAsFixed(2)}');
+    buffer.writeln('Growth rate %,${revenue.growthRate?.toStringAsFixed(2) ?? 'N/A'}');
+    buffer.writeln();
+    buffer.writeln('=== ENGAGEMENT SERIES (date,activeUsers,actions) ===');
+    for (final p in analytics.engagementSeries) {
+      buffer.writeln(
+          '${p.date.toIso8601String()},${p.activeUsers},${p.actions}');
+    }
+    buffer.writeln();
+    buffer.writeln('=== REVENUE SERIES (date,revenueNGN,transactions) ===');
+    for (final p in revenue.revenueSeries) {
+      buffer.writeln(
+          '${p.date.toIso8601String()},${p.revenueNaira.toStringAsFixed(2)},${p.transactionCount}');
+    }
+    return buffer.toString();
   }
 }

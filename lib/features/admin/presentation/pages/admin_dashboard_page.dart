@@ -5,17 +5,22 @@ import '../../../../core/widgets/state_views.dart';
 import '../../../auth/application/auth_providers.dart';
 import '../../application/admin_providers.dart';
 import '../../application/admin_state.dart';
+import 'admin_analytics_page.dart';
 import 'admin_competitions_page.dart';
+import 'admin_moderation_logs_page.dart';
 import 'admin_moderation_page.dart';
 import 'admin_predictions_page.dart';
+import 'admin_reports_page.dart';
+import 'admin_revenue_page.dart';
 import 'admin_subscriptions_page.dart';
 import 'admin_users_page.dart';
 
 /// Main protected admin dashboard hub.
 ///
 /// Presents a tabbed interface for managing users, subscriptions,
-/// competitions, predictions, and community moderation. Only reachable by
-/// users with an admin role (enforced by routing + Firestore rules).
+/// competitions, predictions, moderation, analytics, revenue, and reports.
+/// Only reachable by users with an admin role (enforced by routing +
+/// Firestore rules).
 class AdminDashboardPage extends ConsumerStatefulWidget {
   const AdminDashboardPage({super.key});
 
@@ -30,7 +35,7 @@ class _AdminDashboardPageState extends ConsumerState<AdminDashboardPage>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 5, vsync: this);
+    _tabController = TabController(length: 9, vsync: this);
     Future.microtask(() {
       final user = ref.read(currentUserProvider);
       ref
@@ -64,12 +69,16 @@ class _AdminDashboardPageState extends ConsumerState<AdminDashboardPage>
         bottom: TabBar(
           controller: _tabController,
           isScrollable: true,
-          tabs: const [
+tabs: const [
+            Tab(text: 'Analytics'),
+            Tab(text: 'Revenue'),
+            Tab(text: 'Reports'),
             Tab(text: 'Users'),
             Tab(text: 'Subscriptions'),
             Tab(text: 'Competitions'),
             Tab(text: 'Predictions'),
             Tab(text: 'Moderation'),
+            Tab(text: 'Mod Logs'),
           ],
         ),
       ),
@@ -80,11 +89,15 @@ class _AdminDashboardPageState extends ConsumerState<AdminDashboardPage>
         AdminLoaded() => TabBarView(
             controller: _tabController,
             children: const [
+              AdminAnalyticsPage(),
+              AdminRevenuePage(),
+              AdminReportsPage(),
               AdminUsersPage(),
               AdminSubscriptionsPage(),
               AdminCompetitionsPage(),
               AdminPredictionsPage(),
               AdminModerationPage(),
+              AdminModerationLogsPage(),
             ],
           ),
       },
