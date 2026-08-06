@@ -134,6 +134,15 @@ class AdminNotifier extends StateNotifier<AdminState> {
         targetId: userId,
         details: reason,
       );
+      if (banned) {
+        await _repository.logModeration(
+          type: 'banned_user',
+          subject: 'User $userId',
+          details: reason ?? 'Banned by admin',
+          status: 'resolved',
+          actionTaken: 'User banned',
+        );
+      }
     } finally {
       _setBusy(false);
     }
@@ -287,6 +296,13 @@ class AdminNotifier extends StateNotifier<AdminState> {
         targetType: 'post',
         targetId: postId,
       );
+      await _repository.logModeration(
+        type: 'flagged_post',
+        subject: 'Post $postId',
+        details: pinned ? 'Post pinned by admin' : 'Post unpinned by admin',
+        status: 'resolved',
+        actionTaken: pinned ? 'Post pinned' : 'Post unpinned',
+      );
     } finally {
       _setBusy(false);
     }
@@ -301,6 +317,13 @@ class AdminNotifier extends StateNotifier<AdminState> {
         action: 'delete_post',
         targetType: 'post',
         targetId: postId,
+      );
+      await _repository.logModeration(
+        type: 'reported_content',
+        subject: 'Post $postId',
+        details: 'Post deleted by admin',
+        status: 'resolved',
+        actionTaken: 'Post deleted',
       );
     } finally {
       _setBusy(false);

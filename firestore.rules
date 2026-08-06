@@ -98,6 +98,13 @@ service cloud.firestore {
       allow write: if isAdmin();
     }
 
+// ─── Moderation logs ─────────────────────────────────────────────
+    // Centralized moderation log: flagged posts, banned users, reported
+    // content. Readable/writable by moderators and admins.
+    match /moderation_logs/{logId} {
+      allow read, write: if isModerator();
+    }
+
     // ─── Payments / subscriptions ────────────────────────────────────
     match /transactions/{txId} {
       allow read: if isOwner(resource.data.userId) || isAdmin();

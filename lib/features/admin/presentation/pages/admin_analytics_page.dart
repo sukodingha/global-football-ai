@@ -15,13 +15,14 @@ class AdminAnalyticsPage extends ConsumerWidget {
     if (analytics == null) {
       return const Center(child: CircularProgressIndicator());
     }
-    return _AnalyticsView(analytics: analytics);
+    return _AnalyticsView(analytics: analytics, ref: ref);
   }
 }
 
 class _AnalyticsView extends StatelessWidget {
-  const _AnalyticsView({required this.analytics});
+  const _AnalyticsView({required this.analytics, required this.ref});
   final AdminAnalyticsEntity analytics;
+  final WidgetRef ref;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,8 @@ class _AnalyticsView extends StatelessWidget {
             ),
             IconButton(
               tooltip: 'Refresh',
-              onPressed: () async {},
+              onPressed: () =>
+                  ref.read(adminNotifierProvider.notifier).refreshInsights(),
               icon: const Icon(Icons.refresh),
             ),
           ],
@@ -88,6 +90,8 @@ class _AnalyticsView extends StatelessWidget {
           progress: analytics.accuracyRate / 100,
           trailing: '${analytics.correctPredictions}/${analytics.totalPredictions} correct',
         ),
+        const SizedBox(height: 8),
+        _AccuracyTrendCard(points: analytics.accuracyTrend),
         const SizedBox(height: 16),
         Text('Content', style: theme.textTheme.titleMedium),
         const SizedBox(height: 8),
@@ -201,6 +205,80 @@ class _ProgressCard extends StatelessWidget {
                     ?.copyWith(color: theme.colorScheme.outline),
               ),
             ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Renders the weekly prediction accuracy trend as simple bars.
+class _AccuracyTrendCard extends StatelessWidget {
+  const _AccuracyTrendCard({required this.points});
+  final List<AccuracyTrendPoint> points;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    if (points.isEmpty) {
+      return const Card(
+        child: Padding(
+          padding: EdgeInsets.all(16),
+          child: Text('No weekly accuracy data available yet.'),
+        ),
+      );
+    }
+    final trend = points.reversed.take(6).toList().reversed.toList();
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Weekly accuracy trend',
+              style: theme.textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 8),
+            for (final p in trend)
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 3),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 78,
+                      child: Text(
+                        p.period,
+                        style: theme.textTheme.bodySmall,
+                      ),
+                    ),
+                    Expanded(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(3),
+                        child: LinearProgressIndicator(
+                          value: (p.accuracy / 100).clamp(0, 1),
+                          minHeight: 8,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    SizedBox(
+                      width: 52,
+                      child: Text(
+                        '${p.accuracy.toStringAsFixed(0)}%',
+                        textAlign: TextAlign.right,
+                        style: theme.textTheme.bodySmall,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            const SizedBox(height: 4),
+            Text(
+              '${points.length} week(s) tracked',
+              style: theme.textTheme.bodySmall
+                  ?.copyWith(color: theme.colorScheme.outline),
+            ),
           ],
         ),
       ),
