@@ -22,12 +22,12 @@ class LiveUpdateStream {
   final StreamController<List<MatchEntity>> _controller =
       StreamController<List<MatchEntity>>.broadcast();
 
-  StreamSubscription<List<MatchEntity>>? _pollSubscription;
+Timer? _pollTimer;
   List<MatchEntity>? _lastSnapshot;
   DateTime? _lastEmit;
 
   /// Whether the stream is currently active.
-  bool get isActive => _pollSubscription != null;
+  bool get isActive => _pollTimer != null;
 
   /// Subscribes to real-time live score updates.
   ///
@@ -38,9 +38,9 @@ class LiveUpdateStream {
   }
 
   void _ensureStarted() {
-    if (_pollSubscription != null) return;
+    if (_pollTimer != null) return;
 
-    _pollSubscription = Timer.periodic(pollInterval, (_) {
+    _pollTimer = Timer.periodic(pollInterval, (_) {
       _poll();
     });
 
@@ -89,10 +89,10 @@ class LiveUpdateStream {
   /// Timestamp of the last successful emit.
   DateTime? get lastEmit => _lastEmit;
 
-  /// Stops the polling subscription and closes the stream.
+/// Stops the polling timer and closes the stream.
   Future<void> dispose() async {
-    _pollSubscription?.cancel();
-    _pollSubscription = null;
+    _pollTimer?.cancel();
+    _pollTimer = null;
     _lastSnapshot = null;
     _lastEmit = null;
     if (!_controller.isClosed) {

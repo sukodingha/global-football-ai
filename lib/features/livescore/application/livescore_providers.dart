@@ -6,6 +6,7 @@ import '../domain/entities/heatmap_entity.dart';
 import '../domain/entities/lineup_entity.dart';
 import '../domain/entities/match_detail_entity.dart';
 import '../domain/entities/match_statistics_entity.dart';
+import '../domain/entities/match_timeline_entity.dart';
 import '../domain/entities/standings_entity.dart';
 import '../data/dependency_injection.dart';
 import 'livescore_notifier.dart';

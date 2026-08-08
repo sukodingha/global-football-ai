@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../domain/entities/competition_entity.dart';
+import '../../domain/entities/competition_entity.dart';
 
 /// Card for a competition in the horizontal carousel.
 class CompetitionCard extends StatelessWidget {
@@ -16,7 +16,7 @@ class CompetitionCard extends StatelessWidget {
         margin: EdgeInsets.zero,
         child: Padding(
           padding: const EdgeInsets.all(12),
-          child: Column(
+child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (competition.emblem != null)
@@ -29,17 +29,21 @@ class CompetitionCard extends StatelessWidget {
               else
                 const Icon(Icons.emoji_events, size: 40),
               const SizedBox(height: 8),
-              Text(
-                competition.name,
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.titleMedium,
+              Flexible(
+                child: Text(
+                  competition.name,
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: theme.textTheme.titleMedium,
+                ),
               ),
               if (competition.country != null) ...[
                 const SizedBox(height: 4),
                 Text(
                   competition.country!,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: theme.textTheme.bodyMedium,
                 ),
               ],

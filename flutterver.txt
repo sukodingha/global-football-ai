@@ -1,0 +1,4 @@
+﻿Flutter 3.22.0 ΓÇó channel stable ΓÇó https://github.com/flutter/flutter.git
+Framework ΓÇó revision 5dcb86f68f (2 years, 3 months ago) ΓÇó 2024-05-09 07:39:20 -0500
+Engine ΓÇó revision f6344b75dc
+Tools ΓÇó Dart 3.4.0 ΓÇó DevTools 2.34.3

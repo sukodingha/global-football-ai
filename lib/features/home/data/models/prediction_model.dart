@@ -1,4 +1,4 @@
-import '../entities/prediction_entity.dart';
+import '../../domain/entities/prediction_entity.dart';
 import 'match_model.dart';
 
 /// Data model for an AI prediction.

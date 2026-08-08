@@ -2,9 +2,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/services/dependency_injection.dart';
 import '../../../core/services/news_cache_service.dart';
-import '../datasources/home_remote_data_source.dart';
-import '../repositories/home_repository_impl.dart';
-import '../../domain/repositories/home_repository.dart';
+import 'datasources/home_remote_data_source.dart';
+import 'repositories/home_repository_impl.dart';
+import '../domain/repositories/home_repository.dart';
 
 /// Riverpod provider for the remote data source.
 final homeRemoteDataSourceProvider = Provider<HomeRemoteDataSource>((ref) {

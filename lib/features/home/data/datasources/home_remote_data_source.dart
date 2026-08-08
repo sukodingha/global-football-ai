@@ -3,8 +3,9 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-import '../../../core/config/app_config.dart';
-import '../../../core/errors/exceptions.dart';
+import '../../../../core/config/app_config.dart';
+import '../../../../core/errors/exceptions.dart';
+import '../../domain/entities/prediction_entity.dart';
 import '../models/article_model.dart';
 import '../models/competition_model.dart';
 import '../models/match_model.dart';
@@ -204,17 +205,8 @@ class HomeRemoteDataSource {
   // ─── Player of the Day ─────────────────────────────────────────────
 
   /// Gets the featured Player of the Day.
-  Future<PlayerModel> getPlayerOfTheDay() async {
+Future<PlayerModel> getPlayerOfTheDay() async {
     final json = await _get('/persons/308401'); // Example: Kylian Mbappé
     return PlayerModel.fromJson(json);
   }
-}
-
-/// Server exception for API errors.
-class ServerException implements Exception {
-  const ServerException(this.message);
-  final String message;
-
-  @override
-  String toString() => message;
 }

@@ -4,8 +4,8 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-import '../../../core/config/app_config.dart';
-import '../../../core/errors/exceptions.dart';
+import '../../../../core/config/app_config.dart';
+import '../../../../core/errors/exceptions.dart';
 import '../../domain/entities/sport_event_entity.dart';
 
 /// Real-time multi-sport data source backed by API-Sports (api-sports.io).

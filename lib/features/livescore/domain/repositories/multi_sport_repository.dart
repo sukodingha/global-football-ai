@@ -1,4 +1,4 @@
-import '../../../core/errors/failures.dart';
+import '../../../../core/errors/failures.dart';
 import '../entities/sport_event_entity.dart';
 
 /// Result wrapper for multi-sport repository operations.

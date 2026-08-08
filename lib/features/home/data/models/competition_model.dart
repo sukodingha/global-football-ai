@@ -1,4 +1,4 @@
-import '../entities/competition_entity.dart';
+import '../../domain/entities/competition_entity.dart';
 
 /// Data model for a competition, mapped from the football-data.org API.
 class CompetitionModel {

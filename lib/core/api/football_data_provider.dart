@@ -5,6 +5,7 @@ import '../../features/livescore/domain/entities/heatmap_entity.dart';
 import '../../features/livescore/domain/entities/lineup_entity.dart';
 import '../../features/livescore/domain/entities/match_detail_entity.dart';
 import '../../features/livescore/domain/entities/match_statistics_entity.dart';
+import '../../features/livescore/domain/entities/match_timeline_entity.dart';
 import '../../features/livescore/domain/entities/standings_entity.dart';
 
 /// Abstraction over the football data provider (e.g. football-data.org,

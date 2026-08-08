@@ -8,6 +8,7 @@ import '../../domain/entities/player_entity.dart';
 import '../../domain/entities/prediction_entity.dart';
 import '../../domain/repositories/home_repository.dart';
 import '../datasources/home_remote_data_source.dart';
+import '../models/article_model.dart';
 
 /// Implementation of [HomeRepository] backed by the football-data.org API.
 ///

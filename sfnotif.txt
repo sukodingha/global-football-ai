@@ -1,0 +1,9 @@
+﻿00:00 +0: loading C:/Users/PC/Documents/global ai prediction/test/features/livescore/sports_feed_notifier_test.dart
+00:00 +0: SportsFeedNotifier initial state is SportsFeedInitial
+00:00 +1: SportsFeedNotifier loadAll produces SportsFeedLoaded with all sports
+00:00 +2: SportsFeedNotifier selectedEvents returns events for the selected sport
+00:00 +3: SportsFeedNotifier totalLive counts only live events
+00:00 +4: SportsFeedNotifier loadAll surfaces SportsFeedError on failure
+00:00 +5: SportsFeedNotifier loadSport loads a single sport and starts its stream
+00:00 +6: SportsFeedNotifier real-time stream updates the state
+00:00 +7: All tests passed!

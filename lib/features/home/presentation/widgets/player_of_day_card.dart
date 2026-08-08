@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../domain/entities/player_entity.dart';
+import '../../domain/entities/player_entity.dart';
 
 /// Card displaying the featured Player of the Day.
 class PlayerOfDayCard extends StatelessWidget {

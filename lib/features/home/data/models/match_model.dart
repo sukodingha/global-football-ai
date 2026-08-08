@@ -1,4 +1,4 @@
-import '../entities/match_entity.dart';
+import '../../domain/entities/match_entity.dart';
 
 /// Data model for a football match, mapped from the football-data.org API.
 class MatchModel {

@@ -1,10 +1,11 @@
-import '../../../core/api/football_data_provider.dart';
+import '../../../../core/api/football_data_provider.dart';
 import '../../../home/domain/entities/match_entity.dart';
 import '../../domain/entities/fixture_entity.dart';
 import '../../domain/entities/heatmap_entity.dart';
 import '../../domain/entities/lineup_entity.dart';
 import '../../domain/entities/match_detail_entity.dart';
 import '../../domain/entities/match_statistics_entity.dart';
+import '../../domain/entities/match_timeline_entity.dart';
 import '../../domain/entities/standings_entity.dart';
 
 /// Remote data source for the Live Scores feature.

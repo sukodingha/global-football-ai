@@ -1,13 +1,13 @@
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/errors/failures.dart';
 import '../../../../core/services/live_scores_cache_service.dart';
-import '../../../home/data/models/match_model.dart';
 import '../../../home/domain/entities/match_entity.dart';
 import '../../domain/entities/fixture_entity.dart';
 import '../../domain/entities/heatmap_entity.dart';
 import '../../domain/entities/lineup_entity.dart';
 import '../../domain/entities/match_detail_entity.dart';
 import '../../domain/entities/match_statistics_entity.dart';
+import '../../domain/entities/match_timeline_entity.dart';
 import '../../domain/entities/standings_entity.dart';
 import '../../domain/repositories/livescore_repository.dart';
 import '../datasources/live_update_stream.dart';
@@ -79,10 +79,7 @@ class LivescoreRepositoryImpl implements LivescoreRepository {
       final cached = await cache.getCachedLiveMatches();
       if (cached != null && cached.isNotEmpty) {
         try {
-          return cached
-              .map(MatchModel.fromJson)
-              .map((m) => m.toEntity())
-              .toList();
+          return cached.map(_matchFromJson).toList();
         } catch (_) {
           // Fall through to remote fetch if cache is corrupt.
         }
@@ -90,15 +87,71 @@ class LivescoreRepositoryImpl implements LivescoreRepository {
     }
 
     return _safeCall(() async {
-      final models = await _remoteDataSource.getLiveMatches();
-      final entities = models.map((m) => m.toEntity()).toList();
+      final entities = await _remoteDataSource.getLiveMatches();
 
       // Persist the fresh live scores for offline / instant rendering.
       if (cache != null) {
-        await cache.cacheLiveMatches(models.map((m) => m.toJson()).toList());
+        await cache.cacheLiveMatches(
+          entities.map(_matchToJson).toList(),
+        );
       }
       return entities;
     });
+  }
+
+  /// Serializes a [MatchEntity] to a JSON map for caching.
+  Map<String, dynamic> _matchToJson(MatchEntity match) {
+    return {
+      'id': match.id,
+      'status': match.status.name,
+      'utcDate': match.utcDate.toIso8601String(),
+      'homeTeam': {
+        'id': match.homeTeam.id,
+        'name': match.homeTeam.name,
+        'shortName': match.homeTeam.shortName,
+        'crest': match.homeTeam.crest,
+      },
+      'awayTeam': {
+        'id': match.awayTeam.id,
+        'name': match.awayTeam.name,
+        'shortName': match.awayTeam.shortName,
+        'crest': match.awayTeam.crest,
+      },
+      'homeScore': match.homeScore,
+      'awayScore': match.awayScore,
+      'competitionName': match.competitionName,
+      'competitionEmblem': match.competitionEmblem,
+      'minute': match.minute,
+    };
+  }
+
+  /// Deserializes a cached JSON map into a [MatchEntity].
+  MatchEntity _matchFromJson(Map<String, dynamic> json) {
+    final homeRaw = json['homeTeam'] as Map<String, dynamic>? ?? const {};
+    final awayRaw = json['awayTeam'] as Map<String, dynamic>? ?? const {};
+    return MatchEntity(
+      id: json['id'] as int? ?? 0,
+      status: MatchStatus.fromApi(json['status'] as String? ?? ''),
+      utcDate:
+          DateTime.tryParse(json['utcDate'] as String? ?? '') ?? DateTime.now(),
+      homeTeam: TeamMini(
+        id: homeRaw['id'] as int? ?? 0,
+        name: homeRaw['name'] as String? ?? 'Home',
+        shortName: homeRaw['shortName'] as String?,
+        crest: homeRaw['crest'] as String?,
+      ),
+      awayTeam: TeamMini(
+        id: awayRaw['id'] as int? ?? 0,
+        name: awayRaw['name'] as String? ?? 'Away',
+        shortName: awayRaw['shortName'] as String?,
+        crest: awayRaw['crest'] as String?,
+      ),
+      homeScore: json['homeScore'] as int?,
+      awayScore: json['awayScore'] as int?,
+      competitionName: json['competitionName'] as String?,
+      competitionEmblem: json['competitionEmblem'] as String?,
+      minute: json['minute'] as int?,
+    );
   }
 
   @override

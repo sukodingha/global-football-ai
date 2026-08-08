@@ -1,4 +1,4 @@
-import '../entities/article_entity.dart';
+import '../../domain/entities/article_entity.dart';
 
 /// Data model for a news article, mapped from the API.
 class ArticleModel {

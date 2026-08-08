@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:intl/intl.dart';
 
-import '../../../domain/entities/match_entity.dart';
+import '../../domain/entities/match_entity.dart';
 
 /// Card for a live match with current score.
 class LiveMatchCard extends StatelessWidget {

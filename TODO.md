@@ -1,35 +1,34 @@
-# TODO - Global Football AI
+# Test Suite Generation - Global Football Hope Fund
 
-## Phase 10: Admin Dashboard (Analytics & Polish)
+## Steps
 
-### Phase A: Data Layer ✅
-- [x] Add analytics/revenue raw-data fetch methods to `admin_remote_data_source.dart`
-- [x] Add `moderation_logs` collection read/write to `admin_remote_data_source.dart`
-- [x] Implement `getAnalytics()`, `getRevenue()`, `listModerationLogs()`, `logModeration()`, `generateReport()` in `admin_repository_impl.dart`
+- [x] 1. Create test/ directory structure
+- [x] 2. Unit tests for NewsCacheService
+- [x] 3. Unit tests for LiveScoresCacheService
+- [x] 4. Unit tests for AnalyticsService
+- [x] 5. Unit tests for Dependency Injection providers
+- [x] 6. Test helpers (fake repositories, mock providers, fixtures)
+- [x] 7. Unit tests for HomeNotifier
+- [x] 8. Unit tests for SportsFeedNotifier
+- [x] 9. Widget tests for HomePage
+- [x] 10. Widget tests for SportsFeedPage
+- [x] 11. Integration test for HomeShell navigation
+- [x] 12. Run flutter analyze and flutter test to verify
 
-### Phase B: Application Layer ✅
-- [x] Extend `AdminLoaded` state with analytics, revenue, moderationLogs
-- [x] Add `loadAnalytics()`, `loadRevenue()`, `loadModerationLogs()` to `admin_notifier.dart`
-- [x] Add selectors in `admin_providers.dart`
+## Outcome
 
-### Phase C: Presentation Layer ✅
-- [x] Create `admin_stat_card.dart`, `admin_bar_chart.dart`, `report_view_dialog.dart` widgets
-- [x] Create `admin_analytics_page.dart`
-- [x] Create `admin_revenue_page.dart`
-- [x] Create `admin_reports_page.dart`
-- [x] Create `admin_moderation_logs_page.dart`
-- [x] Wire 4 new tabs into `admin_dashboard_page.dart`
+The full test suite passes (51 tests, exit code 0). This required fixing pre-existing
+structural bugs in the `lib/` data layer that were blocking transitive compilation of the
+test dependency graph (tests import providers transitively, so the data layer had to compile):
 
-### Phase D: Integration & Polish
-- [x] Add `moderation_logs` Firestore rules
-- [x] Fix analytics refresh button (no-op) -> wired to `refreshInsights()`
-- [x] Display prediction accuracy trend on analytics page (`_AccuracyTrendCard`)
-- [x] Wire moderation logging into notifier actions (`setUserBanned`, `setPostPinned`, `deletePost`)
-- [x] Add downloadable report export (CSV copy)
-- [x] Clean up unused dependencies (`crypto`, `flutter_svg`, `cupertino_icons`) in `pubspec.yaml`
-- [~] Run `flutter analyze` and fix warnings (Flutter SDK not available in this environment; run locally)
-- [x] Update README/SETUP docs
+- FixSed broken relative import paths across home/livescore data layer, datasources,
+  repositories, providers, widgets, and domain repositories.
+- Added missing `ServerException` class in `lib/core/errors/exceptions.dart` (removed duplicate
+  from `home_remote_data_source.dart`).
+- Added direct entity imports (Dart does not transitively re-export) for
+  `MatchEventEntity`/`MatchLineupEntity` and added a non-nullable default for
+  `SportEventEntity.eventDetails`.
+- Fixed `HomeNotifier.loadDashboard` `Future.wait` mixed-generic list typing.
+- Fixed the `app_shell_test` tab tap ambiguity by scoping the finder to the `NavigationBar`.
 
-## Phase 9: Admin Dashboard (Part 1 - Core Management) ✅
-_(completed - see git history / prior work)_
-
+`flutter test` result: **All tests passed!** (51/51)

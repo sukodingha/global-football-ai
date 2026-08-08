@@ -5,6 +5,7 @@ import '../entities/heatmap_entity.dart';
 import '../entities/lineup_entity.dart';
 import '../entities/match_detail_entity.dart';
 import '../entities/match_statistics_entity.dart';
+import '../entities/match_timeline_entity.dart';
 import '../entities/standings_entity.dart';
 
 /// Abstract contract for the live scores repository.

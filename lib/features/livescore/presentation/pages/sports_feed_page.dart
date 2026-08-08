@@ -145,8 +145,8 @@ class _UpdateBanner extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-      color: stale
-          ? Colors.orange.withValues(alpha: 0.15)
+color: stale
+          ? Colors.orange.withOpacity(0.15)
           : Colors.transparent,
       child: Row(
         children: [

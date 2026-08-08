@@ -19,6 +19,12 @@ class CacheException extends AppException {
   const CacheException([super.message = 'Cache operation failed.']);
 }
 
+/// Thrown when the remote server returns a 5xx error or is otherwise
+/// unavailable.
+class ServerException extends AppException {
+  const ServerException([super.message = 'Server error. Please try again.']);
+}
+
 /// Thrown when a Firebase authentication operation fails.
 class AuthenticationException extends AppException {
   const AuthenticationException(super.message);

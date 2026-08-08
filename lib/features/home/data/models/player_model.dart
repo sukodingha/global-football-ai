@@ -1,4 +1,4 @@
-import '../entities/player_entity.dart';
+import '../../domain/entities/player_entity.dart';
 
 /// Data model for a featured player, mapped from the API.
 class PlayerModel {

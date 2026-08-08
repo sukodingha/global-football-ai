@@ -1,0 +1,28 @@
+﻿00:00 +0: loading C:/Users/PC/Documents/global ai prediction/test/core/services/analytics_service_test.dart
+00:00 +0: C:/Users/PC/Documents/global ai prediction/test/core/services/analytics_service_test.dart: AnalyticsService logScreen forwards to Firebase Analytics
+00:00 +1: C:/Users/PC/Documents/global ai prediction/test/core/services/analytics_service_test.dart: AnalyticsService logEvent forwards name and parameters
+00:00 +2: C:/Users/PC/Documents/global ai prediction/test/core/services/analytics_service_test.dart: AnalyticsService startTrace creates a trace via FirebasePerformance
+00:00 +3: C:/Users/PC/Documents/global ai prediction/test/core/services/analytics_service_test.dart: AnalyticsService trace helper returns the action result
+00:00 +4: C:/Users/PC/Documents/global ai prediction/test/core/services/dependency_injection_test.dart: Dependency Injection providers newsCacheServiceProvider provides a NewsCacheService
+00:00 +5: C:/Users/PC/Documents/global ai prediction/test/core/services/dependency_injection_test.dart: Dependency Injection providers newsCacheServiceProvider provides a NewsCacheService
+00:00 +6: C:/Users/PC/Documents/global ai prediction/test/core/services/dependency_injection_test.dart: Dependency Injection providers newsCacheServiceProvider provides a NewsCacheService
+00:00 +7: C:/Users/PC/Documents/global ai prediction/test/core/services/dependency_injection_test.dart: Dependency Injection providers newsCacheServiceProvider provides a NewsCacheService
+00:00 +8: C:/Users/PC/Documents/global ai prediction/test/core/services/dependency_injection_test.dart: Dependency Injection providers liveScoresCacheServiceProvider provides a LiveScoresCacheService
+00:00 +9: C:/Users/PC/Documents/global ai prediction/test/core/services/dependency_injection_test.dart: Dependency Injection providers newsCacheServiceProvider is a singleton for the same container
+00:00 +10: C:/Users/PC/Documents/global ai prediction/test/core/services/dependency_injection_test.dart: Dependency Injection providers liveScoresCacheServiceProvider is a singleton
+00:00 +11: C:/Users/PC/Documents/global ai prediction/test/core/services/dependency_injection_test.dart: Dependency Injection providers newsCacheServiceProvider can be overridden with a custom value
+00:00 +12: C:/Users/PC/Documents/global ai prediction/test/core/services/dependency_injection_test.dart: Dependency Injection providers liveScoresCacheServiceProvider can be overridden
+00:01 +13: C:/Users/PC/Documents/global ai prediction/test/core/services/live_scores_cache_service_test.dart: LiveScoresCacheService returns null when no cache exists for a key
+00:02 +14: C:/Users/PC/Documents/global ai prediction/test/core/services/live_scores_cache_service_test.dart: LiveScoresCacheService caches and retrieves matches
+00:02 +15: C:/Users/PC/Documents/global ai prediction/test/core/services/live_scores_cache_service_test.dart: LiveScoresCacheService convenience cacheLiveMatches/getCachedLiveMatches round-trips
+00:02 +16: C:/Users/PC/Documents/global ai prediction/test/core/services/live_scores_cache_service_test.dart: LiveScoresCacheService evicts stale entries older than the TTL
+00:02 +17: C:/Users/PC/Documents/global ai prediction/test/core/services/live_scores_cache_service_test.dart: LiveScoresCacheService returns null for corrupt JSON data
+00:02 +18: C:/Users/PC/Documents/global ai prediction/test/core/services/live_scores_cache_service_test.dart: LiveScoresCacheService clearCache removes all live scores cache entries
+00:02 +19: C:/Users/PC/Documents/global ai prediction/test/core/services/news_cache_service_test.dart: NewsCacheService returns null when no cache exists for a key
+00:03 +20: C:/Users/PC/Documents/global ai prediction/test/core/services/news_cache_service_test.dart: NewsCacheService caches and retrieves news articles
+00:03 +21: C:/Users/PC/Documents/global ai prediction/test/core/services/news_cache_service_test.dart: NewsCacheService isolates caches by key
+00:03 +22: C:/Users/PC/Documents/global ai prediction/test/core/services/news_cache_service_test.dart: NewsCacheService evicts stale entries older than the TTL
+00:03 +23: C:/Users/PC/Documents/global ai prediction/test/core/services/news_cache_service_test.dart: NewsCacheService returns null for corrupt JSON data
+00:03 +24: C:/Users/PC/Documents/global ai prediction/test/core/services/news_cache_service_test.dart: NewsCacheService clearCache removes all news cache entries
+00:03 +25: C:/Users/PC/Documents/global ai prediction/test/core/services/news_cache_service_test.dart: NewsCacheService cacheNews silently ignores failures
+00:03 +26: All tests passed!

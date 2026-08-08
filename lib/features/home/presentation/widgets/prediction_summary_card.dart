@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../domain/entities/prediction_entity.dart';
+import '../../domain/entities/prediction_entity.dart';
 
 /// Card summarizing today's AI predictions.
 class PredictionSummaryCard extends StatelessWidget {

@@ -21,7 +21,7 @@ class HomeNotifier extends StateNotifier<HomeState> {
   Future<void> loadDashboard() async {
     state = const HomeLoading();
 
-    // Load sections concurrently for responsive performance.
+// Load sections concurrently for responsive performance.
     final results = await Future.wait([
       _guard(() => _repository.getLiveMatches()),
       _guard(() => _repository.getUpcomingMatches()),
@@ -33,16 +33,20 @@ class HomeNotifier extends StateNotifier<HomeState> {
       _guard(() => _repository.getPlayerOfTheDay()),
     ]);
 
-    final liveMatches = results[0].fold(<MatchEntity>[], (v) => v);
-    final upcomingMatches = results[1].fold(<MatchEntity>[], (v) => v);
-    final finishedMatches = results[2].fold(<MatchEntity>[], (v) => v);
-    final competitions = results[3].fold(<CompetitionEntity>[], (v) => v);
-    final trendingMatches = results[4].fold(<MatchEntity>[], (v) => v);
-    final news = results[5].fold(<ArticleEntity>[], (v) => v);
-    final predictions = results[6].isSuccess
-        ? results[6].value!
-        : const PredictionSummaryEntity.empty();
-    final player = results[7].isSuccess ? results[7].value : null;
+    final liveMatches = _valueOf<List<MatchEntity>>(results[0]) ?? const [];
+    final upcomingMatches =
+        _valueOf<List<MatchEntity>>(results[1]) ?? const [];
+    final finishedMatches =
+        _valueOf<List<MatchEntity>>(results[2]) ?? const [];
+    final competitions =
+        _valueOf<List<CompetitionEntity>>(results[3]) ?? const [];
+    final trendingMatches =
+        _valueOf<List<MatchEntity>>(results[4]) ?? const [];
+    final news = _valueOf<List<ArticleEntity>>(results[5]) ?? const [];
+    final predictions =
+        _valueOf<PredictionSummaryEntity>(results[6]) ??
+            const PredictionSummaryEntity.empty();
+    final player = _valueOf<PlayerEntity>(results[7]);
 
     // If everything failed, surface an error state.
     if (results.every((r) => r.isFailure)) {
@@ -76,9 +80,17 @@ class HomeNotifier extends StateNotifier<HomeState> {
     }
   }
 
-  Failure _mapFailure(Object e) {
+Failure _mapFailure(Object e) {
     if (e is Failure) return e;
     return Failure.unknown(message: e.toString());
+  }
+
+  /// Safely extracts the value of a [HomeResult] if it is a success of type [T].
+  T? _valueOf<T>(HomeResult<Object> result) {
+    if (result.isSuccess && result.value is T) {
+      return result.value as T;
+    }
+    return null;
   }
 }
 

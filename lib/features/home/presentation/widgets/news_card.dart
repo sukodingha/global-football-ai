@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../domain/entities/article_entity.dart';
+import '../../domain/entities/article_entity.dart';
 
 /// Card for a news article.
 class NewsCard extends StatelessWidget {

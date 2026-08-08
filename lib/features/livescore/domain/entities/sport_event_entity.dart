@@ -160,7 +160,7 @@ class SportEventEntity extends Equatable {
     this.venue,
     this.minute,
     this.currentPeriod,
-    this.eventDetails,
+    this.eventDetails = const {},
     this.lastUpdated,
   });
 
