@@ -1,4 +1,4 @@
-import '../../../core/errors/failures.dart';
+import '../../../../core/errors/failures.dart';
 import '../entities/post_match_comparison_entity.dart';
 import '../entities/prediction_entity.dart';
 import '../entities/prediction_history_entity.dart';

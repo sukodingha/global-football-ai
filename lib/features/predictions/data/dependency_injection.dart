@@ -2,12 +2,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../auth/data/dependency_injection.dart';
 import '../../livescore/data/dependency_injection.dart';
-import '../datasources/prediction_local_data_source.dart';
-import '../datasources/prediction_remote_data_source.dart';
-import '../engine/comparison_engine.dart';
-import '../engine/prediction_engine.dart';
-import '../repositories/prediction_repository_impl.dart';
-import '../../domain/repositories/prediction_repository.dart';
+import 'datasources/prediction_local_data_source.dart';
+import 'datasources/prediction_remote_data_source.dart';
+import 'engine/comparison_engine.dart';
+import 'engine/prediction_engine.dart';
+import 'repositories/prediction_repository_impl.dart';
+import '../domain/repositories/prediction_repository.dart';
 
 /// The Poisson-based statistical prediction engine.
 ///

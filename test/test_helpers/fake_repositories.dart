@@ -13,9 +13,16 @@ import 'package:global_football_ai/features/home/domain/repositories/home_reposi
 import 'package:global_football_ai/features/livescore/data/dependency_injection.dart';
 import 'package:global_football_ai/features/livescore/domain/entities/sport_event_entity.dart';
 import 'package:global_football_ai/features/livescore/domain/repositories/multi_sport_repository.dart';
+import 'package:global_football_ai/features/predictions/data/dependency_injection.dart';
+import 'package:global_football_ai/features/predictions/domain/entities/post_match_comparison_entity.dart';
+import 'package:global_football_ai/features/predictions/domain/entities/prediction_entity.dart';
+import 'package:global_football_ai/features/predictions/domain/entities/prediction_history_entity.dart';
+import 'package:global_football_ai/features/predictions/domain/entities/user_vote_entity.dart';
+import 'package:global_football_ai/features/predictions/domain/repositories/prediction_repository.dart';
 
 import '../features/home/fixtures/home_fixtures.dart';
 import '../features/livescore/fixtures/sports_feed_fixtures.dart';
+import '../features/predictions/fixtures/prediction_fixtures.dart';
 
 /// In-memory fake [HomeRepository] for tests.
 class FakeHomeRepository implements HomeRepository {
@@ -194,5 +201,174 @@ FakeMultiSportRepository loadedSportsRepository() {
       SportType.tennis: buildTennisEvents(),
       SportType.basketball: buildBasketballEvents(),
     },
+  );
+}
+
+/// In-memory fake [PredictionRepository] for tests.
+class FakePredictionRepository implements PredictionRepository {
+  FakePredictionRepository({
+    MatchPredictionEntity? prediction,
+    this.history = const [],
+    this.comparisons = const [],
+    this.accuracyStats,
+    VoteCountsEntity? voteCounts,
+    this.myVote,
+    this.throwOnFetch = false,
+    this.delay,
+  })  : _prediction = prediction ?? buildPrediction(),
+        _voteCounts = voteCounts ?? buildVoteCounts();
+
+  MatchPredictionEntity _prediction;
+  List<PredictionHistoryEntity> history;
+  List<PostMatchComparisonEntity> comparisons;
+  AccuracyStatsEntity? accuracyStats;
+  VoteCountsEntity _voteCounts;
+  String? myVote;
+
+  /// When true, getPredictionForMatch throws a [ServerFailure].
+  bool throwOnFetch;
+
+  /// Optional delay before fetches resolve, for testing loading states.
+  Duration? delay;
+
+  // Call recording.
+  int historyFetchCount = 0;
+  int comparisonsFetchCount = 0;
+  int savePredictionCount = 0;
+  int voteCount = 0;
+  int saveComparisonCount = 0;
+  int? lastMatchedMatchId;
+
+  Future<void> _maybeDelay() async {
+    final d = delay;
+    if (d != null) await Future<void>.delayed(d);
+  }
+
+  /// Overrides the prediction returned by [getPredictionForMatch].
+  set predictionValue(MatchPredictionEntity value) => _prediction = value;
+
+  @override
+  Future<MatchPredictionEntity> getPredictionForMatch(int matchId) async {
+    await _maybeDelay();
+    lastMatchedMatchId = matchId;
+    if (throwOnFetch) throw const ServerFailure();
+    return _prediction;
+  }
+
+  @override
+  Future<List<PredictionHistoryEntity>> getPredictionHistory({
+    String? userId,
+    int limit = 50,
+  }) async {
+    historyFetchCount++;
+    await _maybeDelay();
+    if (throwOnFetch) throw const ServerFailure();
+    return history;
+  }
+
+  @override
+  Future<void> savePredictionToHistory({
+    required String userId,
+    required MatchPredictionEntity prediction,
+    DateTime? matchDate,
+  }) async {
+    savePredictionCount++;
+    await _maybeDelay();
+    if (throwOnFetch) throw const ServerFailure();
+  }
+
+  @override
+  Future<VoteCountsEntity> voteOnPrediction({
+    required String predictionId,
+    required String userId,
+    required String vote,
+  }) async {
+    voteCount++;
+    await _maybeDelay();
+    if (throwOnFetch) throw const ServerFailure();
+    return _voteCounts;
+  }
+
+  @override
+  Future<(VoteCountsEntity, String?)> getVoteState({
+    required String predictionId,
+    required String userId,
+  }) async {
+    await _maybeDelay();
+    if (throwOnFetch) throw const ServerFailure();
+    return (_voteCounts, myVote);
+  }
+
+  @override
+  Future<PostMatchComparisonEntity> compareWithResult({
+    required MatchPredictionEntity prediction,
+    required int actualHomeScore,
+    required int actualAwayScore,
+    int? actualCorners,
+    int? actualCards,
+  }) async {
+    await _maybeDelay();
+    if (throwOnFetch) throw const ServerFailure();
+    return buildComparison(
+      matchId: prediction.matchId,
+      actualHomeScore: actualHomeScore,
+      actualAwayScore: actualAwayScore,
+    );
+  }
+
+  @override
+  Future<void> saveComparison({
+    required String userId,
+    required PostMatchComparisonEntity comparison,
+  }) async {
+    saveComparisonCount++;
+    await _maybeDelay();
+    if (throwOnFetch) throw const ServerFailure();
+    comparisons = [comparison, ...comparisons];
+  }
+
+  @override
+  Future<List<PostMatchComparisonEntity>> getComparisons({
+    String? userId,
+    int limit = 20,
+  }) async {
+    comparisonsFetchCount++;
+    await _maybeDelay();
+    if (throwOnFetch) throw const ServerFailure();
+    return comparisons;
+  }
+
+  @override
+  Future<AccuracyStatsEntity> getAccuracyStats({String? userId}) async {
+    await _maybeDelay();
+    if (throwOnFetch) throw const ServerFailure();
+    return accuracyStats ?? buildAccuracyStats();
+  }
+
+  @override
+  Future<void> resolvePrediction({
+    required String historyId,
+    required bool isCorrect,
+  }) async {
+    await _maybeDelay();
+    if (throwOnFetch) throw const ServerFailure();
+  }
+}
+
+/// Pre-built fake providers for [FakePredictionRepository].
+List<Override> predictionRepositoryOverrides(
+  FakePredictionRepository repo,
+) =>
+    [
+      predictionRepositoryProvider.overrideWithValue(repo),
+    ];
+
+/// Convenience factory for a fully loaded prediction repository.
+FakePredictionRepository loadedPredictionRepository() {
+  return FakePredictionRepository(
+    history: [buildHistory(), buildHistory(id: 'h2', matchId: 2)],
+    comparisons: [buildComparison()],
+    accuracyStats: buildAccuracyStats(),
+    voteCounts: buildVoteCounts(),
   );
 }

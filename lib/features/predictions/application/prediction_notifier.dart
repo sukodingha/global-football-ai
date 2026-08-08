@@ -138,7 +138,7 @@ class PredictionNotifier extends StateNotifier<PredictionState> {
         userId: userId,
         vote: vote,
       );
-      final (final counts, final myVote) = await _repository.getVoteState(
+final (counts, myVote) = await _repository.getVoteState(
         predictionId: '${prediction.matchId}',
         userId: userId,
       );

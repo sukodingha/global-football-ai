@@ -2,21 +2,21 @@ import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../core/errors/failures.dart';
-import '../../../../core/services/biometric_service.dart';
-import '../../domain/entities/user_entity.dart';
-import '../../domain/usecases/apple_sign_in.dart';
-import '../../domain/usecases/biometric_login.dart';
-import '../../domain/usecases/forgot_password.dart';
-import '../../domain/usecases/get_current_user.dart';
-import '../../domain/usecases/google_sign_in.dart';
-import '../../domain/usecases/login_with_email.dart';
-import '../../domain/usecases/logout.dart';
-import '../../domain/usecases/register_with_email.dart';
-import '../../domain/usecases/send_phone_verification_code.dart';
-import '../../domain/usecases/usecase.dart';
-import '../../domain/usecases/verify_phone_otp.dart';
-import '../../domain/usecases/watch_auth_state.dart';
+import '../../../core/errors/failures.dart';
+import '../../../core/services/biometric_service.dart';
+import '../domain/entities/user_entity.dart';
+import '../domain/usecases/apple_sign_in.dart';
+import '../domain/usecases/biometric_login.dart';
+import '../domain/usecases/forgot_password.dart';
+import '../domain/usecases/get_current_user.dart';
+import '../domain/usecases/google_sign_in.dart';
+import '../domain/usecases/login_with_email.dart';
+import '../domain/usecases/logout.dart';
+import '../domain/usecases/register_with_email.dart';
+import '../domain/usecases/send_phone_verification_code.dart';
+import '../domain/usecases/usecase.dart';
+import '../domain/usecases/verify_phone_otp.dart';
+import '../domain/usecases/watch_auth_state.dart';
 import 'auth_state.dart';
 
 /// Riverpod controller managing the authentication state and all

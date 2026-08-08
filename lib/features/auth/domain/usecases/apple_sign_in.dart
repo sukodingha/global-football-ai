@@ -3,7 +3,7 @@ import '../repositories/auth_repository.dart';
 import 'usecase.dart';
 
 /// Signs the user in with Apple.
-class AppleSignIn implements UseCase<UserEntity, NoParams> {
+class AppleSignIn implements UseCase<Future<UserEntity>, NoParams> {
   const AppleSignIn(this._repository);
   final AuthRepository _repository;
 

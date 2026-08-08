@@ -3,7 +3,7 @@ import '../repositories/auth_repository.dart';
 import 'usecase.dart';
 
 /// Verifies an OTP code to complete phone sign-in.
-class VerifyPhoneOtp implements UseCase<UserEntity, OtpVerificationParams> {
+class VerifyPhoneOtp implements UseCase<Future<UserEntity>, OtpVerificationParams> {
   const VerifyPhoneOtp(this._repository);
   final AuthRepository _repository;
 

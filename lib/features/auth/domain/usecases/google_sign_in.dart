@@ -3,7 +3,7 @@ import '../repositories/auth_repository.dart';
 import 'usecase.dart';
 
 /// Signs the user in with Google.
-class GoogleSignIn implements UseCase<UserEntity, NoParams> {
+class GoogleSignIn implements UseCase<Future<UserEntity>, NoParams> {
   const GoogleSignIn(this._repository);
   final AuthRepository _repository;
 

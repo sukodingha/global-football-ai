@@ -2,7 +2,7 @@ import '../repositories/auth_repository.dart';
 import 'usecase.dart';
 
 /// Signs out the current user.
-class Logout implements UseCase<void, NoParams> {
+class Logout implements UseCase<Future<void>, NoParams> {
   const Logout(this._repository);
   final AuthRepository _repository;
 

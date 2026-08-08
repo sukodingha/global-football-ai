@@ -2,23 +2,23 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart' as gsi;
 
-import '../../../../core/services/biometric_service.dart';
-import '../../../../core/services/secure_storage_service.dart';
-import '../../domain/repositories/auth_repository.dart';
-import '../../domain/usecases/apple_sign_in.dart';
-import '../../domain/usecases/biometric_login.dart';
-import '../../domain/usecases/forgot_password.dart';
-import '../../domain/usecases/get_current_user.dart';
-import '../../domain/usecases/google_sign_in.dart';
-import '../../domain/usecases/login_with_email.dart';
-import '../../domain/usecases/logout.dart';
-import '../../domain/usecases/register_with_email.dart';
-import '../../domain/usecases/send_phone_verification_code.dart';
-import '../../domain/usecases/verify_phone_otp.dart';
-import '../../domain/usecases/watch_auth_state.dart';
-import '../datasources/auth_local_data_source.dart';
-import '../datasources/auth_remote_data_source.dart';
-import '../repositories/auth_repository_impl.dart';
+import '../../../core/services/biometric_service.dart';
+import '../../../core/services/secure_storage_service.dart';
+import '../domain/repositories/auth_repository.dart';
+import '../domain/usecases/apple_sign_in.dart';
+import '../domain/usecases/biometric_login.dart';
+import '../domain/usecases/forgot_password.dart';
+import '../domain/usecases/get_current_user.dart';
+import '../domain/usecases/google_sign_in.dart';
+import '../domain/usecases/login_with_email.dart';
+import '../domain/usecases/logout.dart';
+import '../domain/usecases/register_with_email.dart';
+import '../domain/usecases/send_phone_verification_code.dart';
+import '../domain/usecases/verify_phone_otp.dart';
+import '../domain/usecases/watch_auth_state.dart';
+import 'datasources/auth_local_data_source.dart';
+import 'datasources/auth_remote_data_source.dart';
+import 'repositories/auth_repository_impl.dart';
 
 /// Core services.
 final secureStorageServiceProvider = Provider<SecureStorageService>((ref) {

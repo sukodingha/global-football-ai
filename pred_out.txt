@@ -1,0 +1,463 @@
+﻿00:00 +0: loading C:/Users/PC/Documents/global ai prediction/test/features/predictions/comparison_engine_test.dart
+flutter : lib/features/auth/data/dependency_injection.dart:7:8: Error: Error when reading 
+'lib/features/domain/repositories/auth_repository.dart': The system cannot find the path specified.
+At line:1 char:50
++ ...  ai prediction"; flutter test test/features/predictions/ 2>&1 | Out-F ...
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (lib/features/au...path specified.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+import '../../domain/repositories/auth_repository.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:8:8: Error: Error when reading 
+'lib/features/domain/usecases/apple_sign_in.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/apple_sign_in.dart';
+       ^
+lib/features/auth/application/auth_notifier.dart:8:8: Error: Error when reading 
+'lib/features/domain/usecases/apple_sign_in.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/apple_sign_in.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:9:8: Error: Error when reading 
+'lib/features/domain/usecases/biometric_login.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/biometric_login.dart';
+       ^
+lib/features/auth/application/auth_notifier.dart:9:8: Error: Error when reading 
+'lib/features/domain/usecases/biometric_login.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/biometric_login.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:10:8: Error: Error when reading 
+'lib/features/domain/usecases/forgot_password.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/forgot_password.dart';
+       ^
+lib/features/auth/application/auth_notifier.dart:10:8: Error: Error when reading 
+'lib/features/domain/usecases/forgot_password.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/forgot_password.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:11:8: Error: Error when reading 
+'lib/features/domain/usecases/get_current_user.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/get_current_user.dart';
+       ^
+lib/features/auth/application/auth_notifier.dart:11:8: Error: Error when reading 
+'lib/features/domain/usecases/get_current_user.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/get_current_user.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:12:8: Error: Error when reading 
+'lib/features/domain/usecases/google_sign_in.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/google_sign_in.dart';
+       ^
+lib/features/auth/application/auth_notifier.dart:12:8: Error: Error when reading 
+'lib/features/domain/usecases/google_sign_in.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/google_sign_in.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:13:8: Error: Error when reading 
+'lib/features/domain/usecases/login_with_email.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/login_with_email.dart';
+       ^
+lib/features/auth/application/auth_notifier.dart:13:8: Error: Error when reading 
+'lib/features/domain/usecases/login_with_email.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/login_with_email.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:14:8: Error: Error when reading 
+'lib/features/domain/usecases/logout.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/logout.dart';
+       ^
+lib/features/auth/application/auth_notifier.dart:14:8: Error: Error when reading 
+'lib/features/domain/usecases/logout.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/logout.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:15:8: Error: Error when reading 
+'lib/features/domain/usecases/register_with_email.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/register_with_email.dart';
+       ^
+lib/features/auth/application/auth_notifier.dart:15:8: Error: Error when reading 
+'lib/features/domain/usecases/register_with_email.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/register_with_email.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:16:8: Error: Error when reading 
+'lib/features/domain/usecases/send_phone_verification_code.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/send_phone_verification_code.dart';
+       ^
+lib/features/auth/application/auth_notifier.dart:16:8: Error: Error when reading 
+'lib/features/domain/usecases/send_phone_verification_code.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/send_phone_verification_code.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:17:8: Error: Error when reading 
+'lib/features/domain/usecases/verify_phone_otp.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/verify_phone_otp.dart';
+       ^
+lib/features/auth/application/auth_notifier.dart:18:8: Error: Error when reading 
+'lib/features/domain/usecases/verify_phone_otp.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/verify_phone_otp.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:18:8: Error: Error when reading 
+'lib/features/domain/usecases/watch_auth_state.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/watch_auth_state.dart';
+       ^
+lib/features/auth/application/auth_notifier.dart:19:8: Error: Error when reading 
+'lib/features/domain/usecases/watch_auth_state.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/watch_auth_state.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:19:8: Error: Error when reading 
+'lib/features/auth/datasources/auth_local_data_source.dart': The system cannot find the path specified.
+
+import '../datasources/auth_local_data_source.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:20:8: Error: Error when reading 
+'lib/features/auth/datasources/auth_remote_data_source.dart': The system cannot find the path specified.
+
+import '../datasources/auth_remote_data_source.dart';
+       ^
+lib/features/auth/data/dependency_injection.dart:21:8: Error: Error when reading 
+'lib/features/auth/repositories/auth_repository_impl.dart': The system cannot find the path specified.
+
+import '../repositories/auth_repository_impl.dart';
+       ^
+lib/features/auth/application/auth_notifier.dart:7:8: Error: Error when reading 
+'lib/features/domain/entities/user_entity.dart': The system cannot find the path specified.
+
+import '../../domain/entities/user_entity.dart';
+       ^
+lib/features/auth/application/auth_state.dart:1:8: Error: Error when reading 
+'lib/features/domain/entities/user_entity.dart': The system cannot find the path specified.
+
+import '../../domain/entities/user_entity.dart';
+       ^
+lib/features/auth/application/auth_notifier.dart:17:8: Error: Error when reading 
+'lib/features/domain/usecases/usecase.dart': The system cannot find the path specified.
+
+import '../../domain/usecases/usecase.dart';
+       ^
+00:00 +0: C:/Users/PC/Documents/global ai prediction/test/features/predictions/comparison_engine_test.dart: ComparisonEngine returns an all-correct comparison when the prediction matches
+00:00 +1: C:/Users/PC/Documents/global ai prediction/test/features/predictions/comparison_engine_test.dart: ComparisonEngine flags incorrect markets against a conflicting result
+00:00 +1 -1: C:/Users/PC/Documents/global ai prediction/test/features/predictions/comparison_engine_test.dart: ComparisonEngine flags incorrect markets against a conflicting result [E]
+  Expected: false
+    Actual: <true>
+  
+  package:matcher                                             expect
+  package:flutter_test/src/widget_tester.dart 474:18          expect
+  test\features\predictions\comparison_engine_test.dart 49:7  main.<fn>.<fn>
+  
+00:00 +1 -1: C:/Users/PC/Documents/global ai prediction/test/features/predictions/comparison_engine_test.dart: ComparisonEngine excludes corners and cards when actual data is not supplied
+00:00 +2 -1: C:/Users/PC/Documents/global ai prediction/test/features/predictions/comparison_engine_test.dart: ComparisonEngine BTTS is evaluated against whether both teams scored
+00:00 +3 -1: C:/Users/PC/Documents/global ai prediction/test/features/predictions/comparison_engine_test.dart: ComparisonEngine over/under is evaluated against the total goal count
+00:00 +4 -1: C:/Users/PC/Documents/global ai prediction/test/features/predictions/comparison_engine_test.dart: ComparisonEngine double chance correct market covers the actual outcome
+00:00 +4 -2: C:/Users/PC/Documents/global ai prediction/test/features/predictions/comparison_engine_test.dart: ComparisonEngine double chance correct market covers the actual outcome [E]
+  Expected: false
+    Actual: <true>
+  
+  package:matcher                                              expect
+  package:flutter_test/src/widget_tester.dart 474:18           expect
+  test\features\predictions\comparison_engine_test.dart 124:7  main.<fn>.<fn>
+  
+00:00 +4 -2: C:/Users/PC/Documents/global ai prediction/test/features/predictions/comparison_engine_test.dart: ComparisonEngine summary string reports counts and accuracy
+lib/features/auth/application/auth_notifier.dart:26:14: Error: Type 'LoginWithEmail' not found.
+    required LoginWithEmail loginWithEmail,
+             ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:27:14: Error: Type 'RegisterWithEmail' not found.
+    required RegisterWithEmail registerWithEmail,
+             ^^^^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:28:14: Error: Type 'GoogleSignIn' not found.
+    required GoogleSignIn googleSignIn,
+             ^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:29:14: Error: Type 'AppleSignIn' not found.
+    required AppleSignIn appleSignIn,
+             ^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:30:14: Error: Type 'SendPhoneVerificationCode' not found.
+    required SendPhoneVerificationCode sendPhoneVerificationCode,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:31:14: Error: Type 'VerifyPhoneOtp' not found.
+    required VerifyPhoneOtp verifyPhoneOtp,
+             ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:32:14: Error: Type 'ForgotPassword' not found.
+    required ForgotPassword forgotPassword,
+             ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:33:14: Error: Type 'BiometricLogin' not found.
+    required BiometricLogin biometricLogin,
+             ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:34:14: Error: Type 'GetCurrentUser' not found.
+    required GetCurrentUser getCurrentUser,
+             ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:35:14: Error: Type 'Logout' not found.
+    required Logout logout,
+             ^^^^^^
+lib/features/auth/application/auth_notifier.dart:36:14: Error: Type 'WatchAuthState' not found.
+    required WatchAuthState watchAuthState,
+             ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:54:9: Error: Type 'LoginWithEmail' not found.
+  final LoginWithEmail _loginWithEmail;
+        ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:55:9: Error: Type 'RegisterWithEmail' not found.
+  final RegisterWithEmail _registerWithEmail;
+        ^^^^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:56:9: Error: Type 'GoogleSignIn' not found.
+  final GoogleSignIn _googleSignIn;
+        ^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:57:9: Error: Type 'AppleSignIn' not found.
+  final AppleSignIn _appleSignIn;
+        ^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:58:9: Error: Type 'SendPhoneVerificationCode' not found.
+  final SendPhoneVerificationCode _sendPhoneVerificationCode;
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:59:9: Error: Type 'VerifyPhoneOtp' not found.
+  final VerifyPhoneOtp _verifyPhoneOtp;
+        ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:60:9: Error: Type 'ForgotPassword' not found.
+  final ForgotPassword _forgotPassword;
+        ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:61:9: Error: Type 'BiometricLogin' not found.
+  final BiometricLogin _biometricLogin;
+        ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:62:9: Error: Type 'GetCurrentUser' not found.
+  final GetCurrentUser _getCurrentUser;
+        ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:63:9: Error: Type 'Logout' not found.
+  final Logout _logout;
+        ^^^^^^
+lib/features/auth/application/auth_notifier.dart:64:9: Error: Type 'WatchAuthState' not found.
+  final WatchAuthState _watchAuthState;
+        ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:67:22: Error: Type 'UserEntity' not found.
+  StreamSubscription<UserEntity?>? _authSubscription;
+                     ^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:70:3: Error: Type 'UserEntity' not found.
+  UserEntity? get currentUser {
+  ^^^^^^^^^^
+lib/features/auth/application/auth_state.dart:21:9: Error: Type 'UserEntity' not found.
+  final UserEntity user;
+        ^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:65:48: Error: 'LoginWithEmail' isn't a type.
+final loginWithEmailUseCaseProvider = Provider<LoginWithEmail>((ref) {
+                                               ^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:66:10: Error: Method not found: 'LoginWithEmail'.
+  return LoginWithEmail(ref.watch(authRepositoryProvider));
+         ^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:69:51: Error: 'RegisterWithEmail' isn't a type.
+final registerWithEmailUseCaseProvider = Provider<RegisterWithEmail>((ref) {
+                                                  ^^^^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:70:10: Error: Method not found: 'RegisterWithEmail'.
+  return RegisterWithEmail(ref.watch(authRepositoryProvider));
+         ^^^^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:73:46: Error: 'GoogleSignIn' isn't a type.
+final googleSignInUseCaseProvider = Provider<GoogleSignIn>((ref) {
+                                             ^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:74:10: Error: Method not found: 'GoogleSignIn'.
+  return GoogleSignIn(ref.watch(authRepositoryProvider));
+         ^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:77:45: Error: 'AppleSignIn' isn't a type.
+final appleSignInUseCaseProvider = Provider<AppleSignIn>((ref) {
+                                            ^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:78:10: Error: Method not found: 'AppleSignIn'.
+  return AppleSignIn(ref.watch(authRepositoryProvider));
+         ^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:81:59: Error: 'SendPhoneVerificationCode' isn't a type.
+final sendPhoneVerificationCodeUseCaseProvider = Provider<SendPhoneVerificationCode>((ref) {
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:82:10: Error: Method not found: 'SendPhoneVerificationCode'.
+  return SendPhoneVerificationCode(ref.watch(authRepositoryProvider));
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:85:48: Error: 'VerifyPhoneOtp' isn't a type.
+final verifyPhoneOtpUseCaseProvider = Provider<VerifyPhoneOtp>((ref) {
+                                               ^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:86:10: Error: Method not found: 'VerifyPhoneOtp'.
+  return VerifyPhoneOtp(ref.watch(authRepositoryProvider));
+         ^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:89:48: Error: 'ForgotPassword' isn't a type.
+final forgotPasswordUseCaseProvider = Provider<ForgotPassword>((ref) {
+                                               ^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:90:10: Error: Method not found: 'ForgotPassword'.
+  return ForgotPassword(ref.watch(authRepositoryProvider));
+         ^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:93:48: Error: 'BiometricLogin' isn't a type.
+final biometricLoginUseCaseProvider = Provider<BiometricLogin>((ref) {
+                                               ^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:94:10: Error: Method not found: 'BiometricLogin'.
+  return BiometricLogin(ref.watch(authRepositoryProvider));
+         ^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:97:48: Error: 'GetCurrentUser' isn't a type.
+final getCurrentUserUseCaseProvider = Provider<GetCurrentUser>((ref) {
+                                               ^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:98:10: Error: Method not found: 'GetCurrentUser'.
+  return GetCurrentUser(ref.watch(authRepositoryProvider));
+         ^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:101:40: Error: 'Logout' isn't a type.
+final logoutUseCaseProvider = Provider<Logout>((ref) {
+                                       ^^^^^^
+lib/features/auth/data/dependency_injection.dart:102:10: Error: Method not found: 'Logout'.
+  return Logout(ref.watch(authRepositoryProvider));
+         ^^^^^^
+lib/features/auth/data/dependency_injection.dart:105:48: Error: 'WatchAuthState' isn't a type.
+final watchAuthStateUseCaseProvider = Provider<WatchAuthState>((ref) {
+                                               ^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:106:10: Error: Method not found: 'WatchAuthState'.
+  return WatchAuthState(ref.watch(authRepositoryProvider));
+         ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_providers.dart:50:27: Error: A value of type 'Future<bool>' can't be assigned to a 
+variable of type 'bool'.
+ - 'Future' is from 'dart:async'.
+  return biometricService.isBiometricAvailable() &&
+                          ^
+lib/features/auth/data/dependency_injection.dart:42:47: Error: 'AuthRemoteDataSource' isn't a type.
+final authRemoteDataSourceProvider = Provider<AuthRemoteDataSource>((ref) {
+                                              ^^^^^^^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:43:10: Error: Method not found: 'AuthRemoteDataSource'.
+  return AuthRemoteDataSource(
+         ^^^^^^^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:49:46: Error: 'AuthLocalDataSource' isn't a type.
+final authLocalDataSourceProvider = Provider<AuthLocalDataSource>((ref) {
+                                             ^^^^^^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:50:10: Error: Method not found: 'AuthLocalDataSource'.
+  return AuthLocalDataSource(
+         ^^^^^^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:56:41: Error: 'AuthRepository' isn't a type.
+final authRepositoryProvider = Provider<AuthRepository>((ref) {
+                                        ^^^^^^^^^^^^^^
+lib/features/auth/data/dependency_injection.dart:57:10: Error: Method not found: 'AuthRepositoryImpl'.
+  return AuthRepositoryImpl(
+         ^^^^^^^^^^^^^^^^^^
+test/test_helpers/fake_repositories.dart:362:7: Error: Undefined name 'predictionRepositoryProvider'.
+      predictionRepositoryProvider.overrideWithValue(repo),
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:26:14: Error: 'LoginWithEmail' isn't a type.
+    required LoginWithEmail loginWithEmail,
+             ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:27:14: Error: 'RegisterWithEmail' isn't a type.
+    required RegisterWithEmail registerWithEmail,
+             ^^^^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:28:14: Error: 'GoogleSignIn' isn't a type.
+    required GoogleSignIn googleSignIn,
+             ^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:29:14: Error: 'AppleSignIn' isn't a type.
+    required AppleSignIn appleSignIn,
+             ^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:30:14: Error: 'SendPhoneVerificationCode' isn't a type.
+    required SendPhoneVerificationCode sendPhoneVerificationCode,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:31:14: Error: 'VerifyPhoneOtp' isn't a type.
+    required VerifyPhoneOtp verifyPhoneOtp,
+             ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:32:14: Error: 'ForgotPassword' isn't a type.
+    required ForgotPassword forgotPassword,
+             ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:33:14: Error: 'BiometricLogin' isn't a type.
+    required BiometricLogin biometricLogin,
+             ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:34:14: Error: 'GetCurrentUser' isn't a type.
+    required GetCurrentUser getCurrentUser,
+             ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:35:14: Error: 'Logout' isn't a type.
+    required Logout logout,
+             ^^^^^^
+lib/features/auth/application/auth_notifier.dart:36:14: Error: 'WatchAuthState' isn't a type.
+    required WatchAuthState watchAuthState,
+             ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:54:9: Error: 'LoginWithEmail' isn't a type.
+  final LoginWithEmail _loginWithEmail;
+        ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:55:9: Error: 'RegisterWithEmail' isn't a type.
+  final RegisterWithEmail _registerWithEmail;
+        ^^^^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:56:9: Error: 'GoogleSignIn' isn't a type.
+  final GoogleSignIn _googleSignIn;
+        ^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:57:9: Error: 'AppleSignIn' isn't a type.
+  final AppleSignIn _appleSignIn;
+        ^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:58:9: Error: 'SendPhoneVerificationCode' isn't a type.
+  final SendPhoneVerificationCode _sendPhoneVerificationCode;
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:59:9: Error: 'VerifyPhoneOtp' isn't a type.
+  final VerifyPhoneOtp _verifyPhoneOtp;
+        ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:60:9: Error: 'ForgotPassword' isn't a type.
+  final ForgotPassword _forgotPassword;
+        ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:61:9: Error: 'BiometricLogin' isn't a type.
+  final BiometricLogin _biometricLogin;
+        ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:62:9: Error: 'GetCurrentUser' isn't a type.
+  final GetCurrentUser _getCurrentUser;
+        ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:63:9: Error: 'Logout' isn't a type.
+  final Logout _logout;
+        ^^^^^^
+lib/features/auth/application/auth_notifier.dart:64:9: Error: 'WatchAuthState' isn't a type.
+  final WatchAuthState _watchAuthState;
+        ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:67:22: Error: 'UserEntity' isn't a type.
+  StreamSubscription<UserEntity?>? _authSubscription;
+                     ^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:81:47: Error: Couldn't find constructor 'NoParams'.
+    _authSubscription = _watchAuthState(const NoParams()).listen(
+                                              ^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:101:48: Error: Couldn't find constructor 'NoParams'.
+      final user = await _getCurrentUser(const NoParams());
+                                               ^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:132:9: Error: The method 'LoginParams' isn't defined for the class 
+'AuthNotifier'.
+ - 'AuthNotifier' is from 'package:global_football_ai/features/auth/application/auth_notifier.dart' 
+('lib/features/auth/application/auth_notifier.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'LoginParams'.
+        LoginParams(email: email, password: password),
+        ^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:155:9: Error: The method 'RegisterParams' isn't defined for the class 
+'AuthNotifier'.
+ - 'AuthNotifier' is from 'package:global_football_ai/features/auth/application/auth_notifier.dart' 
+('lib/features/auth/application/auth_notifier.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'RegisterParams'.
+        RegisterParams(
+        ^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:177:46: Error: Couldn't find constructor 'NoParams'.
+      final user = await _googleSignIn(const NoParams());
+                                             ^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:194:45: Error: Couldn't find constructor 'NoParams'.
+      final user = await _appleSignIn(const NoParams());
+                                            ^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:215:9: Error: The method 'PhoneCodeParams' isn't defined for the class 
+'AuthNotifier'.
+ - 'AuthNotifier' is from 'package:global_football_ai/features/auth/application/auth_notifier.dart' 
+('lib/features/auth/application/auth_notifier.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'PhoneCodeParams'.
+        PhoneCodeParams(phoneNumber: phoneNumber, onCodeSent: onCodeSent),
+        ^^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:236:9: Error: The method 'OtpVerificationParams' isn't defined for the 
+class 'AuthNotifier'.
+ - 'AuthNotifier' is from 'package:global_football_ai/features/auth/application/auth_notifier.dart' 
+('lib/features/auth/application/auth_notifier.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'OtpVerificationParams'.
+        OtpVerificationParams(verificationId: verificationId, otpCode: otpCode),
+        ^^^^^^^^^^^^^^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:271:48: Error: Couldn't find constructor 'NoParams'.
+      final user = await _biometricLogin(const NoParams());
+                                               ^^^^^^^^
+lib/features/auth/application/auth_notifier.dart:287:27: Error: Couldn't find constructor 'NoParams'.
+      await _logout(const NoParams());
+                          ^^^^^^^^
+lib/features/auth/application/auth_state.dart:21:9: Error: 'UserEntity' isn't a type.
+  final UserEntity user;
+        ^^^^^^^^^^
+00:04 +5 -3: loading C:/Users/PC/Documents/global ai prediction/test/features/predictions/prediction_notifier_test.dart [E]
+  Failed to load "C:/Users/PC/Documents/global ai prediction/test/features/predictions/prediction_notifier_test.dart": Compilation failed for testPath=C:/Users/PC/Documents/global ai prediction/test/features/predictions/prediction_notifier_test.dart
+00:04 +5 -3: Some tests failed.

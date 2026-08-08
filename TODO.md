@@ -15,6 +15,14 @@
 - [x] 11. Integration test for HomeShell navigation
 - [x] 12. Run flutter analyze and flutter test to verify
 
+## Predictions Feature Test Suite
+
+- [x] 13. Create prediction fixtures (prediction_fixtures.dart)
+- [x] 14. Add FakePredictionRepository to fake_repositories.dart
+- [x] 15. Unit tests for PredictionNotifier
+- [x] 16. Unit tests for ComparisonEngine
+- [ ] 17. Run flutter analyze and flutter test to verify
+
 ## Outcome
 
 The full test suite passes (51 tests, exit code 0). This required fixing pre-existing
@@ -32,3 +40,7 @@ test dependency graph (tests import providers transitively, so the data layer ha
 - Fixed the `app_shell_test` tab tap ambiguity by scoping the finder to the `NavigationBar`.
 
 `flutter test` result: **All tests passed!** (51/51)
+
+## Predictions Test Suite Outcome
+
+Pending implementation.

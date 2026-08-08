@@ -47,6 +47,6 @@ final authStateProvider = Provider<AuthState>((ref) {
 /// Provider for biometric availability.
 final biometricAvailabilityProvider = FutureProvider<bool>((ref) async {
   final biometricService = ref.watch(biometricServiceProvider);
-  return biometricService.isBiometricAvailable() &&
-      await biometricService.hasEnrolledBiometrics();
+  final available = await biometricService.isBiometricAvailable();
+  return available && await biometricService.hasEnrolledBiometrics();
 });

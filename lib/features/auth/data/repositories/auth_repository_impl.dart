@@ -183,34 +183,32 @@ class AuthRepositoryImpl implements AuthRepository {
 /// Maps a data-layer exception to a domain failure.
   Failure _mapException(AuthenticationException e) {
     final message = e.message;
-    if (message.contains('invalid email', caseSensitive: false) ||
-        message.contains('email address is not valid')) {
+    final lower = message.toLowerCase();
+    if (lower.contains('invalid email') ||
+        lower.contains('email address is not valid')) {
       return InvalidEmailFailure(message);
     }
-    if (message.contains('user not found', caseSensitive: false) ||
-        message.contains('no user found', caseSensitive: false)) {
+    if (lower.contains('user not found') || lower.contains('no user found')) {
       return UserNotFoundFailure(message);
     }
-    if (message.contains('already exists', caseSensitive: false) ||
-        message.contains('already in use', caseSensitive: false)) {
+    if (lower.contains('already exists') || lower.contains('already in use')) {
       return EmailAlreadyInUseFailure(message);
     }
-    if (message.contains('weak password', caseSensitive: false) ||
-        message.contains('too weak', caseSensitive: false)) {
+    if (lower.contains('weak password') || lower.contains('too weak')) {
       return WeakPasswordFailure(message);
     }
-    if (message.contains('incorrect password', caseSensitive: false) ||
-        message.contains('wrong password', caseSensitive: false)) {
+    if (lower.contains('incorrect password') ||
+        lower.contains('wrong password')) {
       return InvalidCredentialsFailure(message);
     }
-    if (message.contains('too many attempts', caseSensitive: false) ||
-        message.contains('too many requests', caseSensitive: false)) {
+    if (lower.contains('too many attempts') ||
+        lower.contains('too many requests')) {
       return TooManyRequestsFailure(message);
     }
-    if (message.contains('verification code', caseSensitive: false)) {
+    if (lower.contains('verification code')) {
       return InvalidOtpFailure(message);
     }
-    if (message.contains('network', caseSensitive: false)) {
+    if (lower.contains('network')) {
       return NetworkFailure(message);
     }
     return ServerFailure(message);

@@ -3,7 +3,7 @@ import '../repositories/auth_repository.dart';
 import 'usecase.dart';
 
 /// Registers a new user with email and password.
-class RegisterWithEmail implements UseCase<UserEntity, RegisterParams> {
+class RegisterWithEmail implements UseCase<Future<UserEntity>, RegisterParams> {
   const RegisterWithEmail(this._repository);
   final AuthRepository _repository;
 

@@ -3,7 +3,7 @@ import '../repositories/auth_repository.dart';
 import 'usecase.dart';
 
 /// Signs a user in with email and password.
-class LoginWithEmail implements UseCase<UserEntity, LoginParams> {
+class LoginWithEmail implements UseCase<Future<UserEntity>, LoginParams> {
   const LoginWithEmail(this._repository);
   final AuthRepository _repository;
 

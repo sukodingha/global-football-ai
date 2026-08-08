@@ -1,0 +1,682 @@
+﻿Analyzing global ai prediction...                               
+
+warning - Unused import: 'features/auth/application/auth_notifier.dart' - lib\app.dart:6:8 - unused_import
+  error - Undefined name 'authNotifierProvider' - lib\app.dart:16:14 - undefined_identifier
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:45:17 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:54:18 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:62:16 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:70:29 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:78:23 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:87:28 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:96:23 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:104:23 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:112:30 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:120:26 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:128:30 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:137:33 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:145:21 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:154:21 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:163:32 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:172:31 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:180:40 - use_super_parameters
+   info - Convert 'message' to a super parameter - lib\core\errors\failures.dart:189:18 - use_super_parameters
+warning - Unused import: '../../features/home/presentation/pages/home_page.dart' - lib\core\router\app_router.dart:16:8 - unused_import
+warning - Unused import: '../../features/auth/application/auth_notifier.dart' - lib\core\router\splash_screen.dart:5:8 - unused_import
+  error - Undefined name 'authNotifierProvider' - lib\core\router\splash_screen.dart:24:20 - undefined_identifier
+  error - Undefined name 'authNotifierProvider' - lib\core\router\splash_screen.dart:29:33 - undefined_identifier
+   info - Use 'const' with the constructor to improve performance - lib\core\router\splash_screen.dart:43:13 - prefer_const_constructors
+   info - Use 'const' with the constructor to improve performance - lib\core\router\splash_screen.dart:44:16 - prefer_const_constructors
+   info - Use 'const' literals as arguments to constructors of '@immutable' classes - lib\core\router\splash_screen.dart:46:21 - prefer_const_literals_to_create_immutables
+  error - The method 'CardThemeData' isn't defined for the type 'AppTheme' - lib\core\theme\app_theme.dart:39:18 - undefined_method
+   info - Use 'const' with the constructor to improve performance - lib\core\theme\app_theme.dart:62:20 - prefer_const_constructors
+  error - The method 'CardThemeData' isn't defined for the type 'AppTheme' - lib\core\theme\app_theme.dart:73:18 - undefined_method
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\core\widgets\app_button.dart:31:66 - deprecated_member_use
+  error - The name 'AdminAuditLogEntity' isn't a type, so it can't be used as a type argument - lib\features\admin\application\admin_notifier.dart:51:39 - non_type_as_type_argument
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\admin\data\datasources\admin_remote_data_source.dart:3:8 - uri_does_not_exist
+warning - Unused import: '../../domain/entities/admin_analytics_entity.dart' - lib\features\admin\data\datasources\admin_remote_data_source.dart:4:8 - unused_import
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:54:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:70:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:83:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:107:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:121:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:132:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:142:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:154:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:168:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:185:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:206:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:235:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:246:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:254:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:298:13 - undefined_method
+   info - The parameter name 'sum' matches a visible type name - lib\features\admin\data\datasources\admin_remote_data_source.dart:357:26 - avoid_types_as_parameter_names
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:368:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:409:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'AdminRemoteDataSource' - lib\features\admin\data\datasources\admin_remote_data_source.dart:434:13 - undefined_method
+  error - Target of URI doesn't exist: '../../domain/repositories/admin_repository.dart' - lib\features\admin\data\dependency_injection.dart:3:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../datasources/admin_remote_data_source.dart' - lib\features\admin\data\dependency_injection.dart:4:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../repositories/admin_repository_impl.dart' - lib\features\admin\data\dependency_injection.dart:5:8 - uri_does_not_exist
+  error - The name 'AdminRemoteDataSource' isn't a type, so it can't be used as a type argument - lib\features\admin\data\dependency_injection.dart:8:48 - non_type_as_type_argument
+  error - The function 'AdminRemoteDataSource' isn't defined - lib\features\admin\data\dependency_injection.dart:9:10 - undefined_function
+  error - The name 'AdminRepository' isn't a type, so it can't be used as a type argument - lib\features\admin\data\dependency_injection.dart:13:42 - non_type_as_type_argument
+  error - The function 'AdminRepositoryImpl' isn't defined - lib\features\admin\data\dependency_injection.dart:15:10 - undefined_function
+  error - A value of type 'AdminAuditLogEntity' can't be returned from the constructor 'AdminAuditLogModel.fromDoc' because it has a return type of 'AdminAuditLogModel' - lib\features\admin\data\models\admin_audit_log_model.dart:16:12 - return_of_invalid_type
+  error - A value of type 'AdminCompetitionEntity' can't be returned from the constructor 'AdminCompetitionModel.fromDoc' because it has a return type of 'AdminCompetitionModel' - lib\features\admin\data\models\admin_competition_model.dart:16:12 - return_of_invalid_type
+  error - A value of type 'AdminPredictionEntity' can't be returned from the constructor 'AdminPredictionModel.fromDoc' because it has a return type of 'AdminPredictionModel' - lib\features\admin\data\models\admin_prediction_model.dart:16:12 - return_of_invalid_type
+  error - A value of type 'AdminUserEntity' can't be returned from the constructor 'AdminUserModel.fromDoc' because it has a return type of 'AdminUserModel' - lib\features\admin\data\models\admin_user_model.dart:14:12 - return_of_invalid_type
+   info - Dangling library doc comment - lib\features\admin\data\models\analytics_models.dart:6:1 - dangling_library_doc_comments
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\admin\data\repositories\admin_repository_impl.dart:1:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../../core/errors/failures.dart' - lib\features\admin\data\repositories\admin_repository_impl.dart:2:8 - uri_does_not_exist
+  error - Undefined class 'Failure' - lib\features\admin\data\repositories\admin_repository_impl.dart:28:3 - undefined_class
+  error - The name 'NetworkException' isn't defined, so it can't be used in an 'is' expression - lib\features\admin\data\repositories\admin_repository_impl.dart:30:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\admin\data\repositories\admin_repository_impl.dart:31:14 - undefined_identifier
+  error - The name 'CacheException' isn't defined, so it can't be used in an 'is' expression - lib\features\admin\data\repositories\admin_repository_impl.dart:33:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\admin\data\repositories\admin_repository_impl.dart:34:14 - undefined_identifier
+  error - The name 'AuthenticationException' isn't defined, so it can't be used in an 'is' expression - lib\features\admin\data\repositories\admin_repository_impl.dart:36:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\admin\data\repositories\admin_repository_impl.dart:37:14 - undefined_identifier
+  error - Undefined name 'Failure' - lib\features\admin\data\repositories\admin_repository_impl.dart:41:12 - undefined_identifier
+  error - Target of URI doesn't exist: '../../../core/errors/failures.dart' - lib\features\admin\domain\repositories\admin_repository.dart:1:8 - uri_does_not_exist
+   info - Use 'const' with the constructor to improve performance - lib\features\admin\presentation\pages\admin_competitions_page.dart:62:26 - prefer_const_constructors
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\admin\presentation\pages\admin_moderation_logs_page.dart:60:38 - undefined_method
+  error - The method 'withValues' isn't defined for the type 'MaterialColor' - lib\features\admin\presentation\pages\admin_moderation_logs_page.dart:125:22 - undefined_method
+  error - This expression has a type of 'void' so its value can't be used - lib\features\admin\presentation\pages\admin_predictions_page.dart:46:11 - use_of_void_result
+warning - Unused import: '../../domain/entities/admin_analytics_entity.dart' - lib\features\admin\presentation\pages\admin_reports_page.dart:5:8 - unused_import
+warning - Unused import: '../../domain/entities/admin_revenue_entity.dart' - lib\features\admin\presentation\pages\admin_reports_page.dart:6:8 - unused_import
+  error - Undefined name 'Clipboard' - lib\features\admin\presentation\pages\admin_reports_page.dart:120:11 - undefined_identifier
+  error - The method 'ClipboardData' isn't defined for the type '_AdminReportsPageState' - lib\features\admin\presentation\pages\admin_reports_page.dart:120:29 - undefined_method
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\features\admin\presentation\pages\admin_reports_page.dart:123:26 - use_build_context_synchronously
+  error - This expression has a type of 'void' so its value can't be used - lib\features\admin\presentation\pages\admin_subscriptions_page.dart:46:11 - use_of_void_result
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\admin\presentation\widgets\competition_tile.dart:126:22 - undefined_method
+  error - The method 'withValues' isn't defined for the type 'MaterialColor' - lib\features\admin\presentation\widgets\prediction_audit_tile.dart:46:40 - undefined_method
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\admin\presentation\widgets\stat_card.dart:26:56 - undefined_method
+  error - Target of URI doesn't exist: '../../domain/entities/user_entity.dart' - lib\features\auth\application\auth_notifier.dart:7:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/apple_sign_in.dart' - lib\features\auth\application\auth_notifier.dart:8:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/biometric_login.dart' - lib\features\auth\application\auth_notifier.dart:9:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/forgot_password.dart' - lib\features\auth\application\auth_notifier.dart:10:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/get_current_user.dart' - lib\features\auth\application\auth_notifier.dart:11:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/google_sign_in.dart' - lib\features\auth\application\auth_notifier.dart:12:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/login_with_email.dart' - lib\features\auth\application\auth_notifier.dart:13:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/logout.dart' - lib\features\auth\application\auth_notifier.dart:14:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/register_with_email.dart' - lib\features\auth\application\auth_notifier.dart:15:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/send_phone_verification_code.dart' - lib\features\auth\application\auth_notifier.dart:16:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/usecase.dart' - lib\features\auth\application\auth_notifier.dart:17:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/verify_phone_otp.dart' - lib\features\auth\application\auth_notifier.dart:18:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/watch_auth_state.dart' - lib\features\auth\application\auth_notifier.dart:19:8 - uri_does_not_exist
+  error - Undefined class 'LoginWithEmail' - lib\features\auth\application\auth_notifier.dart:26:14 - undefined_class
+  error - Undefined class 'RegisterWithEmail' - lib\features\auth\application\auth_notifier.dart:27:14 - undefined_class
+  error - Undefined class 'GoogleSignIn' - lib\features\auth\application\auth_notifier.dart:28:14 - undefined_class
+  error - Undefined class 'AppleSignIn' - lib\features\auth\application\auth_notifier.dart:29:14 - undefined_class
+  error - Undefined class 'SendPhoneVerificationCode' - lib\features\auth\application\auth_notifier.dart:30:14 - undefined_class
+  error - Undefined class 'VerifyPhoneOtp' - lib\features\auth\application\auth_notifier.dart:31:14 - undefined_class
+  error - Undefined class 'ForgotPassword' - lib\features\auth\application\auth_notifier.dart:32:14 - undefined_class
+  error - Undefined class 'BiometricLogin' - lib\features\auth\application\auth_notifier.dart:33:14 - undefined_class
+  error - Undefined class 'GetCurrentUser' - lib\features\auth\application\auth_notifier.dart:34:14 - undefined_class
+  error - Undefined class 'Logout' - lib\features\auth\application\auth_notifier.dart:35:14 - undefined_class
+  error - Undefined class 'WatchAuthState' - lib\features\auth\application\auth_notifier.dart:36:14 - undefined_class
+  error - Undefined class 'LoginWithEmail' - lib\features\auth\application\auth_notifier.dart:54:9 - undefined_class
+  error - Undefined class 'RegisterWithEmail' - lib\features\auth\application\auth_notifier.dart:55:9 - undefined_class
+  error - Undefined class 'GoogleSignIn' - lib\features\auth\application\auth_notifier.dart:56:9 - undefined_class
+  error - Undefined class 'AppleSignIn' - lib\features\auth\application\auth_notifier.dart:57:9 - undefined_class
+  error - Undefined class 'SendPhoneVerificationCode' - lib\features\auth\application\auth_notifier.dart:58:9 - undefined_class
+  error - Undefined class 'VerifyPhoneOtp' - lib\features\auth\application\auth_notifier.dart:59:9 - undefined_class
+  error - Undefined class 'ForgotPassword' - lib\features\auth\application\auth_notifier.dart:60:9 - undefined_class
+  error - Undefined class 'BiometricLogin' - lib\features\auth\application\auth_notifier.dart:61:9 - undefined_class
+  error - Undefined class 'GetCurrentUser' - lib\features\auth\application\auth_notifier.dart:62:9 - undefined_class
+  error - Undefined class 'Logout' - lib\features\auth\application\auth_notifier.dart:63:9 - undefined_class
+  error - Undefined class 'WatchAuthState' - lib\features\auth\application\auth_notifier.dart:64:9 - undefined_class
+  error - The name 'UserEntity' isn't a type, so it can't be used as a type argument - lib\features\auth\application\auth_notifier.dart:67:22 - non_type_as_type_argument
+  error - Undefined class 'UserEntity' - lib\features\auth\application\auth_notifier.dart:70:3 - undefined_class
+  error - The name 'NoParams' isn't a class - lib\features\auth\application\auth_notifier.dart:81:47 - creation_with_non_type
+  error - The name 'NoParams' isn't a class - lib\features\auth\application\auth_notifier.dart:101:48 - creation_with_non_type
+  error - The method 'LoginParams' isn't defined for the type 'AuthNotifier' - lib\features\auth\application\auth_notifier.dart:132:9 - undefined_method
+   info - Use 'const' for final variables initialized to a constant value - lib\features\auth\application\auth_notifier.dart:140:7 - prefer_const_declarations
+  error - The method 'RegisterParams' isn't defined for the type 'AuthNotifier' - lib\features\auth\application\auth_notifier.dart:155:9 - undefined_method
+   info - Use 'const' for final variables initialized to a constant value - lib\features\auth\application\auth_notifier.dart:167:7 - prefer_const_declarations
+  error - The name 'NoParams' isn't a class - lib\features\auth\application\auth_notifier.dart:177:46 - creation_with_non_type
+   info - Use 'const' for final variables initialized to a constant value - lib\features\auth\application\auth_notifier.dart:184:7 - prefer_const_declarations
+  error - The name 'NoParams' isn't a class - lib\features\auth\application\auth_notifier.dart:194:45 - creation_with_non_type
+   info - Use 'const' for final variables initialized to a constant value - lib\features\auth\application\auth_notifier.dart:201:7 - prefer_const_declarations
+  error - The method 'PhoneCodeParams' isn't defined for the type 'AuthNotifier' - lib\features\auth\application\auth_notifier.dart:215:9 - undefined_method
+   info - Use 'const' for final variables initialized to a constant value - lib\features\auth\application\auth_notifier.dart:222:7 - prefer_const_declarations
+  error - The method 'OtpVerificationParams' isn't defined for the type 'AuthNotifier' - lib\features\auth\application\auth_notifier.dart:236:9 - undefined_method
+   info - Use 'const' for final variables initialized to a constant value - lib\features\auth\application\auth_notifier.dart:244:7 - prefer_const_declarations
+   info - Use 'const' for final variables initialized to a constant value - lib\features\auth\application\auth_notifier.dart:261:7 - prefer_const_declarations
+  error - The name 'NoParams' isn't a class - lib\features\auth\application\auth_notifier.dart:271:48 - creation_with_non_type
+   info - Use 'const' for final variables initialized to a constant value - lib\features\auth\application\auth_notifier.dart:278:7 - prefer_const_declarations
+  error - The name 'NoParams' isn't a class - lib\features\auth\application\auth_notifier.dart:287:27 - creation_with_non_type
+warning - Unused import: '../../../core/services/biometric_service.dart' - lib\features\auth\application\auth_providers.dart:3:8 - unused_import
+  error - The operands of the operator '&&' must be assignable to 'bool' - lib\features\auth\application\auth_providers.dart:50:10 - non_bool_operand
+  error - Target of URI doesn't exist: '../../domain/entities/user_entity.dart' - lib\features\auth\application\auth_state.dart:1:8 - uri_does_not_exist
+  error - Undefined class 'UserEntity' - lib\features\auth\application\auth_state.dart:21:9 - undefined_class
+  error - Target of URI doesn't exist: '../../domain/repositories/auth_repository.dart' - lib\features\auth\data\dependency_injection.dart:7:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/apple_sign_in.dart' - lib\features\auth\data\dependency_injection.dart:8:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/biometric_login.dart' - lib\features\auth\data\dependency_injection.dart:9:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/forgot_password.dart' - lib\features\auth\data\dependency_injection.dart:10:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/get_current_user.dart' - lib\features\auth\data\dependency_injection.dart:11:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/google_sign_in.dart' - lib\features\auth\data\dependency_injection.dart:12:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/login_with_email.dart' - lib\features\auth\data\dependency_injection.dart:13:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/logout.dart' - lib\features\auth\data\dependency_injection.dart:14:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/register_with_email.dart' - lib\features\auth\data\dependency_injection.dart:15:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/send_phone_verification_code.dart' - lib\features\auth\data\dependency_injection.dart:16:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/verify_phone_otp.dart' - lib\features\auth\data\dependency_injection.dart:17:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/watch_auth_state.dart' - lib\features\auth\data\dependency_injection.dart:18:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../datasources/auth_local_data_source.dart' - lib\features\auth\data\dependency_injection.dart:19:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../datasources/auth_remote_data_source.dart' - lib\features\auth\data\dependency_injection.dart:20:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../repositories/auth_repository_impl.dart' - lib\features\auth\data\dependency_injection.dart:21:8 - uri_does_not_exist
+  error - The name 'AuthRemoteDataSource' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:42:47 - non_type_as_type_argument
+  error - The function 'AuthRemoteDataSource' isn't defined - lib\features\auth\data\dependency_injection.dart:43:10 - undefined_function
+  error - The name 'AuthLocalDataSource' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:49:46 - non_type_as_type_argument
+  error - The function 'AuthLocalDataSource' isn't defined - lib\features\auth\data\dependency_injection.dart:50:10 - undefined_function
+  error - The name 'AuthRepository' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:56:41 - non_type_as_type_argument
+  error - The function 'AuthRepositoryImpl' isn't defined - lib\features\auth\data\dependency_injection.dart:57:10 - undefined_function
+  error - The name 'LoginWithEmail' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:65:48 - non_type_as_type_argument
+  error - The function 'LoginWithEmail' isn't defined - lib\features\auth\data\dependency_injection.dart:66:10 - undefined_function
+  error - The name 'RegisterWithEmail' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:69:51 - non_type_as_type_argument
+  error - The function 'RegisterWithEmail' isn't defined - lib\features\auth\data\dependency_injection.dart:70:10 - undefined_function
+  error - The name 'GoogleSignIn' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:73:46 - non_type_as_type_argument
+  error - The function 'GoogleSignIn' isn't defined - lib\features\auth\data\dependency_injection.dart:74:10 - undefined_function
+  error - The name 'AppleSignIn' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:77:45 - non_type_as_type_argument
+  error - The function 'AppleSignIn' isn't defined - lib\features\auth\data\dependency_injection.dart:78:10 - undefined_function
+  error - The name 'SendPhoneVerificationCode' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:81:59 - non_type_as_type_argument
+  error - The function 'SendPhoneVerificationCode' isn't defined - lib\features\auth\data\dependency_injection.dart:82:10 - undefined_function
+  error - The name 'VerifyPhoneOtp' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:85:48 - non_type_as_type_argument
+  error - The function 'VerifyPhoneOtp' isn't defined - lib\features\auth\data\dependency_injection.dart:86:10 - undefined_function
+  error - The name 'ForgotPassword' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:89:48 - non_type_as_type_argument
+  error - The function 'ForgotPassword' isn't defined - lib\features\auth\data\dependency_injection.dart:90:10 - undefined_function
+  error - The name 'BiometricLogin' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:93:48 - non_type_as_type_argument
+  error - The function 'BiometricLogin' isn't defined - lib\features\auth\data\dependency_injection.dart:94:10 - undefined_function
+  error - The name 'GetCurrentUser' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:97:48 - non_type_as_type_argument
+  error - The function 'GetCurrentUser' isn't defined - lib\features\auth\data\dependency_injection.dart:98:10 - undefined_function
+  error - The name 'Logout' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:101:40 - non_type_as_type_argument
+  error - The function 'Logout' isn't defined - lib\features\auth\data\dependency_injection.dart:102:10 - undefined_function
+  error - The name 'WatchAuthState' isn't a type, so it can't be used as a type argument - lib\features\auth\data\dependency_injection.dart:105:48 - non_type_as_type_argument
+  error - The function 'WatchAuthState' isn't defined - lib\features\auth\data\dependency_injection.dart:106:10 - undefined_function
+warning - Unused import: '../models/user_model.dart' - lib\features\auth\data\repositories\auth_repository_impl.dart:10:8 - unused_import
+  error - The named parameter 'caseSensitive' isn't defined - lib\features\auth\data\repositories\auth_repository_impl.dart:186:43 - undefined_named_parameter
+  error - The named parameter 'caseSensitive' isn't defined - lib\features\auth\data\repositories\auth_repository_impl.dart:190:44 - undefined_named_parameter
+  error - The named parameter 'caseSensitive' isn't defined - lib\features\auth\data\repositories\auth_repository_impl.dart:191:43 - undefined_named_parameter
+  error - The named parameter 'caseSensitive' isn't defined - lib\features\auth\data\repositories\auth_repository_impl.dart:194:44 - undefined_named_parameter
+  error - The named parameter 'caseSensitive' isn't defined - lib\features\auth\data\repositories\auth_repository_impl.dart:195:44 - undefined_named_parameter
+  error - The named parameter 'caseSensitive' isn't defined - lib\features\auth\data\repositories\auth_repository_impl.dart:198:43 - undefined_named_parameter
+  error - The named parameter 'caseSensitive' isn't defined - lib\features\auth\data\repositories\auth_repository_impl.dart:199:38 - undefined_named_parameter
+  error - The named parameter 'caseSensitive' isn't defined - lib\features\auth\data\repositories\auth_repository_impl.dart:202:48 - undefined_named_parameter
+  error - The named parameter 'caseSensitive' isn't defined - lib\features\auth\data\repositories\auth_repository_impl.dart:203:44 - undefined_named_parameter
+  error - The named parameter 'caseSensitive' isn't defined - lib\features\auth\data\repositories\auth_repository_impl.dart:206:47 - undefined_named_parameter
+  error - The named parameter 'caseSensitive' isn't defined - lib\features\auth\data\repositories\auth_repository_impl.dart:207:47 - undefined_named_parameter
+  error - The named parameter 'caseSensitive' isn't defined - lib\features\auth\data\repositories\auth_repository_impl.dart:210:47 - undefined_named_parameter
+  error - The named parameter 'caseSensitive' isn't defined - lib\features\auth\data\repositories\auth_repository_impl.dart:213:37 - undefined_named_parameter
+  error - 'AppleSignIn.call' ('Future<UserEntity> Function(NoParams)') isn't a valid override of 'UseCase.call' ('UserEntity Function(NoParams)') - lib\features\auth\domain\usecases\apple_sign_in.dart:11:22 - invalid_override
+  error - 'BiometricLogin.call' ('Future<UserEntity> Function(NoParams)') isn't a valid override of 'UseCase.call' ('UserEntity Function(NoParams)') - lib\features\auth\domain\usecases\biometric_login.dart:11:22 - invalid_override
+  error - 'GetCurrentUser.call' ('Future<UserEntity?> Function(NoParams)') isn't a valid override of 'UseCase.call' ('UserEntity? Function(NoParams)') - lib\features\auth\domain\usecases\get_current_user.dart:11:23 - invalid_override
+  error - 'GoogleSignIn.call' ('Future<UserEntity> Function(NoParams)') isn't a valid override of 'UseCase.call' ('UserEntity Function(NoParams)') - lib\features\auth\domain\usecases\google_sign_in.dart:11:22 - invalid_override
+  error - 'LoginWithEmail.call' ('Future<UserEntity> Function(LoginParams)') isn't a valid override of 'UseCase.call' ('UserEntity Function(LoginParams)') - lib\features\auth\domain\usecases\login_with_email.dart:11:22 - invalid_override
+  error - 'RegisterWithEmail.call' ('Future<UserEntity> Function(RegisterParams)') isn't a valid override of 'UseCase.call' ('UserEntity Function(RegisterParams)') - lib\features\auth\domain\usecases\register_with_email.dart:11:22 - invalid_override
+  error - 'VerifyPhoneOtp.call' ('Future<UserEntity> Function(OtpVerificationParams)') isn't a valid override of 'UseCase.call' ('UserEntity Function(OtpVerificationParams)') - lib\features\auth\domain\usecases\verify_phone_otp.dart:11:22 - invalid_override
+warning - Unused import: '../../application/auth_notifier.dart' - lib\features\auth\presentation\pages\forgot_password_page.dart:9:8 - unused_import
+  error - Undefined name 'authNotifierProvider' - lib\features\auth\presentation\pages\forgot_password_page.dart:37:31 - undefined_identifier
+warning - Unused import: '../../application/auth_notifier.dart' - lib\features\auth\presentation\pages\login_page.dart:9:8 - unused_import
+warning - Unused import: '../../application/auth_notifier.dart' - lib\features\auth\presentation\pages\otp_verification_page.dart:9:8 - unused_import
+  error - Undefined name 'authNotifierProvider' - lib\features\auth\presentation\pages\otp_verification_page.dart:41:31 - undefined_identifier
+  error - Methods can't be invoked in constant expressions - lib\features\auth\presentation\pages\otp_verification_page.dart:94:28 - const_eval_method_invocation
+warning - Unused import: '../../application/auth_notifier.dart' - lib\features\auth\presentation\pages\phone_login_page.dart:9:8 - unused_import
+  error - Undefined name 'authNotifierProvider' - lib\features\auth\presentation\pages\phone_login_page.dart:36:31 - undefined_identifier
+warning - Unused import: '../../application/auth_notifier.dart' - lib\features\auth\presentation\pages\register_page.dart:9:8 - unused_import
+  error - Undefined name 'authNotifierProvider' - lib\features\auth\presentation\pages\register_page.dart:45:31 - undefined_identifier
+   info - Use 'rethrow' to rethrow a caught exception - lib\features\community\application\community_notifier.dart:105:7 - use_rethrow_when_possible
+   info - Use 'rethrow' to rethrow a caught exception - lib\features\community\application\community_notifier.dart:206:7 - use_rethrow_when_possible
+   info - Don't return 'null' from a function with a return type of 'void' - lib\features\community\application\community_providers.dart:56:3 - avoid_returning_null_for_void
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\community\data\datasources\community_remote_data_source.dart:3:8 - uri_does_not_exist
+  error - The method 'CacheException' isn't defined for the type 'CommunityRemoteDataSource' - lib\features\community\data\datasources\community_remote_data_source.dart:49:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'CommunityRemoteDataSource' - lib\features\community\data\datasources\community_remote_data_source.dart:97:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'CommunityRemoteDataSource' - lib\features\community\data\datasources\community_remote_data_source.dart:131:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'CommunityRemoteDataSource' - lib\features\community\data\datasources\community_remote_data_source.dart:190:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'CommunityRemoteDataSource' - lib\features\community\data\datasources\community_remote_data_source.dart:211:13 - undefined_method
+  error - Target of URI doesn't exist: '../../domain/repositories/community_repository.dart' - lib\features\community\data\dependency_injection.dart:3:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../datasources/community_remote_data_source.dart' - lib\features\community\data\dependency_injection.dart:4:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../repositories/community_repository_impl.dart' - lib\features\community\data\dependency_injection.dart:5:8 - uri_does_not_exist
+  error - The name 'CommunityRemoteDataSource' isn't a type, so it can't be used as a type argument - lib\features\community\data\dependency_injection.dart:8:52 - non_type_as_type_argument
+  error - The function 'CommunityRemoteDataSource' isn't defined - lib\features\community\data\dependency_injection.dart:9:10 - undefined_function
+  error - The name 'CommunityRepository' isn't a type, so it can't be used as a type argument - lib\features\community\data\dependency_injection.dart:13:46 - non_type_as_type_argument
+  error - The function 'CommunityRepositoryImpl' isn't defined - lib\features\community\data\dependency_injection.dart:15:10 - undefined_function
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\community\data\repositories\community_repository_impl.dart:1:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../../core/errors/failures.dart' - lib\features\community\data\repositories\community_repository_impl.dart:2:8 - uri_does_not_exist
+  error - Undefined class 'Failure' - lib\features\community\data\repositories\community_repository_impl.dart:24:3 - undefined_class
+  error - The name 'NetworkException' isn't defined, so it can't be used in an 'is' expression - lib\features\community\data\repositories\community_repository_impl.dart:26:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\community\data\repositories\community_repository_impl.dart:27:14 - undefined_identifier
+  error - The name 'CacheException' isn't defined, so it can't be used in an 'is' expression - lib\features\community\data\repositories\community_repository_impl.dart:29:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\community\data\repositories\community_repository_impl.dart:30:14 - undefined_identifier
+  error - The name 'AuthenticationException' isn't defined, so it can't be used in an 'is' expression - lib\features\community\data\repositories\community_repository_impl.dart:32:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\community\data\repositories\community_repository_impl.dart:33:14 - undefined_identifier
+  error - Undefined name 'Failure' - lib\features\community\data\repositories\community_repository_impl.dart:35:12 - undefined_identifier
+  error - Target of URI doesn't exist: '../../../core/errors/failures.dart' - lib\features\community\domain\repositories\community_repository.dart:1:8 - uri_does_not_exist
+  error - Undefined class 'Failure' - lib\features\community\domain\repositories\community_repository.dart:10:33 - undefined_class
+  error - Undefined class 'Failure' - lib\features\community\domain\repositories\community_repository.dart:13:9 - undefined_class
+  error - 'AddComment.call' ('Future<CommentEntity> Function(AddCommentParams)') isn't a valid override of 'UseCase.call' ('CommentEntity Function(AddCommentParams)') - lib\features\community\domain\usecases\add_comment.dart:11:25 - invalid_override
+  error - 'CreatePost.call' ('Future<CommunityPostEntity> Function(CreatePostParams)') isn't a valid override of 'UseCase.call' ('CommunityPostEntity Function(CreatePostParams)') - lib\features\community\domain\usecases\create_post.dart:11:31 - invalid_override
+  error - 'GetBadges.call' ('Future<List<UserBadgeEntity>> Function(BadgesParams)') isn't a valid override of 'UseCase.call' ('List<UserBadgeEntity> Function(BadgesParams)') - lib\features\community\domain\usecases\get_badges.dart:11:33 - invalid_override
+  error - 'ToggleLike.call' ('Future<(int, bool)> Function(ToggleLikeParams)') isn't a valid override of 'UseCase.call' ('(int, bool) Function(ToggleLikeParams)') - lib\features\community\domain\usecases\toggle_like.dart:10:23 - invalid_override
+warning - Unused import: '../entities/community_post_entity.dart' - lib\features\community\domain\usecases\usecase.dart:1:8 - unused_import
+  error - The method 'withValues' isn't defined for the type 'MaterialColor' - lib\features\community\presentation\widgets\community_post_card.dart:195:29 - undefined_method
+  error - Undefined class 'LeagueVisibility' - lib\features\fantasy\application\fantasy_notifier.dart:98:14 - undefined_class
+  error - Methods can't be invoked in constant expressions - lib\features\fantasy\application\fantasy_notifier.dart:106:9 - const_eval_method_invocation
+   info - Unnecessary braces in a string interpolation - lib\features\fantasy\application\fantasy_notifier.dart:122:28 - unnecessary_brace_in_string_interps
+  error - Expected to find '(' - lib\features\fantasy\application\fantasy_notifier.dart:139:46 - expected_token
+warning - The value of the local variable 'f' isn't used - lib\features\fantasy\application\fantasy_notifier.dart:144:13 - unused_local_variable
+  error - The named parameter 'message' isn't defined - lib\features\fantasy\application\fantasy_notifier.dart:147:24 - undefined_named_parameter
+  error - Methods can't be invoked in constant expressions - lib\features\fantasy\application\fantasy_notifier.dart:161:9 - const_eval_method_invocation
+  error - Expected to find '(' - lib\features\fantasy\application\fantasy_notifier.dart:197:46 - expected_token
+  error - The named parameter 'message' isn't defined - lib\features\fantasy\application\fantasy_notifier.dart:207:24 - undefined_named_parameter
+  error - Methods must have an explicit list of parameters - lib\features\fantasy\application\fantasy_notifier.dart:397:9 - missing_method_parameters
+   info - Don't return 'null' from a function with a return type of 'void' - lib\features\fantasy\application\fantasy_providers.dart:26:3 - avoid_returning_null_for_void
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:3:8 - uri_does_not_exist
+   info - The declaration '_userDoc' isn't referenced - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:44:43 - unused_element
+  error - The method 'CacheException' isn't defined for the type 'FantasyRemoteDataSource' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:70:13 - undefined_method
+  error - The name 'CacheException' isn't a class - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:81:21 - creation_with_non_type
+  error - The method 'copyWith' isn't defined for the type 'FantasyLeagueModel' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:99:20 - undefined_method
+  error - The name 'CacheException' isn't a type and can't be used in an on-catch clause - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:103:10 - non_type_in_catch_clause
+  error - The method 'CacheException' isn't defined for the type 'FantasyRemoteDataSource' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:106:13 - undefined_method
+  error - The name 'CacheException' isn't a class - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:114:21 - creation_with_non_type
+  error - The method 'CacheException' isn't defined for the type 'FantasyRemoteDataSource' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:118:13 - undefined_method
+  error - The name 'CacheException' isn't a class - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:125:21 - creation_with_non_type
+  error - The method 'CacheException' isn't defined for the type 'FantasyRemoteDataSource' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:141:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'FantasyRemoteDataSource' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:156:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'FantasyRemoteDataSource' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:192:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'FantasyRemoteDataSource' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:213:13 - undefined_method
+  error - The name 'CacheException' isn't a class - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:220:21 - creation_with_non_type
+  error - The name 'CacheException' isn't a class - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:241:21 - creation_with_non_type
+  error - The name 'CacheException' isn't defined, so it can't be used in an 'is' expression - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:257:16 - type_test_with_undefined_name
+  error - The method 'CacheException' isn't defined for the type 'FantasyRemoteDataSource' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:258:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'FantasyRemoteDataSource' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:298:13 - undefined_method
+  error - The name 'CacheException' isn't a class - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:325:21 - creation_with_non_type
+  error - The name 'CacheException' isn't defined, so it can't be used in an 'is' expression - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:338:16 - type_test_with_undefined_name
+  error - The method 'CacheException' isn't defined for the type 'FantasyRemoteDataSource' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:339:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'FantasyRemoteDataSource' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:411:13 - undefined_method
+  error - The name 'CacheException' isn't a class - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:452:21 - creation_with_non_type
+  error - The name 'CacheException' isn't defined, so it can't be used in an 'is' expression - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:476:16 - type_test_with_undefined_name
+  error - The method 'CacheException' isn't defined for the type 'FantasyRemoteDataSource' - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:477:13 - undefined_method
+  error - The name 'CacheException' isn't a class - lib\features\fantasy\data\datasources\fantasy_remote_data_source.dart:485:19 - creation_with_non_type
+  error - Target of URI doesn't exist: '../../domain/repositories/fantasy_repository.dart' - lib\features\fantasy\data\dependency_injection.dart:3:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../datasources/fantasy_remote_data_source.dart' - lib\features\fantasy\data\dependency_injection.dart:4:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../engine/scoring_engine.dart' - lib\features\fantasy\data\dependency_injection.dart:5:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../repositories/fantasy_repository_impl.dart' - lib\features\fantasy\data\dependency_injection.dart:6:8 - uri_does_not_exist
+  error - The name 'ScoringEngine' isn't a type, so it can't be used as a type argument - lib\features\fantasy\data\dependency_injection.dart:9:40 - non_type_as_type_argument
+  error - The name 'ScoringEngine' isn't a class - lib\features\fantasy\data\dependency_injection.dart:10:16 - creation_with_non_type
+  error - The name 'FantasyRemoteDataSource' isn't a type, so it can't be used as a type argument - lib\features\fantasy\data\dependency_injection.dart:15:14 - non_type_as_type_argument
+  error - The function 'FantasyRemoteDataSource' isn't defined - lib\features\fantasy\data\dependency_injection.dart:16:10 - undefined_function
+  error - The name 'FantasyRepository' isn't a type, so it can't be used as a type argument - lib\features\fantasy\data\dependency_injection.dart:20:44 - non_type_as_type_argument
+  error - The function 'FantasyRepositoryImpl' isn't defined - lib\features\fantasy\data\dependency_injection.dart:22:10 - undefined_function
+warning - The value of the local variable 'points' isn't used - lib\features\fantasy\data\engine\scoring_engine.dart:31:9 - unused_local_variable
+  error - The final variable 'stats' can only be set once - lib\features\fantasy\data\engine\scoring_engine.dart:39:9 - assignment_to_final_local
+  error - The final variable 'stats' can only be set once - lib\features\fantasy\data\engine\scoring_engine.dart:45:9 - assignment_to_final_local
+  error - The final variable 'stats' can only be set once - lib\features\fantasy\data\engine\scoring_engine.dart:52:9 - assignment_to_final_local
+  error - The final variable 'stats' can only be set once - lib\features\fantasy\data\engine\scoring_engine.dart:59:9 - assignment_to_final_local
+  error - The final variable 'stats' can only be set once - lib\features\fantasy\data\engine\scoring_engine.dart:66:9 - assignment_to_final_local
+  error - The final variable 'stats' can only be set once - lib\features\fantasy\data\engine\scoring_engine.dart:76:9 - assignment_to_final_local
+  error - The final variable 'stats' can only be set once - lib\features\fantasy\data\engine\scoring_engine.dart:86:9 - assignment_to_final_local
+  error - The final variable 'stats' can only be set once - lib\features\fantasy\data\engine\scoring_engine.dart:97:9 - assignment_to_final_local
+warning - Unused import: '../../domain/entities/fantasy_player_entity.dart' - lib\features\fantasy\data\models\fantasy_team_model.dart:1:8 - unused_import
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\fantasy\data\repositories\fantasy_repository_impl.dart:1:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../../core/errors/failures.dart' - lib\features\fantasy\data\repositories\fantasy_repository_impl.dart:2:8 - uri_does_not_exist
+  error - Undefined class 'Failure' - lib\features\fantasy\data\repositories\fantasy_repository_impl.dart:25:3 - undefined_class
+  error - The name 'NetworkException' isn't defined, so it can't be used in an 'is' expression - lib\features\fantasy\data\repositories\fantasy_repository_impl.dart:27:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\fantasy\data\repositories\fantasy_repository_impl.dart:28:14 - undefined_identifier
+  error - The name 'CacheException' isn't defined, so it can't be used in an 'is' expression - lib\features\fantasy\data\repositories\fantasy_repository_impl.dart:30:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\fantasy\data\repositories\fantasy_repository_impl.dart:31:14 - undefined_identifier
+  error - The name 'AuthenticationException' isn't defined, so it can't be used in an 'is' expression - lib\features\fantasy\data\repositories\fantasy_repository_impl.dart:33:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\fantasy\data\repositories\fantasy_repository_impl.dart:34:14 - undefined_identifier
+  error - Undefined name 'Failure' - lib\features\fantasy\data\repositories\fantasy_repository_impl.dart:36:12 - undefined_identifier
+  error - Target of URI doesn't exist: '../../../core/errors/failures.dart' - lib\features\fantasy\domain\repositories\fantasy_repository.dart:1:8 - uri_does_not_exist
+  error - Undefined class 'Failure' - lib\features\fantasy\domain\repositories\fantasy_repository.dart:11:31 - undefined_class
+  error - Undefined class 'Failure' - lib\features\fantasy\domain\repositories\fantasy_repository.dart:14:9 - undefined_class
+  error - The argument type 'void Function(dynamic)' can't be assigned to the parameter type 'void Function()'.  - lib\features\fantasy\presentation\pages\fantasy_hub_page.dart:145:24 - argument_type_not_assignable
+warning - Unused import: '../widgets/player_pick_card.dart' - lib\features\fantasy\presentation\pages\player_stats_hub_page.dart:8:8 - unused_import
+  error - The named parameter 'itemBuilder' is required, but there's no corresponding argument - lib\features\fantasy\presentation\pages\player_stats_hub_page.dart:41:11 - missing_required_argument
+  error - The named parameter 'children' isn't defined - lib\features\fantasy\presentation\pages\player_stats_hub_page.dart:46:13 - undefined_named_parameter
+warning - The value of the local variable 'budget' isn't used - lib\features\fantasy\presentation\pages\team_management_page.dart:137:11 - unused_local_variable
+   info - Don't use 'BuildContext's across async gaps - lib\features\fantasy\presentation\pages\team_management_page.dart:144:37 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\features\fantasy\presentation\pages\team_management_page.dart:150:37 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\features\fantasy\presentation\pages\team_management_page.dart:156:37 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\features\fantasy\presentation\pages\team_management_page.dart:162:37 - use_build_context_synchronously
+  error - Target of URI doesn't exist: '../../../core/widgets/app_button.dart' - lib\features\fantasy\presentation\widgets\create_league_dialog.dart:3:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../../core/widgets/app_text_field.dart' - lib\features\fantasy\presentation\widgets\create_league_dialog.dart:4:8 - uri_does_not_exist
+  error - The method 'AppTextField' isn't defined for the type '_CreateLeagueDialogState' - lib\features\fantasy\presentation\widgets\create_league_dialog.dart:39:13 - undefined_method
+  error - The method 'AppTextField' isn't defined for the type '_CreateLeagueDialogState' - lib\features\fantasy\presentation\widgets\create_league_dialog.dart:45:13 - undefined_method
+  error - The method 'AppTextField' isn't defined for the type '_CreateLeagueDialogState' - lib\features\fantasy\presentation\widgets\create_league_dialog.dart:51:13 - undefined_method
+  error - Target of URI doesn't exist: '../../../core/widgets/app_text_field.dart' - lib\features\fantasy\presentation\widgets\join_league_dialog.dart:3:8 - uri_does_not_exist
+  error - The method 'AppTextField' isn't defined for the type '_JoinLeagueDialogState' - lib\features\fantasy\presentation\widgets\join_league_dialog.dart:32:13 - undefined_method
+  error - The method 'AppTextField' isn't defined for the type '_JoinLeagueDialogState' - lib\features\fantasy\presentation\widgets\join_league_dialog.dart:38:13 - undefined_method
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\fantasy\presentation\widgets\leaderboard_table.dart:42:42 - undefined_method
+   info - Use 'const' with the constructor to improve performance - lib\features\fantasy\presentation\widgets\player_pick_card.dart:61:25 - prefer_const_constructors
+   info - The declaration 'fold' isn't referenced - lib\features\home\application\home_notifier.dart:100:5 - unused_element
+   info - The null check operator shouldn't be used on a variable whose type is a potentially nullable type parameter - lib\features\home\application\home_notifier.dart:101:40 - null_check_on_nullable_type_parameter
+warning - Unused import: '../../../core/services/news_cache_service.dart' - lib\features\home\data\dependency_injection.dart:4:8 - unused_import
+warning - Unused import: '../../domain/entities/article_entity.dart' - lib\features\home\presentation\pages\home_page.dart:8:8 - unused_import
+warning - Unused import: '../../domain/entities/match_entity.dart' - lib\features\home\presentation\pages\home_page.dart:10:8 - unused_import
+warning - Unused import: '../../domain/entities/player_entity.dart' - lib\features\home\presentation\pages\home_page.dart:11:8 - unused_import
+warning - Unused import: '../../domain/entities/prediction_entity.dart' - lib\features\home\presentation\pages\home_page.dart:12:8 - unused_import
+warning - Unused import: 'package:intl/intl.dart' - lib\features\home\presentation\widgets\live_match_card.dart:3:8 - unused_import
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\home\presentation\widgets\news_card.dart:33:46 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\home\presentation\widgets\news_card.dart:43:44 - deprecated_member_use
+   info - Unnecessary use of string interpolation - lib\features\home\presentation\widgets\player_of_day_card.dart:44:21 - unnecessary_string_interpolations
+   info - Unnecessary use of string interpolation - lib\features\home\presentation\widgets\player_of_day_card.dart:61:27 - unnecessary_string_interpolations
+warning - Unused import: '../domain/entities/fixture_entity.dart' - lib\features\livescore\application\livescore_notifier.dart:7:8 - unused_import
+warning - Unused import: '../domain/entities/heatmap_entity.dart' - lib\features\livescore\application\livescore_notifier.dart:8:8 - unused_import
+warning - Unused import: '../domain/entities/lineup_entity.dart' - lib\features\livescore\application\livescore_notifier.dart:9:8 - unused_import
+warning - Unused import: '../domain/entities/match_detail_entity.dart' - lib\features\livescore\application\livescore_notifier.dart:10:8 - unused_import
+warning - Unused import: '../domain/entities/match_statistics_entity.dart' - lib\features\livescore\application\livescore_notifier.dart:11:8 - unused_import
+warning - Unused import: '../domain/entities/match_timeline_entity.dart' - lib\features\livescore\application\livescore_notifier.dart:12:8 - unused_import
+warning - Unused import: '../domain/entities/standings_entity.dart' - lib\features\livescore\application\livescore_notifier.dart:13:8 - unused_import
+warning - The value of the local variable 'setsWonHome' isn't used - lib\features\livescore\data\datasources\api_sports_data_source.dart:226:11 - unused_local_variable
+   info - The 'if' statement could be replaced by a null-aware assignment - lib\features\livescore\data\datasources\api_sports_data_source.dart:314:5 - prefer_conditional_assignment
+warning - Unused import: '../../../../core/services/live_scores_cache_service.dart' - lib\features\livescore\data\dependency_injection.dart:6:8 - unused_import
+warning - Unused import: '../../../home/domain/entities/match_entity.dart' - lib\features\livescore\data\models\fixture_model.dart:2:8 - unused_import
+warning - Unused import: '../../../home/domain/entities/match_entity.dart' - lib\features\livescore\data\models\standings_model.dart:1:8 - unused_import
+warning - Unused import: '../models/heatmap_model.dart' - lib\features\livescore\data\providers\football_data_org_provider.dart:14:8 - unused_import
+   info - The 'if' statement could be replaced by a null-aware assignment - lib\features\livescore\data\repositories\livescore_repository_impl.dart:38:5 - prefer_conditional_assignment
+warning - Unused import: '../../../home/domain/entities/match_entity.dart' - lib\features\livescore\domain\entities\standings_entity.dart:3:8 - unused_import
+  error - 'GetFixtures.call' ('Future<List<FixtureEntity>> Function(CompetitionIdParams)') isn't a valid override of 'UseCase.call' ('List<FixtureEntity> Function(CompetitionIdParams)') - lib\features\livescore\domain\usecases\get_fixtures.dart:11:31 - invalid_override
+  error - 'GetMatchDetail.call' ('Future<MatchDetailEntity> Function(MatchIdParams)') isn't a valid override of 'UseCase.call' ('MatchDetailEntity Function(MatchIdParams)') - lib\features\livescore\domain\usecases\get_match_detail.dart:11:29 - invalid_override
+  error - 'GetMatchHeatmap.call' ('Future<List<HeatmapPointEntity>> Function(MatchIdParams)') isn't a valid override of 'UseCase.call' ('List<HeatmapPointEntity> Function(MatchIdParams)') - lib\features\livescore\domain\usecases\get_match_heatmap.dart:12:36 - invalid_override
+  error - 'GetMatchLineups.call' ('Future<MatchLineupEntity> Function(MatchIdParams)') isn't a valid override of 'UseCase.call' ('MatchLineupEntity Function(MatchIdParams)') - lib\features\livescore\domain\usecases\get_match_lineups.dart:11:29 - invalid_override
+  error - 'GetMatchStatistics.call' ('Future<List<MatchStatisticEntity>> Function(MatchIdParams)') isn't a valid override of 'UseCase.call' ('List<MatchStatisticEntity> Function(MatchIdParams)') - lib\features\livescore\domain\usecases\get_match_statistics.dart:12:38 - invalid_override
+  error - 'GetMatchTimeline.call' ('Future<List<MatchEventEntity>> Function(MatchIdParams)') isn't a valid override of 'UseCase.call' ('List<MatchEventEntity> Function(MatchIdParams)') - lib\features\livescore\domain\usecases\get_match_timeline.dart:11:34 - invalid_override
+  error - 'GetStandings.call' ('Future<List<StandingsRowEntity>> Function(CompetitionIdParams)') isn't a valid override of 'UseCase.call' ('List<StandingsRowEntity> Function(CompetitionIdParams)') - lib\features\livescore\domain\usecases\get_standings.dart:11:36 - invalid_override
+  error - 'GetLiveMatches.call' ('Future<List<MatchEntity>> Function(NoParams)') isn't a valid override of 'UseCase.call' ('List<MatchEntity> Function(NoParams)') - lib\features\livescore\domain\usecases\live_scores.dart:11:29 - invalid_override
+warning - Unused import: '../../application/livescore_notifier.dart' - lib\features\livescore\presentation\pages\live_scores_page.dart:6:8 - unused_import
+warning - Unused import: '../../application/livescore_notifier.dart' - lib\features\livescore\presentation\pages\match_detail_page.dart:4:8 - unused_import
+  error - The name 'MatchLineupEntity' isn't a class - lib\features\livescore\presentation\pages\match_detail_page.dart:94:27 - creation_with_non_type
+warning - Unused import: '../../application/sports_feed_notifier.dart' - lib\features\livescore\presentation\pages\sports_feed_page.dart:7:8 - unused_import
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\livescore\presentation\widgets\heatmap_view.dart:77:30 - undefined_method
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\livescore\presentation\widgets\heatmap_view.dart:135:12 - undefined_method
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\livescore\presentation\widgets\lineups_view.dart:123:52 - deprecated_member_use
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\livescore\presentation\widgets\match_events_view.dart:102:28 - undefined_method
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\livescore\presentation\widgets\match_events_view.dart:147:28 - undefined_method
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\livescore\presentation\widgets\match_statistics_view.dart:115:63 - deprecated_member_use
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\livescore\presentation\widgets\match_timeline_view.dart:80:28 - undefined_method
+   info - Unnecessary use of double quotes - lib\features\livescore\presentation\widgets\match_timeline_view.dart:108:11 - prefer_single_quotes
+warning - Unused import: '../../../home/domain/entities/match_entity.dart' - lib\features\livescore\presentation\widgets\sport_event_card.dart:4:8 - unused_import
+   info - Use 'rethrow' to rethrow a caught exception - lib\features\notifications\application\notification_notifier.dart:183:7 - use_rethrow_when_possible
+warning - Unused import: '../../../core/services/notification_service.dart' - lib\features\notifications\application\notification_providers.dart:5:8 - unused_import
+   info - Don't return 'null' from a function with a return type of 'void' - lib\features\notifications\application\notification_providers.dart:78:3 - avoid_returning_null_for_void
+  error - Target of URI doesn't exist: '../../domain/repositories/notification_repository.dart' - lib\features\notifications\data\dependency_injection.dart:3:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/get_notification_preferences.dart' - lib\features\notifications\data\dependency_injection.dart:4:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/save_notification_preferences.dart' - lib\features\notifications\data\dependency_injection.dart:5:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/watch_notification_preferences.dart' - lib\features\notifications\data\dependency_injection.dart:6:8 - uri_does_not_exist
+  error - The name 'NotificationRepository' isn't a type, so it can't be used as a type argument - lib\features\notifications\data\dependency_injection.dart:17:49 - non_type_as_type_argument
+  error - The name 'WatchNotificationPreferences' isn't a type, so it can't be used as a type argument - lib\features\notifications\data\dependency_injection.dart:25:14 - non_type_as_type_argument
+  error - The function 'WatchNotificationPreferences' isn't defined - lib\features\notifications\data\dependency_injection.dart:26:12 - undefined_function
+  error - The name 'GetNotificationPreferences' isn't a type, so it can't be used as a type argument - lib\features\notifications\data\dependency_injection.dart:32:14 - non_type_as_type_argument
+  error - The function 'GetNotificationPreferences' isn't defined - lib\features\notifications\data\dependency_injection.dart:33:12 - undefined_function
+  error - The name 'SaveNotificationPreferences' isn't a type, so it can't be used as a type argument - lib\features\notifications\data\dependency_injection.dart:39:14 - non_type_as_type_argument
+  error - The function 'SaveNotificationPreferences' isn't defined - lib\features\notifications\data\dependency_injection.dart:40:12 - undefined_function
+warning - Unused import: '../../../../core/errors/failures.dart' - lib\features\notifications\domain\repositories\notification_repository.dart:1:8 - unused_import
+   info - Use 'const' with the constructor to improve performance - lib\features\notifications\presentation\pages\notifications_page.dart:68:21 - prefer_const_constructors
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\notifications\presentation\pages\notifications_page.dart:136:34 - undefined_method
+warning - The value of the local variable 'theme' isn't used - lib\features\notifications\presentation\widgets\alert_banner.dart:23:11 - unused_local_variable
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\notifications\presentation\widgets\alert_banner.dart:28:20 - undefined_method
+warning - Unused import: 'package:flutter/foundation.dart' - lib\features\payments\application\payment_notifier.dart:3:8 - unused_import
+warning - The value of the field '_repository' isn't used - lib\features\payments\application\payment_notifier.dart:40:27 - unused_field
+  error - The method 'SubscriptionParams' isn't defined for the type 'PaymentNotifier' - lib\features\payments\application\payment_notifier.dart:53:51 - undefined_method
+  error - The method 'TransactionHistoryParams' isn't defined for the type 'PaymentNotifier' - lib\features\payments\application\payment_notifier.dart:55:9 - undefined_method
+  error - The method 'SubscriptionParams' isn't defined for the type 'PaymentNotifier' - lib\features\payments\application\payment_notifier.dart:73:43 - undefined_method
+  error - The method 'InitTransactionParams' isn't defined for the type 'PaymentNotifier' - lib\features\payments\application\payment_notifier.dart:100:9 - undefined_method
+  error - The method 'VerifyTransactionParams' isn't defined for the type 'PaymentNotifier' - lib\features\payments\application\payment_notifier.dart:131:9 - undefined_method
+  error - The method 'TransactionHistoryParams' isn't defined for the type 'PaymentNotifier' - lib\features\payments\application\payment_notifier.dart:136:11 - undefined_method
+warning - Unused import: '../../auth/application/auth_providers.dart' - lib\features\payments\application\payment_providers.dart:3:8 - unused_import
+warning - Unused import: '../../auth/domain/entities/user_entity.dart' - lib\features\payments\application\payment_providers.dart:4:8 - unused_import
+  error - Expected a method, getter, setter or operator declaration - lib\features\payments\application\payment_state.dart:57:1 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\features\payments\application\payment_state.dart:57:2 - expected_executable
+   info - An uninitialized variable should have an explicit type annotation - lib\features\payments\application\payment_state.dart:57:3 - prefer_typing_uninitialized_variables
+  error - Expected to find ';' - lib\features\payments\application\payment_state.dart:57:3 - expected_token
+  error - Variables must be declared using the keywords 'const', 'final', 'var' or a type name - lib\features\payments\application\payment_state.dart:57:3 - missing_const_final_var_or_type
+  error - Expected a method, getter, setter or operator declaration - lib\features\payments\application\payment_state.dart:57:10 - expected_executable
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\payments\data\datasources\payment_local_data_source.dart:3:8 - uri_does_not_exist
+  error - The method 'CacheException' isn't defined for the type 'PaymentLocalDataSource' - lib\features\payments\data\datasources\payment_local_data_source.dart:35:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'PaymentLocalDataSource' - lib\features\payments\data\datasources\payment_local_data_source.dart:49:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'PaymentLocalDataSource' - lib\features\payments\data\datasources\payment_local_data_source.dart:60:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'PaymentLocalDataSource' - lib\features\payments\data\datasources\payment_local_data_source.dart:92:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'PaymentLocalDataSource' - lib\features\payments\data\datasources\payment_local_data_source.dart:108:13 - undefined_method
+  error - Target of URI doesn't exist: '../../../core/config/app_config.dart' - lib\features\payments\data\datasources\paystack_api_data_source.dart:7:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\payments\data\datasources\paystack_api_data_source.dart:8:8 - uri_does_not_exist
+  error - Undefined name 'AppConfig' - lib\features\payments\data\datasources\paystack_api_data_source.dart:24:31 - undefined_identifier
+  error - Undefined name 'AppConfig' - lib\features\payments\data\datasources\paystack_api_data_source.dart:26:26 - undefined_identifier
+  error - Undefined name 'AppConfig' - lib\features\payments\data\datasources\paystack_api_data_source.dart:28:26 - undefined_identifier
+  error - The name 'NetworkException' isn't a class - lib\features\payments\data\datasources\paystack_api_data_source.dart:41:19 - creation_with_non_type
+  error - The name 'ServerException' isn't a class - lib\features\payments\data\datasources\paystack_api_data_source.dart:82:21 - creation_with_non_type
+  error - The name 'AppException' isn't a type and can't be used in an on-catch clause - lib\features\payments\data\datasources\paystack_api_data_source.dart:98:10 - non_type_in_catch_clause
+warning - Dead code: This on-catch block won't be executed because 'SocketException' is a subtype of 'InvalidType' and hence will have been caught already - lib\features\payments\data\datasources\paystack_api_data_source.dart:100:7 - dead_code_on_catch_subtype
+  error - The name 'NetworkException' isn't a class - lib\features\payments\data\datasources\paystack_api_data_source.dart:101:19 - creation_with_non_type
+  error - The name 'NetworkException' isn't a class - lib\features\payments\data\datasources\paystack_api_data_source.dart:105:19 - creation_with_non_type
+  error - The method 'ServerException' isn't defined for the type 'PaystackApiDataSource' - lib\features\payments\data\datasources\paystack_api_data_source.dart:107:13 - undefined_method
+  error - The name 'AppException' isn't a type and can't be used in an on-catch clause - lib\features\payments\data\datasources\paystack_api_data_source.dart:150:10 - non_type_in_catch_clause
+warning - Dead code: This on-catch block won't be executed because 'SocketException' is a subtype of 'InvalidType' and hence will have been caught already - lib\features\payments\data\datasources\paystack_api_data_source.dart:152:7 - dead_code_on_catch_subtype
+  error - The name 'NetworkException' isn't a class - lib\features\payments\data\datasources\paystack_api_data_source.dart:153:19 - creation_with_non_type
+  error - The name 'NetworkException' isn't a class - lib\features\payments\data\datasources\paystack_api_data_source.dart:157:19 - creation_with_non_type
+  error - The method 'ServerException' isn't defined for the type 'PaystackApiDataSource' - lib\features\payments\data\datasources\paystack_api_data_source.dart:159:13 - undefined_method
+  error - The name 'AuthenticationException' isn't a class - lib\features\payments\data\datasources\paystack_api_data_source.dart:169:19 - creation_with_non_type
+  error - The name 'ServerException' isn't a class - lib\features\payments\data\datasources\paystack_api_data_source.dart:171:19 - creation_with_non_type
+  error - The name 'ServerException' isn't a class - lib\features\payments\data\datasources\paystack_api_data_source.dart:173:19 - creation_with_non_type
+  error - The name 'NetworkException' isn't a class - lib\features\payments\data\datasources\paystack_api_data_source.dart:175:17 - creation_with_non_type
+  error - Target of URI doesn't exist: '../../domain/repositories/payment_repository.dart' - lib\features\payments\data\dependency_injection.dart:3:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/get_subscription.dart' - lib\features\payments\data\dependency_injection.dart:4:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/get_transaction_history.dart' - lib\features\payments\data\dependency_injection.dart:5:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/initialize_transaction.dart' - lib\features\payments\data\dependency_injection.dart:6:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/verify_transaction.dart' - lib\features\payments\data\dependency_injection.dart:7:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/usecases/watch_subscription.dart' - lib\features\payments\data\dependency_injection.dart:8:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../datasources/payment_local_data_source.dart' - lib\features\payments\data\dependency_injection.dart:9:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../datasources/paystack_api_data_source.dart' - lib\features\payments\data\dependency_injection.dart:10:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../repositories/payment_repository_impl.dart' - lib\features\payments\data\dependency_injection.dart:11:8 - uri_does_not_exist
+  error - The name 'PaystackApiDataSource' isn't a type, so it can't be used as a type argument - lib\features\payments\data\dependency_injection.dart:14:48 - non_type_as_type_argument
+  error - The function 'PaystackApiDataSource' isn't defined - lib\features\payments\data\dependency_injection.dart:15:10 - undefined_function
+  error - The name 'PaymentLocalDataSource' isn't a type, so it can't be used as a type argument - lib\features\payments\data\dependency_injection.dart:19:49 - non_type_as_type_argument
+  error - The function 'PaymentLocalDataSource' isn't defined - lib\features\payments\data\dependency_injection.dart:20:10 - undefined_function
+  error - The name 'PaymentRepository' isn't a type, so it can't be used as a type argument - lib\features\payments\data\dependency_injection.dart:24:44 - non_type_as_type_argument
+  error - The function 'PaymentRepositoryImpl' isn't defined - lib\features\payments\data\dependency_injection.dart:25:10 - undefined_function
+  error - The name 'InitializeTransaction' isn't a type, so it can't be used as a type argument - lib\features\payments\data\dependency_injection.dart:33:14 - non_type_as_type_argument
+  error - The function 'InitializeTransaction' isn't defined - lib\features\payments\data\dependency_injection.dart:34:10 - undefined_function
+  error - The name 'VerifyTransaction' isn't a type, so it can't be used as a type argument - lib\features\payments\data\dependency_injection.dart:37:51 - non_type_as_type_argument
+  error - The function 'VerifyTransaction' isn't defined - lib\features\payments\data\dependency_injection.dart:38:10 - undefined_function
+  error - The name 'GetSubscription' isn't a type, so it can't be used as a type argument - lib\features\payments\data\dependency_injection.dart:41:49 - non_type_as_type_argument
+  error - The function 'GetSubscription' isn't defined - lib\features\payments\data\dependency_injection.dart:42:10 - undefined_function
+  error - The name 'WatchSubscription' isn't a type, so it can't be used as a type argument - lib\features\payments\data\dependency_injection.dart:45:51 - non_type_as_type_argument
+  error - The function 'WatchSubscription' isn't defined - lib\features\payments\data\dependency_injection.dart:46:10 - undefined_function
+  error - The name 'GetTransactionHistory' isn't a type, so it can't be used as a type argument - lib\features\payments\data\dependency_injection.dart:50:14 - non_type_as_type_argument
+  error - The function 'GetTransactionHistory' isn't defined - lib\features\payments\data\dependency_injection.dart:51:10 - undefined_function
+  error - Expected a method, getter, setter or operator declaration - lib\features\payments\data\dependency_injection.dart:53:1 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\features\payments\data\dependency_injection.dart:53:2 - expected_executable
+   info - An uninitialized variable should have an explicit type annotation - lib\features\payments\data\dependency_injection.dart:53:3 - prefer_typing_uninitialized_variables
+  error - Expected to find ';' - lib\features\payments\data\dependency_injection.dart:53:3 - expected_token
+  error - Variables must be declared using the keywords 'const', 'final', 'var' or a type name - lib\features\payments\data\dependency_injection.dart:53:3 - missing_const_final_var_or_type
+  error - Expected a method, getter, setter or operator declaration - lib\features\payments\data\dependency_injection.dart:53:10 - expected_executable
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\payments\data\repositories\payment_repository_impl.dart:1:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../../core/errors/failures.dart' - lib\features\payments\data\repositories\payment_repository_impl.dart:2:8 - uri_does_not_exist
+  error - Undefined class 'Failure' - lib\features\payments\data\repositories\payment_repository_impl.dart:32:3 - undefined_class
+  error - The name 'NetworkException' isn't defined, so it can't be used in an 'is' expression - lib\features\payments\data\repositories\payment_repository_impl.dart:34:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\payments\data\repositories\payment_repository_impl.dart:35:14 - undefined_identifier
+  error - The name 'AuthenticationException' isn't defined, so it can't be used in an 'is' expression - lib\features\payments\data\repositories\payment_repository_impl.dart:37:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\payments\data\repositories\payment_repository_impl.dart:38:14 - undefined_identifier
+  error - The name 'CacheException' isn't defined, so it can't be used in an 'is' expression - lib\features\payments\data\repositories\payment_repository_impl.dart:40:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\payments\data\repositories\payment_repository_impl.dart:41:14 - undefined_identifier
+  error - The name 'ServerException' isn't defined, so it can't be used in an 'is' expression - lib\features\payments\data\repositories\payment_repository_impl.dart:43:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\payments\data\repositories\payment_repository_impl.dart:45:14 - undefined_identifier
+  error - Undefined name 'Failure' - lib\features\payments\data\repositories\payment_repository_impl.dart:47:12 - undefined_identifier
+  error - Target of URI doesn't exist: '../../../core/errors/failures.dart' - lib\features\payments\domain\repositories\payment_repository.dart:1:8 - uri_does_not_exist
+  error - Undefined class 'Failure' - lib\features\payments\domain\repositories\payment_repository.dart:10:31 - undefined_class
+  error - Undefined class 'Failure' - lib\features\payments\domain\repositories\payment_repository.dart:13:9 - undefined_class
+  error - 'GetSubscription.call' ('Future<SubscriptionEntity> Function(SubscriptionParams)') isn't a valid override of 'UseCase.call' ('SubscriptionEntity Function(SubscriptionParams)') - lib\features\payments\domain\usecases\get_subscription.dart:11:30 - invalid_override
+  error - 'GetTransactionHistory.call' ('Future<List<TransactionEntity>> Function(TransactionHistoryParams)') isn't a valid override of 'UseCase.call' ('List<TransactionEntity> Function(TransactionHistoryParams)') - lib\features\payments\domain\usecases\get_transaction_history.dart:12:35 - invalid_override
+  error - 'InitializeTransaction.call' ('Future<TransactionEntity> Function(InitTransactionParams)') isn't a valid override of 'UseCase.call' ('TransactionEntity Function(InitTransactionParams)') - lib\features\payments\domain\usecases\initialize_transaction.dart:12:29 - invalid_override
+  error - 'VerifyTransaction.call' ('Future<TransactionEntity> Function(VerifyTransactionParams)') isn't a valid override of 'UseCase.call' ('TransactionEntity Function(VerifyTransactionParams)') - lib\features\payments\domain\usecases\verify_transaction.dart:12:29 - invalid_override
+  error - Target of URI doesn't exist: '../../../core/widgets/app_button.dart' - lib\features\payments\presentation\pages\checkout_page.dart:4:8 - uri_does_not_exist
+  error - The method 'AppButton' isn't defined for the type '_CheckoutLauncherPageState' - lib\features\payments\presentation\pages\checkout_page.dart:61:13 - undefined_method
+  error - The method 'AppButton' isn't defined for the type '_CheckoutLauncherPageState' - lib\features\payments\presentation\pages\checkout_page.dart:71:13 - undefined_method
+  error - Undefined name 'currentUserProvider' - lib\features\payments\presentation\pages\checkout_page.dart:104:27 - undefined_identifier
+  error - Target of URI doesn't exist: '../../../core/widgets/app_button.dart' - lib\features\payments\presentation\pages\premium_page.dart:4:8 - uri_does_not_exist
+warning - Unused import: '../../domain/entities/transaction_entity.dart' - lib\features\payments\presentation\pages\premium_page.dart:7:8 - unused_import
+  error - The method 'AppButton' isn't defined for the type '_PremiumPageState' - lib\features\payments\presentation\pages\premium_page.dart:75:11 - undefined_method
+  error - Undefined name 'currentUserProvider' - lib\features\payments\presentation\pages\premium_page.dart:87:27 - undefined_identifier
+   info - Use 'const' with the constructor to improve performance - lib\features\payments\presentation\pages\profile_page.dart:119:9 - prefer_const_constructors
+  error - Target of URI doesn't exist: '../../../core/widgets/app_button.dart' - lib\features\payments\presentation\widgets\donation_sheet.dart:5:8 - uri_does_not_exist
+  error - Undefined name 'currentUserProvider' - lib\features\payments\presentation\widgets\donation_sheet.dart:58:27 - undefined_identifier
+  error - The method 'AppButton' isn't defined for the type '_DonationSheetState' - lib\features\payments\presentation\widgets\donation_sheet.dart:160:11 - undefined_method
+warning - Unused import: '../../auth/application/auth_providers.dart' - lib\features\predictions\application\prediction_notifier.dart:4:8 - unused_import
+warning - Unused import: '../domain/entities/user_vote_entity.dart' - lib\features\predictions\application\prediction_notifier.dart:9:8 - unused_import
+warning - The value of the local variable 'voteCounts' isn't used - lib\features\predictions\application\prediction_notifier.dart:136:13 - unused_local_variable
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:3:8 - uri_does_not_exist
+warning - Unused import: '../models/prediction_model.dart' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:10:8 - unused_import
+   info - The declaration '_historyCollection' isn't referenced - lib\features\predictions\data\datasources\prediction_local_data_source.dart:22:49 - unused_element
+  error - The method 'CacheException' isn't defined for the type 'PredictionLocalDataSource' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:43:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'PredictionLocalDataSource' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:68:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'PredictionLocalDataSource' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:83:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'PredictionLocalDataSource' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:119:13 - undefined_method
+  error - Conditions must have a static type of 'bool' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:146:35 - non_bool_condition
+  error - Expected an identifier - lib\features\predictions\data\datasources\prediction_local_data_source.dart:146:72 - missing_identifier
+  error - Expected to find ':' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:146:72 - expected_token
+  error - The method 'CacheException' isn't defined for the type 'PredictionLocalDataSource' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:149:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'PredictionLocalDataSource' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:169:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'PredictionLocalDataSource' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:186:13 - undefined_method
+   info - The type of the right operand ('String') isn't a subtype or a supertype of the left operand ('List<String>') - lib\features\predictions\data\datasources\prediction_local_data_source.dart:208:75 - unrelated_type_equality_checks
+  error - Expected an identifier - lib\features\predictions\data\datasources\prediction_local_data_source.dart:211:27 - missing_identifier
+  error - Expected to find ':' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:211:27 - expected_token
+  error - The method 'CacheException' isn't defined for the type 'PredictionLocalDataSource' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:218:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'PredictionLocalDataSource' - lib\features\predictions\data\datasources\prediction_local_data_source.dart:255:13 - undefined_method
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\predictions\data\datasources\prediction_remote_data_source.dart:1:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../home/domain/entities/match_entity.dart' - lib\features\predictions\data\datasources\prediction_remote_data_source.dart:2:8 - uri_does_not_exist
+  error - Undefined class 'MatchEntity' - lib\features\predictions\data\datasources\prediction_remote_data_source.dart:23:14 - undefined_class
+   info - Uses 'await' on an instance of 'MatchPredictionEntity', which is not a subtype of 'Future' - lib\features\predictions\data\datasources\prediction_remote_data_source.dart:28:14 - await_only_futures
+  error - The method 'ServerException' isn't defined for the type 'PredictionRemoteDataSource' - lib\features\predictions\data\datasources\prediction_remote_data_source.dart:34:13 - undefined_method
+  error - Target of URI doesn't exist: '../datasources/prediction_local_data_source.dart' - lib\features\predictions\data\dependency_injection.dart:5:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../datasources/prediction_remote_data_source.dart' - lib\features\predictions\data\dependency_injection.dart:6:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../engine/comparison_engine.dart' - lib\features\predictions\data\dependency_injection.dart:7:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../engine/prediction_engine.dart' - lib\features\predictions\data\dependency_injection.dart:8:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../repositories/prediction_repository_impl.dart' - lib\features\predictions\data\dependency_injection.dart:9:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../domain/repositories/prediction_repository.dart' - lib\features\predictions\data\dependency_injection.dart:10:8 - uri_does_not_exist
+  error - The name 'PredictionEngine' isn't a type, so it can't be used as a type argument - lib\features\predictions\data\dependency_injection.dart:17:43 - non_type_as_type_argument
+  error - The name 'PredictionEngine' isn't a class - lib\features\predictions\data\dependency_injection.dart:18:16 - creation_with_non_type
+  error - The name 'ComparisonEngine' isn't a type, so it can't be used as a type argument - lib\features\predictions\data\dependency_injection.dart:22:43 - non_type_as_type_argument
+  error - The name 'ComparisonEngine' isn't a class - lib\features\predictions\data\dependency_injection.dart:23:16 - creation_with_non_type
+  error - The name 'PredictionRemoteDataSource' isn't a type, so it can't be used as a type argument - lib\features\predictions\data\dependency_injection.dart:28:14 - non_type_as_type_argument
+  error - The function 'PredictionRemoteDataSource' isn't defined - lib\features\predictions\data\dependency_injection.dart:30:10 - undefined_function
+  error - The name 'PredictionLocalDataSource' isn't a type, so it can't be used as a type argument - lib\features\predictions\data\dependency_injection.dart:35:14 - non_type_as_type_argument
+  error - The function 'PredictionLocalDataSource' isn't defined - lib\features\predictions\data\dependency_injection.dart:36:10 - undefined_function
+  error - The name 'PredictionRepository' isn't a type, so it can't be used as a type argument - lib\features\predictions\data\dependency_injection.dart:41:47 - non_type_as_type_argument
+  error - The function 'PredictionRepositoryImpl' isn't defined - lib\features\predictions\data\dependency_injection.dart:48:10 - undefined_function
+  error - Target of URI doesn't exist: '../../../core/errors/failures.dart' - lib\features\predictions\data\engine\prediction_engine.dart:3:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../home/domain/entities/match_entity.dart' - lib\features\predictions\data\engine\prediction_engine.dart:4:8 - uri_does_not_exist
+  error - Undefined class 'MatchEntity' - lib\features\predictions\data\engine\prediction_engine.dart:28:14 - undefined_class
+   info - Use 'const' for final variables initialized to a constant value - lib\features\predictions\data\engine\prediction_engine.dart:165:5 - prefer_const_declarations
+  error - A value of type '({int away, int home, double prob})' can't be returned from the method '_mostLikelyScore' because it has a return type of '({int away, int home, double probability})' - lib\features\predictions\data\engine\prediction_engine.dart:265:12 - return_of_invalid_type
+  error - Undefined class 'MatchEntity' - lib\features\predictions\data\engine\prediction_engine.dart:289:5 - undefined_class
+  error - Undefined name 'home' - lib\features\predictions\data\engine\prediction_engine.dart:369:41 - undefined_identifier
+  error - Undefined class 'Failure' - lib\features\predictions\data\engine\prediction_engine.dart:418:1 - undefined_class
+  error - Undefined name 'Failure' - lib\features\predictions\data\engine\prediction_engine.dart:420:12 - undefined_identifier
+  error - Undefined name 'Failure' - lib\features\predictions\data\engine\prediction_engine.dart:422:10 - undefined_identifier
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:1:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../../core/errors/failures.dart' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:2:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../auth/domain/repositories/auth_repository.dart' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:3:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../home/domain/entities/match_entity.dart' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:4:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../livescore/domain/repositories/livescore_repository.dart' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:5:8 - uri_does_not_exist
+  error - Undefined class 'LivescoreRepository' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:24:14 - undefined_class
+  error - Undefined class 'AuthRepository' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:25:14 - undefined_class
+  error - Undefined class 'LivescoreRepository' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:35:9 - undefined_class
+  error - Undefined class 'AuthRepository' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:36:9 - undefined_class
+  error - The name 'AuthenticationException' isn't a class - lib\features\predictions\data\repositories\prediction_repository_impl.dart:44:19 - creation_with_non_type
+  error - Undefined class 'Failure' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:57:3 - undefined_class
+  error - The name 'NetworkException' isn't defined, so it can't be used in an 'is' expression - lib\features\predictions\data\repositories\prediction_repository_impl.dart:59:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:60:14 - undefined_identifier
+  error - The name 'AuthenticationException' isn't defined, so it can't be used in an 'is' expression - lib\features\predictions\data\repositories\prediction_repository_impl.dart:62:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:63:14 - undefined_identifier
+  error - The name 'CacheException' isn't defined, so it can't be used in an 'is' expression - lib\features\predictions\data\repositories\prediction_repository_impl.dart:65:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:66:14 - undefined_identifier
+  error - The name 'ServerException' isn't defined, so it can't be used in an 'is' expression - lib\features\predictions\data\repositories\prediction_repository_impl.dart:68:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:69:14 - undefined_identifier
+  error - Undefined name 'Failure' - lib\features\predictions\data\repositories\prediction_repository_impl.dart:71:12 - undefined_identifier
+  error - 'CompareWithResult.call' ('Future<PostMatchComparisonEntity> Function(ComparisonParams)') isn't a valid override of 'UseCase.call' ('PostMatchComparisonEntity Function(ComparisonParams)') - lib\features\predictions\domain\usecases\compare_with_result.dart:11:37 - invalid_override
+  error - 'GetAccuracyStats.call' ('Future<AccuracyStatsEntity> Function(NoParams)') isn't a valid override of 'UseCase.call' ('AccuracyStatsEntity Function(NoParams)') - lib\features\predictions\domain\usecases\get_accuracy_stats.dart:11:31 - invalid_override
+  error - 'GetComparisons.call' ('Future<List<PostMatchComparisonEntity>> Function(GetComparisonsParams)') isn't a valid override of 'UseCase.call' ('List<PostMatchComparisonEntity> Function(GetComparisonsParams)') - lib\features\predictions\domain\usecases\get_comparisons.dart:12:43 - invalid_override
+  error - 'GetPredictionForMatch.call' ('Future<MatchPredictionEntity> Function(MatchPredictionParams)') isn't a valid override of 'UseCase.call' ('MatchPredictionEntity Function(MatchPredictionParams)') - lib\features\predictions\domain\usecases\get_prediction_for_match.dart:11:33 - invalid_override
+  error - 'GetPredictionHistory.call' ('Future<List<PredictionHistoryEntity>> Function(NoParams)') isn't a valid override of 'UseCase.call' ('List<PredictionHistoryEntity> Function(NoParams)') - lib\features\predictions\domain\usecases\get_prediction_history.dart:11:41 - invalid_override
+  error - 'VoteOnPrediction.call' ('Future<VoteCountsEntity> Function(VoteParams)') isn't a valid override of 'UseCase.call' ('VoteCountsEntity Function(VoteParams)') - lib\features\predictions\domain\usecases\vote_on_prediction.dart:11:28 - invalid_override
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\predictions\presentation\widgets\comparison_card.dart:35:42 - undefined_method
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\predictions\presentation\widgets\comparison_card.dart:113:22 - undefined_method
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\predictions\presentation\widgets\confidence_gauge.dart:30:36 - undefined_method
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\predictions\presentation\widgets\confidence_gauge.dart:81:23 - undefined_method
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\predictions\presentation\widgets\history_card.dart:112:22 - undefined_method
+warning - Unused import: '../../../home/domain/entities/match_entity.dart' - lib\features\predictions\presentation\widgets\prediction_breakdown_card.dart:3:8 - unused_import
+   info - Use 'const' for final variables initialized to a constant value - lib\features\predictions\presentation\widgets\prediction_breakdown_card.dart:93:5 - prefer_const_declarations
+warning - The value of the local variable 'no' isn't used - lib\features\predictions\presentation\widgets\prediction_breakdown_card.dart:168:11 - unused_local_variable
+  error - The method 'withValues' isn't defined for the type 'Color' - lib\features\predictions\presentation\widgets\prediction_breakdown_card.dart:445:22 - undefined_method
+warning - Unused import: '../../domain/entities/user_vote_entity.dart' - lib\features\predictions\presentation\widgets\vote_widget.dart:5:8 - unused_import
+   info - Don't use 'BuildContext's across async gaps - lib\features\predictions\presentation\widgets\vote_widget.dart:55:51 - use_build_context_synchronously
+warning - The value of the field '_saveSettings' isn't used - lib\features\settings\application\settings_notifier.dart:36:22 - unused_field
+  error - The method 'GetSettingsParams' isn't defined for the type 'SettingsNotifier' - lib\features\settings\application\settings_notifier.dart:46:43 - undefined_method
+  error - The method 'WatchSettingsParams' isn't defined for the type 'SettingsNotifier' - lib\features\settings\application\settings_notifier.dart:86:36 - undefined_method
+   info - Don't return 'null' from a function with a return type of 'void' - lib\features\settings\application\settings_providers.dart:41:3 - avoid_returning_null_for_void
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\settings\data\datasources\settings_local_data_source.dart:3:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../../core/services/secure_storage_service.dart' - lib\features\settings\data\datasources\settings_local_data_source.dart:4:8 - uri_does_not_exist
+  error - Undefined class 'SecureStorageService' - lib\features\settings\data\datasources\settings_local_data_source.dart:13:37 - undefined_class
+  error - Undefined class 'SecureStorageService' - lib\features\settings\data\datasources\settings_local_data_source.dart:16:9 - undefined_class
+  error - The name 'CacheException' isn't a class - lib\features\settings\data\datasources\settings_local_data_source.dart:38:19 - creation_with_non_type
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\settings\data\datasources\settings_remote_data_source.dart:3:8 - uri_does_not_exist
+  error - The method 'CacheException' isn't defined for the type 'SettingsRemoteDataSource' - lib\features\settings\data\datasources\settings_remote_data_source.dart:32:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'SettingsRemoteDataSource' - lib\features\settings\data\datasources\settings_remote_data_source.dart:52:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'SettingsRemoteDataSource' - lib\features\settings\data\datasources\settings_remote_data_source.dart:68:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'SettingsRemoteDataSource' - lib\features\settings\data\datasources\settings_remote_data_source.dart:82:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'SettingsRemoteDataSource' - lib\features\settings\data\datasources\settings_remote_data_source.dart:101:13 - undefined_method
+  error - The method 'CacheException' isn't defined for the type 'SettingsRemoteDataSource' - lib\features\settings\data\datasources\settings_remote_data_source.dart:115:13 - undefined_method
+warning - Unused import: '../../../core/services/secure_storage_service.dart' - lib\features\settings\data\dependency_injection.dart:3:8 - unused_import
+  error - Target of URI doesn't exist: 'domain/usecases/get_settings.dart' - lib\features\settings\data\dependency_injection.dart:8:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'domain/usecases/save_settings.dart' - lib\features\settings\data\dependency_injection.dart:9:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: 'domain/usecases/watch_settings.dart' - lib\features\settings\data\dependency_injection.dart:10:8 - uri_does_not_exist
+  error - The name 'WatchSettings' isn't a type, so it can't be used as a type argument - lib\features\settings\data\dependency_injection.dart:34:47 - non_type_as_type_argument
+  error - The function 'WatchSettings' isn't defined - lib\features\settings\data\dependency_injection.dart:35:12 - undefined_function
+  error - The name 'GetSettings' isn't a type, so it can't be used as a type argument - lib\features\settings\data\dependency_injection.dart:38:45 - non_type_as_type_argument
+  error - The function 'GetSettings' isn't defined - lib\features\settings\data\dependency_injection.dart:39:12 - undefined_function
+  error - The name 'SaveSettings' isn't a type, so it can't be used as a type argument - lib\features\settings\data\dependency_injection.dart:42:46 - non_type_as_type_argument
+  error - The function 'SaveSettings' isn't defined - lib\features\settings\data\dependency_injection.dart:43:12 - undefined_function
+  error - The name 'UpdateProfile' isn't a type, so it can't be used as a type argument - lib\features\settings\data\dependency_injection.dart:46:47 - non_type_as_type_argument
+  error - The function 'UpdateProfile' isn't defined - lib\features\settings\data\dependency_injection.dart:47:12 - undefined_function
+  error - The name 'UpdateFavoriteTeams' isn't a type, so it can't be used as a type argument - lib\features\settings\data\dependency_injection.dart:50:53 - non_type_as_type_argument
+  error - The function 'UpdateFavoriteTeams' isn't defined - lib\features\settings\data\dependency_injection.dart:51:12 - undefined_function
+  error - The name 'UpdateNotificationPreferences' isn't a type, so it can't be used as a type argument - lib\features\settings\data\dependency_injection.dart:55:14 - non_type_as_type_argument
+  error - The function 'UpdateNotificationPreferences' isn't defined - lib\features\settings\data\dependency_injection.dart:56:12 - undefined_function
+  error - The name 'UpdateThemeMode' isn't a type, so it can't be used as a type argument - lib\features\settings\data\dependency_injection.dart:59:49 - non_type_as_type_argument
+  error - The function 'UpdateThemeMode' isn't defined - lib\features\settings\data\dependency_injection.dart:60:12 - undefined_function
+  error - Target of URI doesn't exist: '../../../core/errors/exceptions.dart' - lib\features\settings\data\repositories\settings_repository_impl.dart:1:8 - uri_does_not_exist
+  error - Target of URI doesn't exist: '../../../core/errors/failures.dart' - lib\features\settings\data\repositories\settings_repository_impl.dart:2:8 - uri_does_not_exist
+  error - Undefined class 'Failure' - lib\features\settings\data\repositories\settings_repository_impl.dart:30:3 - undefined_class
+  error - The name 'NetworkException' isn't defined, so it can't be used in an 'is' expression - lib\features\settings\data\repositories\settings_repository_impl.dart:32:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\settings\data\repositories\settings_repository_impl.dart:33:14 - undefined_identifier
+  error - The name 'CacheException' isn't defined, so it can't be used in an 'is' expression - lib\features\settings\data\repositories\settings_repository_impl.dart:35:14 - type_test_with_undefined_name
+  error - Undefined name 'Failure' - lib\features\settings\data\repositories\settings_repository_impl.dart:36:14 - undefined_identifier
+  error - Undefined name 'Failure' - lib\features\settings\data\repositories\settings_repository_impl.dart:38:12 - undefined_identifier
+warning - Unused import: '../entities/user_settings_entity.dart' - lib\features\settings\domain\usecases\save_settings.dart:1:8 - unused_import
+   info - Don't return 'null' from a function with a return type of 'void' - lib\features\settings\presentation\pages\settings_page.dart:62:58 - avoid_returning_null_for_void
+  error - The argument type 'T?' can't be assigned to the parameter type 'T'.  - lib\features\settings\presentation\pages\settings_page.dart:271:69 - argument_type_not_assignable
+warning - The value of the local variable 'themeMode' isn't used - lib\home_shell.dart:25:11 - unused_local_variable
+   info - The import of 'package:flutter/foundation.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' - lib\main.dart:3:8 - unnecessary_import
+warning - Unused import: 'package:flutter_local_notifications/flutter_local_notifications.dart' - lib\main.dart:5:8 - unused_import
+warning - Unused import: 'package:go_router/go_router.dart' - lib\main.dart:7:8 - unused_import
+warning - Unused import: 'core/constants/app_constants.dart' - lib\main.dart:10:8 - unused_import
+warning - Unused import: 'core/router/app_router.dart' - lib\main.dart:11:8 - unused_import
+warning - Unused import: 'core/services/dependency_injection.dart' - lib\main.dart:13:8 - unused_import
+  error - The function 'NotificationService' isn't defined - lib\main.dart:31:31 - undefined_function
+  error - The named parameter 'pathParameters' isn't defined - lib\main.dart:54:9 - undefined_named_parameter
+warning - Unused import: 'package:global_football_ai/core/errors/failures.dart' - test\features\home\home_notifier_test.dart:3:8 - unused_import
+   info - The import of 'dart:ui' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' - test\features\home\home_page_test.dart:1:8 - unnecessary_import
+   info - Use 'const' with the constructor to improve performance - test\features\predictions\fixtures\prediction_fixtures.dart:44:19 - prefer_const_constructors
+   info - Use 'const' literals as arguments to constructors of '@immutable' classes - test\features\predictions\fixtures\prediction_fixtures.dart:59:24 - prefer_const_literals_to_create_immutables
+   info - Use 'const' literals as arguments to constructors of '@immutable' classes - test\features\predictions\fixtures\prediction_fixtures.dart:81:18 - prefer_const_literals_to_create_immutables
+   info - Use 'const' with the constructor to improve performance - test\features\predictions\fixtures\prediction_fixtures.dart:82:7 - prefer_const_constructors
+warning - Unused import: 'package:global_football_ai/features/predictions/domain/entities/prediction_entity.dart' - test\features\predictions\prediction_notifier_test.dart:5:8 - unused_import
+   info - The import of 'dart:ui' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' - test\integration\app_shell_test.dart:1:8 - unnecessary_import
+   info - The private field _voteCounts could be 'final' - test\test_helpers\fake_repositories.dart:224:20 - prefer_final_fields
+  error - Undefined name 'predictionRepositoryProvider' - test\test_helpers\fake_repositories.dart:362:7 - undefined_identifier
+
+flutter : 672 issues found. (ran in 10.8s)
+At line:1 char:111
++ ... alyze.txt -ErrorAction SilentlyContinue; flutter analyze 2>&1 | Out-F ...
++                                              ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (672 issues found. (ran in 10.8s):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

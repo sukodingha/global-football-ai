@@ -3,7 +3,7 @@ import '../repositories/auth_repository.dart';
 import 'usecase.dart';
 
 /// Returns the currently authenticated user, or null.
-class GetCurrentUser implements UseCase<UserEntity?, NoParams> {
+class GetCurrentUser implements UseCase<Future<UserEntity?>, NoParams> {
   const GetCurrentUser(this._repository);
   final AuthRepository _repository;
 

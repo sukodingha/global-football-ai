@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
 import '../../../core/errors/failures.dart';
-import '../../home/domain/entities/match_entity.dart';
+import '../../../home/domain/entities/match_entity.dart';
 import '../../domain/entities/prediction_entity.dart';
 
 /// Statistical prediction engine based on a Poisson model of expected goals.

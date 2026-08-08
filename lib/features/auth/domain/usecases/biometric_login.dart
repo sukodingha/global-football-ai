@@ -3,7 +3,7 @@ import '../repositories/auth_repository.dart';
 import 'usecase.dart';
 
 /// Signs the user in using biometrics and the stored session.
-class BiometricLogin implements UseCase<UserEntity, NoParams> {
+class BiometricLogin implements UseCase<Future<UserEntity>, NoParams> {
   const BiometricLogin(this._repository);
   final AuthRepository _repository;
 
