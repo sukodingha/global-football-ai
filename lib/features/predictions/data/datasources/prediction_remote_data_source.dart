@@ -1,5 +1,5 @@
-import '../../../core/errors/exceptions.dart';
-import '../../home/domain/entities/match_entity.dart';
+import '../../../../core/errors/exceptions.dart';
+import '../../../home/domain/entities/match_entity.dart';
 import '../../domain/entities/prediction_entity.dart';
 import '../engine/prediction_engine.dart';
 
@@ -25,7 +25,7 @@ class PredictionRemoteDataSource {
     double awayForm = 0.0,
   }) async {
     try {
-      return await _engine.generatePrediction(
+      return _engine.generatePrediction(
         match: match,
         homeForm: homeForm,
         awayForm: awayForm,
