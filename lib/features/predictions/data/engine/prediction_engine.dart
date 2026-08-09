@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import '../../../core/errors/failures.dart';
+import '../../../../core/errors/failures.dart';
 import '../../../home/domain/entities/match_entity.dart';
 import '../../domain/entities/prediction_entity.dart';
 
@@ -161,8 +161,8 @@ class PredictionEngine {
   // ── Expected goals ────────────────────────────────────────────────
 
   double _expectedGoals(double homeForm, double awayForm, {required bool isHome}) {
-    // Base rates tuned to a typical pro-league average.
-    final base = 1.35;
+// Base rates tuned to a typical pro-league average.
+    const base = 1.35;
     final attack = isHome ? (homeForm + 1) : (awayForm + 1);
     final defence = isHome ? (awayForm + 1) : (homeForm + 1);
     final lambda = base * (attack / defence);
@@ -248,17 +248,17 @@ class PredictionEngine {
 
   // ── Correct score ─────────────────────────────────────────────────
 
-  ({int home, int away, double probability}) _mostLikelyScore(
+({int home, int away, double probability}) _mostLikelyScore(
     double lambdaHome,
     double lambdaAway,
   ) {
-    var best = (home: 0, away: 0, prob: 0.0);
+    var best = (home: 0, away: 0, probability: 0.0);
     const maxGoals = 8;
     for (var h = 0; h <= maxGoals; h++) {
       for (var a = 0; a <= maxGoals; a++) {
         final prob = _poisson(h, lambdaHome) * _poisson(a, lambdaAway);
-        if (prob > best.prob) {
-          best = (home: h, away: a, prob: prob);
+        if (prob > best.probability) {
+          best = (home: h, away: a, probability: prob);
         }
       }
     }
@@ -366,7 +366,7 @@ class PredictionEngine {
     double homeOrAway,
     double drawOrAway,
   ) {
-    return 'Double chance markets: 1X ($home or draw) has '
+return 'Double chance markets: 1X (home or draw) has '
         '${(homeOrDraw * 100).toStringAsFixed(0)}% likelihood, 12 (either side) '
         '${(homeOrAway * 100).toStringAsFixed(0)}%, and X2 (away or draw) '
         '${(drawOrAway * 100).toStringAsFixed(0)}%.';
