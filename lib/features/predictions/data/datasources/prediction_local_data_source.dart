@@ -1,13 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../../../core/errors/exceptions.dart';
+import '../../../../core/errors/exceptions.dart';
 import '../../domain/entities/post_match_comparison_entity.dart';
 import '../../domain/entities/prediction_entity.dart';
 import '../../domain/entities/prediction_history_entity.dart';
 import '../../domain/entities/user_vote_entity.dart';
 import '../models/post_match_comparison_model.dart';
 import '../models/prediction_history_model.dart';
-import '../models/prediction_model.dart';
 
 /// Local data source backed by Cloud Firestore.
 ///
@@ -19,18 +18,19 @@ class PredictionLocalDataSource {
 
   final FirebaseFirestore _firestore;
 
-  CollectionReference<Map<String, dynamic>> get _historyCollection =>
-      _firestore.collection('prediction_history');
-
   CollectionReference<Map<String, dynamic>> _userHistory(String userId) =>
       _firestore.collection('users').doc(userId).collection('predictions');
 
   CollectionReference<Map<String, dynamic>> _votes(String predictionId) =>
-      _firestore.collection('predictions').doc(predictionId).collection('votes');
+      _firestore
+          .collection('predictions')
+          .doc(predictionId)
+          .collection('votes');
 
   // ─── History ──────────────────────────────────────────────────────
 
-  Future<List<PredictionHistoryEntity>> getHistory(String userId, {int limit = 50}) async {
+  Future<List<PredictionHistoryEntity>> getHistory(String userId,
+      {int limit = 50}) async {
     try {
       final snapshot = await _userHistory(userId)
           .orderBy('createdAt', descending: true)
@@ -143,7 +143,7 @@ class PredictionLocalDataSource {
     try {
       final counts = await _voteCounts(predictionId);
       final doc = await _votes(predictionId).doc(userId).get();
-      final myVote = doc.exists ? doc.data()?['vote'] as String? : null;
+      final myVote = doc.exists ? (doc.data()?['vote'] as String?) : null;
       return (counts, myVote);
     } catch (e) {
       throw CacheException('Unable to load vote state: $e');
@@ -180,7 +180,8 @@ class PredictionLocalDataSource {
           .limit(limit)
           .get();
       return snapshot.docs
-          .map((doc) => PostMatchComparisonModel.fromJson(doc.data()).toEntity())
+          .map(
+              (doc) => PostMatchComparisonModel.fromJson(doc.data()).toEntity())
           .toList();
     } catch (e) {
       throw CacheException('Unable to load comparisons: $e');
@@ -202,13 +203,26 @@ class PredictionLocalDataSource {
         final actualAway = data['actualAwayScore'] as int?;
         if (actualHome == null || actualAway == null) continue;
 
-        final isCorrect = actualHome > actualAway
-            ? data['prediction']?['matchWinner']?['predictedOutcome'] == 'home'
-            : actualAway > actualHome
-                ? data['prediction']?['matchWinner']?['predictedOutcome'] ==
-                    'away'
-                : data['prediction']?['matchWinner']?['predictedOutcome'] ==
-                    'draw';
+        final predictionMap = data['prediction'];
+        String? predicted;
+        if (predictionMap is Map) {
+          final winner = predictionMap['matchWinner'];
+          if (winner is Map) {
+            final outcome = winner['predictedOutcome'];
+            if (outcome is String) {
+              predicted = outcome;
+            }
+          }
+        }
+
+        final bool isCorrect;
+        if (actualHome > actualAway) {
+          isCorrect = predicted == 'home';
+        } else if (actualAway > actualHome) {
+          isCorrect = predicted == 'away';
+        } else {
+          isCorrect = predicted == 'draw';
+        }
         await doc.reference.update({
           'status': isCorrect ? 'won' : 'lost',
           'isCorrect': isCorrect,

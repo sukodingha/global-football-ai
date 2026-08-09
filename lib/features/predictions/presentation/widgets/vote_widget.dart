@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../application/prediction_providers.dart';
-import '../../domain/entities/user_vote_entity.dart';
 
 /// Interactive upvote/downvote widget for a prediction.
 ///
@@ -48,11 +47,11 @@ class VoteWidget extends ConsumerWidget {
     WidgetRef ref,
     String vote,
   ) async {
+    final messenger = ScaffoldMessenger.maybeOf(context);
     final message = await ref
         .read(predictionNotifierProvider.notifier)
         .voteOnPrediction(vote);
     if (message != null) {
-      final messenger = ScaffoldMessenger.maybeOf(context);
       messenger?.showSnackBar(
         SnackBar(content: Text(message)),
       );

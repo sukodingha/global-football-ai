@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../home/domain/entities/match_entity.dart';
 import '../../domain/entities/prediction_entity.dart';
 import 'confidence_gauge.dart';
 
@@ -90,7 +89,7 @@ class _Header extends StatelessWidget {
   }
 
   String _formatDate(DateTime date) {
-    final months = const [
+    const months = [
       'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
     ];
@@ -165,7 +164,6 @@ class _BttsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final yes = btts.yesConfidence;
-    final no = btts.noConfidence;
     final color =
         btts.prediction ? const Color(0xFF2E7D32) : const Color(0xFFC62828);
     return Column(
@@ -442,7 +440,7 @@ class _Pill extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.12),
+        color: color.withOpacity(0.12),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: color, width: 1.2),
       ),

@@ -3,7 +3,7 @@ import '../entities/prediction_entity.dart';
 
 /// Base contract for prediction use cases.
 abstract class UseCase<Type, Params> {
-  Type call(Params params);
+  Future<Type> call(Params params);
 }
 
 /// No parameters.

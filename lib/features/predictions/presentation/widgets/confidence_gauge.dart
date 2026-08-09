@@ -27,7 +27,7 @@ class ConfidenceGauge extends StatelessWidget {
           child: CircularProgressIndicator(
             value: clamped / 100,
             strokeWidth: 8,
-            backgroundColor: color.withValues(alpha: 0.15),
+            backgroundColor: color.withOpacity(0.15),
             valueColor: AlwaysStoppedAnimation<Color>(color),
             strokeCap: StrokeCap.round,
           ),
@@ -78,7 +78,7 @@ class _InnerShadowPainter extends CustomPainter {
     final paint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.5
-      ..color = color.withValues(alpha: 0.35);
+      ..color = color.withOpacity(0.35);
     final arc = Rect.fromLTWH(2, 2, size.width - 4, size.height - 4);
     canvas.drawArc(arc, math.pi * 0.75, math.pi * 1.5, false, paint);
   }

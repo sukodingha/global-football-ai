@@ -1,12 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/errors/failures.dart';
-import '../../auth/application/auth_providers.dart';
 import '../../home/domain/entities/match_entity.dart';
 import '../domain/entities/post_match_comparison_entity.dart';
 import '../domain/entities/prediction_entity.dart';
 import '../domain/entities/prediction_history_entity.dart';
-import '../domain/entities/user_vote_entity.dart';
 import '../domain/repositories/prediction_repository.dart';
 import 'prediction_state.dart';
 
@@ -133,12 +131,12 @@ class PredictionNotifier extends StateNotifier<PredictionState> {
       return 'No prediction to vote on or you are not signed in.';
     }
     try {
-      final voteCounts = await _repository.voteOnPrediction(
+      await _repository.voteOnPrediction(
         predictionId: '${prediction.matchId}',
         userId: userId,
         vote: vote,
       );
-final (counts, myVote) = await _repository.getVoteState(
+      final (counts, myVote) = await _repository.getVoteState(
         predictionId: '${prediction.matchId}',
         userId: userId,
       );
