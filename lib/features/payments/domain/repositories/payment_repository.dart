@@ -1,4 +1,4 @@
-import '../../../core/errors/failures.dart';
+import '../../../../core/errors/failures.dart';
 import '../entities/payment_plan_entity.dart';
 import '../entities/subscription_entity.dart';
 import '../entities/transaction_entity.dart';
