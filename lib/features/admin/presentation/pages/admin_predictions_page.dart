@@ -38,19 +38,18 @@ class AdminPredictionsPage extends ConsumerWidget {
     );
   }
 
-  void _override(BuildContext context, WidgetRef ref, AdminPredictionEntity p) {
-    showDialog<void>(
+  Future<void> _override(BuildContext context, WidgetRef ref, AdminPredictionEntity p) async {
+    final result = await showDialog<Map<String, dynamic>>(
       context: context,
       builder: (_) => _OverrideDialog(prediction: p),
-    ).then((result) {
-      if (result is Map<String, dynamic>) {
-        ref.read(adminNotifierProvider.notifier).overridePrediction(
-              predictionId: p.id,
-              outcome: result['outcome'] as String,
-              note: result['note'] as String,
-            );
-      }
-    });
+    );
+    if (result != null) {
+      ref.read(adminNotifierProvider.notifier).overridePrediction(
+            predictionId: p.id,
+            outcome: result['outcome'] as String,
+            note: result['note'] as String,
+          );
+    }
   }
 }
 

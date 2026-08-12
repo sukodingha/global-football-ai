@@ -34,24 +34,23 @@ class AdminSubscriptionsPage extends ConsumerWidget {
     );
   }
 
-  void _editSubscription(
+  Future<void> _editSubscription(
     BuildContext context,
     WidgetRef ref,
     AdminUserEntity user,
-  ) {
-    showDialog<void>(
+  ) async {
+    final result = await showDialog<Map<String, dynamic>>(
       context: context,
       builder: (_) => _SubscriptionEditDialog(user: user),
-    ).then((result) {
-      if (result is Map<String, dynamic>) {
-        ref.read(adminNotifierProvider.notifier).updateSubscription(
-              userId: user.id,
-              isPremium: result['isPremium'] as bool,
-              planName: result['planName'] as String?,
-              end: result['end'] as DateTime?,
-            );
-      }
-    });
+    );
+    if (result != null) {
+      ref.read(adminNotifierProvider.notifier).updateSubscription(
+            userId: user.id,
+            isPremium: result['isPremium'] as bool,
+            planName: result['planName'] as String?,
+            end: result['end'] as DateTime?,
+          );
+    }
   }
 }
 

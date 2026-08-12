@@ -268,7 +268,7 @@ class RadioGroup<T> extends StatelessWidget {
             title: Text(label),
             value: v,
             groupValue: value,
-            onChanged: onChanged == null ? null : (T v) => onChanged!(v),
+            onChanged: onChanged == null ? null : (T? v) => onChanged!(v as T),
           ),
       ],
     );
