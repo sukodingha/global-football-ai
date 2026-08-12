@@ -12,6 +12,7 @@ import '../domain/repositories/payment_repository.dart';
 import '../domain/usecases/get_subscription.dart';
 import '../domain/usecases/get_transaction_history.dart';
 import '../domain/usecases/initialize_transaction.dart';
+import '../domain/usecases/usecase.dart';
 import '../domain/usecases/verify_transaction.dart';
 import '../domain/usecases/watch_subscription.dart';
 import 'payment_state.dart';

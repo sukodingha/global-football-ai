@@ -1,4 +1,4 @@
-import 'package:global_football_ai/features/livescore/domain/entities/sport_event_entity.dart';
+import 'package:global_ai_prediction/features/livescore/domain/entities/sport_event_entity.dart';
 
 /// Shared test fixtures for the multi-sport live feed.
 

@@ -84,6 +84,32 @@ class FantasyLeagueModel {
         members: entity.members,
       );
 
+  FantasyLeagueModel copyWith({
+    String? id,
+    String? name,
+    String? code,
+    LeagueVisibility? visibility,
+    String? ownerId,
+    int? memberCount,
+    double? startBudget,
+    DateTime? createdAt,
+    String? description,
+    List<String>? members,
+  }) {
+    return FantasyLeagueModel(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      code: code ?? this.code,
+      visibility: visibility ?? this.visibility,
+      ownerId: ownerId ?? this.ownerId,
+      memberCount: memberCount ?? this.memberCount,
+      startBudget: startBudget ?? this.startBudget,
+      createdAt: createdAt ?? this.createdAt,
+      description: description ?? this.description,
+      members: members ?? this.members,
+    );
+  }
+
   static LeagueVisibility _visibilityFromString(String? value) {
     switch (value) {
       case 'public':

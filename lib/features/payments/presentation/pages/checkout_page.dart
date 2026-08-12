@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../core/widgets/app_button.dart';
+import '../../../../core/widgets/app_button.dart';
 import '../../application/payment_providers.dart';
 import '../../domain/entities/transaction_entity.dart';
+import '../../../auth/application/auth_providers.dart';
 
 /// Displays the Paystack hosted-checkout URL and opens it for the user.
 ///

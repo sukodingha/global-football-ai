@@ -1,8 +1,8 @@
-import 'package:global_football_ai/features/home/domain/entities/article_entity.dart';
-import 'package:global_football_ai/features/home/domain/entities/competition_entity.dart';
-import 'package:global_football_ai/features/home/domain/entities/match_entity.dart';
-import 'package:global_football_ai/features/home/domain/entities/player_entity.dart';
-import 'package:global_football_ai/features/home/domain/entities/prediction_entity.dart';
+import 'package:global_ai_prediction/features/home/domain/entities/article_entity.dart';
+import 'package:global_ai_prediction/features/home/domain/entities/competition_entity.dart';
+import 'package:global_ai_prediction/features/home/domain/entities/match_entity.dart';
+import 'package:global_ai_prediction/features/home/domain/entities/player_entity.dart';
+import 'package:global_ai_prediction/features/home/domain/entities/prediction_entity.dart';
 
 /// Shared test fixtures for Home feature entities.
 

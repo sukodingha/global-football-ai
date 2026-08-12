@@ -1,8 +1,8 @@
-import 'package:global_football_ai/features/home/domain/entities/match_entity.dart';
-import 'package:global_football_ai/features/predictions/domain/entities/post_match_comparison_entity.dart';
-import 'package:global_football_ai/features/predictions/domain/entities/prediction_entity.dart';
-import 'package:global_football_ai/features/predictions/domain/entities/prediction_history_entity.dart';
-import 'package:global_football_ai/features/predictions/domain/entities/user_vote_entity.dart';
+import 'package:global_ai_prediction/features/home/domain/entities/match_entity.dart';
+import 'package:global_ai_prediction/features/predictions/domain/entities/post_match_comparison_entity.dart';
+import 'package:global_ai_prediction/features/predictions/domain/entities/prediction_entity.dart';
+import 'package:global_ai_prediction/features/predictions/domain/entities/prediction_history_entity.dart';
+import 'package:global_ai_prediction/features/predictions/domain/entities/user_vote_entity.dart';
 
 /// Shared test fixtures for the Predictions feature entities.
 

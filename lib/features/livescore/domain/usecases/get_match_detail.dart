@@ -3,7 +3,7 @@ import '../repositories/livescore_repository.dart';
 import 'usecase.dart';
 
 /// Fetches the full detail for a single match.
-class GetMatchDetail implements UseCase<MatchDetailEntity, MatchIdParams> {
+class GetMatchDetail implements UseCase<Future<MatchDetailEntity>, MatchIdParams> {
   const GetMatchDetail(this._repository);
   final LivescoreRepository _repository;
 

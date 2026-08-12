@@ -1,5 +1,5 @@
-import '../../../core/errors/exceptions.dart';
-import '../../../core/errors/failures.dart';
+import '../../../../core/errors/exceptions.dart';
+import '../../../../core/errors/failures.dart';
 import '../../domain/entities/user_settings_entity.dart';
 import '../../domain/repositories/settings_repository.dart';
 import '../datasources/settings_local_data_source.dart';

@@ -43,7 +43,7 @@ class _PlayerStatsHubPageState extends ConsumerState<PlayerStatsHubPage> {
             tooltip: 'Filter by position',
             initialValue: _positionFilter,
             onSelected: (p) => setState(() => _positionFilter = p),
-            children: [
+            itemBuilder: (context) => [
               const PopupMenuItem(value: null, child: Text('All')),
               ...FantasyPosition.values.map(
                 (p) => PopupMenuItem(

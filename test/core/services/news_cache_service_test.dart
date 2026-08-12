@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:global_football_ai/core/services/news_cache_service.dart';
+import 'package:global_ai_prediction/core/services/news_cache_service.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

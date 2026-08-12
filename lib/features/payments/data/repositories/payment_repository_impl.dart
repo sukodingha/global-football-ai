@@ -1,5 +1,5 @@
-import '../../../core/errors/exceptions.dart';
-import '../../../core/errors/failures.dart';
+import   '../../../../core/errors/exceptions.dart';
+import   '../../../../core/errors/failures.dart';
 import '../../domain/entities/payment_plan_entity.dart';
 import '../../domain/entities/subscription_entity.dart';
 import '../../domain/entities/transaction_entity.dart';

@@ -2,7 +2,7 @@ import '../repositories/community_repository.dart';
 import 'usecase.dart';
 
 /// Toggles a like on a post.
-class ToggleLike implements UseCase<(int, bool), ToggleLikeParams> {
+class ToggleLike implements UseCase<Future<(int, bool)>, ToggleLikeParams> {
   const ToggleLike(this._repository);
   final CommunityRepository _repository;
 

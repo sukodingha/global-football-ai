@@ -74,7 +74,7 @@ class _PitchPainter extends CustomPainter {
 
     // Draw the pitch markings.
     final linePaint = Paint()
-      ..color = Colors.white.withValues(alpha: 0.6)
+      ..color = Colors.white.withOpacity(0.6)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.5;
 
@@ -132,7 +132,7 @@ class _PitchPainter extends CustomPainter {
           const Color(0xFFFF5722),
           const Color(0xFFFFEB3B),
           point.intensity,
-        )!.withValues(alpha: 0.25 + point.intensity * 0.4);
+        )!.withOpacity(0.25 + point.intensity * 0.4);
 
       canvas.drawCircle(Offset(dx, dy), radius, heatPaint);
     }

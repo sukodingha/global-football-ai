@@ -13,7 +13,7 @@ class AdminCompetitionModel {
     DocumentSnapshot<Map<String, dynamic>> doc,
   ) {
     final data = doc.data() ?? const {};
-    return AdminCompetitionEntity(
+    final entity = AdminCompetitionEntity(
       id: data['id'] as String? ?? doc.id,
       name: data['name'] as String? ?? '',
       code: data['code'] as String? ?? '',
@@ -26,6 +26,7 @@ class AdminCompetitionModel {
       totalTeams: (data['totalTeams'] as num?)?.toInt() ?? 0,
       totalFixtures: (data['totalFixtures'] as num?)?.toInt() ?? 0,
     );
+    return AdminCompetitionModel(entity: entity);
   }
 
   /// Serializes the entity to a Firestore map.

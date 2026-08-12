@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/auth/application/auth_notifier.dart';
+import '../../features/auth/application/auth_providers.dart';
 import '../../features/auth/application/auth_state.dart';
 
 /// Splash screen shown while the session is being restored.

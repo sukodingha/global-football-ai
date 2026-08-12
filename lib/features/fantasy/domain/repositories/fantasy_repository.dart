@@ -1,4 +1,4 @@
-import '../../../core/errors/failures.dart';
+import   '../../../../core/errors/failures.dart';
 import '../entities/fantasy_league_entity.dart';
 import '../entities/fantasy_player_entity.dart';
 import '../entities/fantasy_team_entity.dart';

@@ -4,8 +4,8 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-import '../../../core/config/app_config.dart';
-import '../../../core/errors/exceptions.dart';
+import   '../../../../core/config/app_config.dart';
+import   '../../../../core/errors/exceptions.dart';
 import '../../domain/entities/payment_plan_entity.dart';
 import '../../domain/entities/transaction_entity.dart';
 

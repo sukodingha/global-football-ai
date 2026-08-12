@@ -3,7 +3,7 @@ import '../repositories/livescore_repository.dart';
 import 'usecase.dart';
 
 /// Fetches standings for a competition.
-class GetStandings implements UseCase<List<StandingsRowEntity>, CompetitionIdParams> {
+class GetStandings implements UseCase<Future<List<StandingsRowEntity>>, CompetitionIdParams> {
   const GetStandings(this._repository);
   final LivescoreRepository _repository;
 

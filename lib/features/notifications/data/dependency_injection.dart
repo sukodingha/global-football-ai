@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../domain/repositories/notification_repository.dart';
-import '../../domain/usecases/get_notification_preferences.dart';
-import '../../domain/usecases/save_notification_preferences.dart';
-import '../../domain/usecases/watch_notification_preferences.dart';
+import '../domain/repositories/notification_repository.dart';
+import '../domain/usecases/get_notification_preferences.dart';
+import '../domain/usecases/save_notification_preferences.dart';
+import '../domain/usecases/watch_notification_preferences.dart';
 import 'datasources/notification_remote_data_source.dart';
 import 'repositories/notification_repository_impl.dart';
 

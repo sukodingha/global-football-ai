@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../../../core/errors/exceptions.dart';
+import   '../../../../core/errors/exceptions.dart';
 import '../../domain/entities/admin_analytics_entity.dart';
 import '../../domain/entities/admin_audit_log_entity.dart';
 import '../../domain/entities/admin_competition_entity.dart';

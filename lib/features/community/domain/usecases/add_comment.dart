@@ -3,7 +3,7 @@ import '../repositories/community_repository.dart';
 import 'usecase.dart';
 
 /// Adds a comment to a post.
-class AddComment implements UseCase<CommentEntity, AddCommentParams> {
+class AddComment implements UseCase<Future<CommentEntity>, AddCommentParams> {
   const AddComment(this._repository);
   final CommunityRepository _repository;
 

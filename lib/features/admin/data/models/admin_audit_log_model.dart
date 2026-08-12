@@ -13,7 +13,7 @@ class AdminAuditLogModel {
     DocumentSnapshot<Map<String, dynamic>> doc,
   ) {
     final data = doc.data() ?? const {};
-    return AdminAuditLogEntity(
+    final entity = AdminAuditLogEntity(
       id: data['id'] as String? ?? doc.id,
       adminId: data['adminId'] as String? ?? '',
       adminName: data['adminName'] as String? ?? 'Unknown',
@@ -23,6 +23,7 @@ class AdminAuditLogModel {
       timestamp: _timestamp(data['timestamp']) ?? DateTime.now(),
       details: data['details'] as String?,
     );
+    return AdminAuditLogModel(entity: entity);
   }
 
   /// Serializes the entity to a Firestore map.

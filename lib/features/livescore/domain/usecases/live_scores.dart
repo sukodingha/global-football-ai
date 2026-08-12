@@ -3,7 +3,7 @@ import '../repositories/livescore_repository.dart';
 import 'usecase.dart';
 
 /// Fetches live matches.
-class GetLiveMatches implements UseCase<List<MatchEntity>, NoParams> {
+class GetLiveMatches implements UseCase<Future<List<MatchEntity>>, NoParams> {
   const GetLiveMatches(this._repository);
   final LivescoreRepository _repository;
 

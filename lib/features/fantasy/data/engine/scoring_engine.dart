@@ -27,7 +27,7 @@ class ScoringEngine {
     String eventType, {
     int quantity = 1,
   }) {
-    final stats = player.stats;
+    var stats = player.stats;
     int points = 0;
     int deltaPoints = 0;
 

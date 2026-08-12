@@ -36,7 +36,7 @@ class AppTheme {
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(foregroundColor: _primary),
       ),
-      cardTheme: CardThemeData(
+      cardTheme: CardTheme(
         color: _surface,
         elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
@@ -70,7 +70,7 @@ class AppTheme {
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(foregroundColor: _primaryDark),
       ),
-      cardTheme: CardThemeData(
+      cardTheme: CardTheme(
         color: _surfaceDark,
         elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),

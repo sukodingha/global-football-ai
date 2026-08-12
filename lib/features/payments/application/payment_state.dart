@@ -54,5 +54,4 @@ class PaymentError extends PaymentState {
   const PaymentError({required this.message});
   final String message;
 }
-</content>
 

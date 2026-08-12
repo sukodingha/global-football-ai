@@ -11,7 +11,7 @@ class AdminUserModel {
   /// Builds an [AdminUserEntity] from a Firestore document snapshot.
   factory AdminUserModel.fromDoc(DocumentSnapshot<Map<String, dynamic>> doc) {
     final data = doc.data() ?? const {};
-    return AdminUserEntity(
+    final entity = AdminUserEntity(
       id: data['id'] as String? ?? doc.id,
       email: data['email'] as String? ?? '',
       displayName: data['displayName'] as String?,
@@ -27,6 +27,7 @@ class AdminUserModel {
       createdAt: _timestamp(data['createdAt']),
       lastActiveAt: _timestamp(data['lastActiveAt']),
     );
+    return AdminUserModel(entity: entity);
   }
 
   static DateTime? _timestamp(Object? value) {

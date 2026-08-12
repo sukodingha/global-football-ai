@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/widgets/app_text_field.dart';
+import '../../../../core/widgets/app_text_field.dart';
 
 /// Dialog for joining a fantasy league by entering a 6-character join code.
 class JoinLeagueDialog extends StatefulWidget {

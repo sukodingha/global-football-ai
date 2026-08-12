@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/widgets/app_button.dart';
-import '../../../core/widgets/app_text_field.dart';
+import '../../../../core/widgets/app_button.dart';
+import '../../../../core/widgets/app_text_field.dart';
 import '../../domain/entities/fantasy_league_entity.dart';
 
 /// Dialog for creating a new fantasy league.

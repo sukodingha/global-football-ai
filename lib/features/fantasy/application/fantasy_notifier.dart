@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/errors/failures.dart';
+import '../domain/entities/fantasy_league_entity.dart';
 import '../domain/entities/fantasy_player_entity.dart';
 import '../domain/entities/fantasy_team_entity.dart';
 import '../domain/entities/leaderboard_entry_entity.dart';
@@ -103,7 +104,7 @@ class FantasyNotifier extends StateNotifier<FantasyState> {
   }) async {
     if (state is! FantasyLoaded) {
       return const FantasyLeagueEntityResult.failure(
-        Failure.unknown(message: 'Fantasy hub is not ready yet.'),
+        UnknownFailure('Fantasy hub is not ready yet.'),
       );
     }
     state = (state as FantasyLoaded).copyWith(busy: true, clearError: true);
@@ -136,7 +137,7 @@ class FantasyNotifier extends StateNotifier<FantasyState> {
       );
       _startTeamSubscription(team);
       _startLeagueLeaderboard(league.id);
-      return const FantasyLeagueEntityResult.success;
+      return const FantasyLeagueEntityResult.success();
     } on Failure catch (f) {
       state = (state as FantasyLoaded).copyWith(busy: false, error: f.message);
       return FantasyLeagueEntityResult.failure(f);
@@ -144,7 +145,7 @@ class FantasyNotifier extends StateNotifier<FantasyState> {
       const f = UnknownFailure();
       state = (state as FantasyLoaded).copyWith(busy: false, error: 'Failed to create league.');
       return const FantasyLeagueEntityResult.failure(
-        UnknownFailure(message: 'Failed to create league.'),
+        UnknownFailure('Failed to create league.'),
       );
     }
   }
@@ -158,7 +159,7 @@ class FantasyNotifier extends StateNotifier<FantasyState> {
   }) async {
     if (state is! FantasyLoaded) {
       return const FantasyLeagueEntityResult.failure(
-        Failure.unknown(message: 'Fantasy hub is not ready yet.'),
+        UnknownFailure('Fantasy hub is not ready yet.'),
       );
     }
     state = (state as FantasyLoaded).copyWith(busy: true, clearError: true);
@@ -194,7 +195,7 @@ class FantasyNotifier extends StateNotifier<FantasyState> {
       );
       _startTeamSubscription(team);
       _startLeagueLeaderboard(league.id);
-      return const FantasyLeagueEntityResult.success;
+      return const FantasyLeagueEntityResult.success();
     } on Failure catch (f) {
       state = (state as FantasyLoaded).copyWith(busy: false, error: f.message);
       return FantasyLeagueEntityResult.failure(f);
@@ -204,7 +205,7 @@ class FantasyNotifier extends StateNotifier<FantasyState> {
         error: 'Failed to join league.',
       );
       return const FantasyLeagueEntityResult.failure(
-        UnknownFailure(message: 'Failed to join league.'),
+        UnknownFailure('Failed to join league.'),
       );
     }
   }
@@ -394,7 +395,7 @@ class FantasyNotifier extends StateNotifier<FantasyState> {
 /// Lightweight result for league create/join operations.
 class FantasyLeagueEntityResult {
   const FantasyLeagueEntityResult._(this.failure);
-  const FantasyLeagueEntityResult.success : this._(null);
+  const FantasyLeagueEntityResult.success() : this._(null);
   const FantasyLeagueEntityResult.failure(Failure failure) : this._(failure);
 
   final Failure? failure;

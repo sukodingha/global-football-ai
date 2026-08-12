@@ -57,7 +57,7 @@ class _ModerationLogTile extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
       child: ExpansionTile(
         leading: CircleAvatar(
-          backgroundColor: iconColor.withValues(alpha: 0.15),
+          backgroundColor: iconColor.withOpacity(0.15),
           child: Icon(icon, color: iconColor, size: 20),
         ),
         title: Text(log.subject),
@@ -122,7 +122,7 @@ class _StatusChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.15),
+        color: color.withOpacity(0.15),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Text(

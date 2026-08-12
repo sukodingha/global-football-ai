@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_constants.dart';
 import '../../../../core/utils/validators.dart';
 import '../../../../core/widgets/app_button.dart';
-import '../../application/auth_notifier.dart';
+import '../../application/auth_providers.dart';
 import '../widgets/auth_scaffold.dart';
 
 /// OTP verification page for completing phone sign-in.
@@ -90,7 +90,7 @@ class _OtpVerificationPageState extends ConsumerState<OtpVerificationPage> {
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Theme.of(context).colorScheme.primary,
                     width: 2,
                   ),

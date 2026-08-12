@@ -1,4 +1,4 @@
-name: global_football_ai
+name: global_ai_prediction
 description: Global Football AI - Production-ready football prediction application.
 publish_to: 'none'
 version: 1.0.0+1

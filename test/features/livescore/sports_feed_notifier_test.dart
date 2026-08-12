@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:global_football_ai/features/livescore/application/sports_feed_notifier.dart';
-import 'package:global_football_ai/features/livescore/application/sports_feed_state.dart';
-import 'package:global_football_ai/features/livescore/domain/entities/sport_event_entity.dart';
+import 'package:global_ai_prediction/features/livescore/application/sports_feed_notifier.dart';
+import 'package:global_ai_prediction/features/livescore/application/sports_feed_state.dart';
+import 'package:global_ai_prediction/features/livescore/domain/entities/sport_event_entity.dart';
 
 import '../../test_helpers/fake_repositories.dart';
 import 'fixtures/sports_feed_fixtures.dart';

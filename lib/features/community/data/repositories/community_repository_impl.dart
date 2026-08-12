@@ -1,5 +1,5 @@
-import '../../../core/errors/exceptions.dart';
-import '../../../core/errors/failures.dart';
+import   '../../../../core/errors/exceptions.dart';
+import   '../../../../core/errors/failures.dart';
 import '../../domain/entities/comment_entity.dart';
 import '../../domain/entities/community_post_entity.dart';
 import '../../domain/entities/user_badge_entity.dart';

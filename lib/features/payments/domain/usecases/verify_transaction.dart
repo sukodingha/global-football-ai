@@ -4,7 +4,7 @@ import 'usecase.dart';
 
 /// Verifies a transaction by reference and applies permission updates.
 class VerifyTransaction
-    implements UseCase<TransactionEntity, VerifyTransactionParams> {
+    implements UseCase<Future<TransactionEntity>, VerifyTransactionParams> {
   const VerifyTransaction(this._repository);
   final PaymentRepository _repository;
 

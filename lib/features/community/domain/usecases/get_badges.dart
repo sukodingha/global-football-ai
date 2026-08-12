@@ -3,7 +3,7 @@ import '../repositories/community_repository.dart';
 import 'usecase.dart';
 
 /// Fetches the badges for a user.
-class GetBadges implements UseCase<List<UserBadgeEntity>, BadgesParams> {
+class GetBadges implements UseCase<Future<List<UserBadgeEntity>>, BadgesParams> {
   const GetBadges(this._repository);
   final CommunityRepository _repository;
 

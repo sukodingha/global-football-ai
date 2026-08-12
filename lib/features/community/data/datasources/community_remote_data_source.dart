@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../../../core/errors/exceptions.dart';
+import   '../../../../core/errors/exceptions.dart';
 import '../../domain/entities/comment_entity.dart';
 import '../../domain/entities/community_post_entity.dart';
 import '../../domain/entities/user_badge_entity.dart';

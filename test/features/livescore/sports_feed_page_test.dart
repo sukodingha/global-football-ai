@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:global_football_ai/features/livescore/presentation/pages/sports_feed_page.dart';
+import 'package:global_ai_prediction/features/livescore/presentation/pages/sports_feed_page.dart';
 
 import '../../test_helpers/fake_repositories.dart';
 

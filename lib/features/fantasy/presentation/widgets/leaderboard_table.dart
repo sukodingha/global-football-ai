@@ -39,7 +39,7 @@ class LeaderboardTable extends StatelessWidget {
             dense: true,
             leading: CircleAvatar(
               radius: 16,
-              backgroundColor: rankColor.withValues(alpha: 0.2),
+              backgroundColor: rankColor.withOpacity(0.2),
               child: Text(
                 '${entry.rank}',
                 style: TextStyle(

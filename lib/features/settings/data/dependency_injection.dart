@@ -5,9 +5,9 @@ import '../../auth/data/dependency_injection.dart';
 import '../domain/repositories/settings_repository.dart';
 import 'datasources/settings_local_data_source.dart';
 import 'datasources/settings_remote_data_source.dart';
-import 'domain/usecases/get_settings.dart';
-import 'domain/usecases/save_settings.dart';
-import 'domain/usecases/watch_settings.dart';
+import '../domain/usecases/get_settings.dart';
+import '../domain/usecases/save_settings.dart';
+import '../domain/usecases/watch_settings.dart';
 import 'repositories/settings_repository_impl.dart';
 
 /// Firestore-backed settings remote data source.

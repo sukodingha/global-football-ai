@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:global_football_ai/features/predictions/application/prediction_notifier.dart';
-import 'package:global_football_ai/features/predictions/application/prediction_state.dart';
-import 'package:global_football_ai/features/predictions/domain/entities/prediction_entity.dart';
+import 'package:global_ai_prediction/features/predictions/application/prediction_notifier.dart';
+import 'package:global_ai_prediction/features/predictions/application/prediction_state.dart';
+import 'package:global_ai_prediction/features/predictions/domain/entities/prediction_entity.dart';
 
 import '../../test_helpers/fake_repositories.dart';
 import 'fixtures/prediction_fixtures.dart';

@@ -1,4 +1,4 @@
-import '../../../core/errors/failures.dart';
+import   '../../../../core/errors/failures.dart';
 import '../entities/comment_entity.dart';
 import '../entities/community_post_entity.dart';
 import '../entities/user_badge_entity.dart';

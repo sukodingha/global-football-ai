@@ -13,7 +13,7 @@ class AdminPredictionModel {
     DocumentSnapshot<Map<String, dynamic>> doc,
   ) {
     final data = doc.data() ?? const {};
-    return AdminPredictionEntity(
+    final entity = AdminPredictionEntity(
       id: data['id'] as String? ?? doc.id,
       matchId: (data['matchId'] as num?)?.toInt() ?? 0,
       homeTeam: data['homeTeam'] as String? ?? '',
@@ -30,6 +30,7 @@ class AdminPredictionModel {
       generatedAt: _timestamp(data['generatedAt']),
       matchDate: _timestamp(data['matchDate']),
     );
+    return AdminPredictionModel(entity: entity);
   }
 
   /// Serializes the entity to a Firestore map.

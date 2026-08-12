@@ -2,7 +2,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_performance/firebase_performance.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:global_football_ai/core/services/analytics_service.dart';
+import 'package:global_ai_prediction/core/services/analytics_service.dart';
 
 /// A fake [FirebaseAnalytics] that records calls for assertions.
 class FakeAnalytics extends Fake implements FirebaseAnalytics {

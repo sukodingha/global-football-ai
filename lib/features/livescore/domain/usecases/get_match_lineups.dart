@@ -3,7 +3,7 @@ import '../repositories/livescore_repository.dart';
 import 'usecase.dart';
 
 /// Fetches the lineups for a match.
-class GetMatchLineups implements UseCase<MatchLineupEntity, MatchIdParams> {
+class GetMatchLineups implements UseCase<Future<MatchLineupEntity>, MatchIdParams> {
   const GetMatchLineups(this._repository);
   final LivescoreRepository _repository;
 

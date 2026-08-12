@@ -23,7 +23,7 @@ class AdminStatCard extends StatelessWidget {
     final accent = color ?? theme.colorScheme.primary;
     return Card(
       elevation: 0,
-      color: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
+      color: theme.colorScheme.surfaceContainerHighest.withOpacity(0.5),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Padding(
         padding: const EdgeInsets.all(16),

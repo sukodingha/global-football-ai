@@ -4,7 +4,7 @@ import 'usecase.dart';
 
 /// Fetches advanced statistics for a match.
 class GetMatchStatistics
-    implements UseCase<List<MatchStatisticEntity>, MatchIdParams> {
+    implements UseCase<Future<List<MatchStatisticEntity>>, MatchIdParams> {
   const GetMatchStatistics(this._repository);
   final LivescoreRepository _repository;
 

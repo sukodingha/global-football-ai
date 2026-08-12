@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:global_football_ai/core/errors/failures.dart';
-import 'package:global_football_ai/features/home/application/home_notifier.dart';
-import 'package:global_football_ai/features/home/application/home_state.dart';
+import 'package:global_ai_prediction/core/errors/failures.dart';
+import 'package:global_ai_prediction/features/home/application/home_notifier.dart';
+import 'package:global_ai_prediction/features/home/application/home_state.dart';
 
 import '../../test_helpers/fake_repositories.dart';
 

@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/errors/failures.dart';
 import '../domain/entities/admin_analytics_entity.dart';
+import '../domain/entities/admin_audit_log_entity.dart';
 import '../domain/entities/admin_competition_entity.dart';
 import '../domain/entities/admin_prediction_entity.dart';
 import '../domain/entities/admin_revenue_entity.dart';

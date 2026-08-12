@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:global_football_ai/app.dart';
+import 'package:global_ai_prediction/app.dart';
 
 void main() {
   testWidgets('app builds and renders the root widget', (WidgetTester tester) async {

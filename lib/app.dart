@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
-import 'features/auth/application/auth_notifier.dart';
+import 'features/auth/application/auth_providers.dart';
 import 'features/home/application/home_providers.dart';
 
 /// Root application widget.

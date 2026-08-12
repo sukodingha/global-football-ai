@@ -3,7 +3,7 @@ import '../repositories/community_repository.dart';
 import 'usecase.dart';
 
 /// Creates a new community post.
-class CreatePost implements UseCase<CommunityPostEntity, CreatePostParams> {
+class CreatePost implements UseCase<Future<CommunityPostEntity>, CreatePostParams> {
   const CreatePost(this._repository);
   final CommunityRepository _repository;
 

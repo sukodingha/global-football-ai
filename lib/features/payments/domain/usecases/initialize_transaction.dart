@@ -4,7 +4,7 @@ import 'usecase.dart';
 
 /// Initializes a Paystack transaction for a plan.
 class InitializeTransaction
-    implements UseCase<TransactionEntity, InitTransactionParams> {
+    implements UseCase<Future<TransactionEntity>, InitTransactionParams> {
   const InitializeTransaction(this._repository);
   final PaymentRepository _repository;
 

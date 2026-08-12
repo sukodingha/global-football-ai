@@ -1,8 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,6 +9,7 @@ import 'core/constants/app_constants.dart';
 import 'core/router/app_router.dart';
 import 'core/router/navigator_key.dart';
 import 'core/services/dependency_injection.dart';
+import 'core/services/notification_service.dart';
 
 /// Allows the background isolate to display alerts even when the Flutter
 /// engine is not running. Required by flutter_local_notifications on Android.
@@ -42,23 +41,27 @@ Future<void> _initNotifications() async {
 /// Routes a tapped notification to the appropriate screen using the global
 /// navigator key. Match alerts deep-link to the match detail page.
 void _handleNotificationTap(Map<String, dynamic> payload) {
-  final navigator = appNavigatorKey.currentState;
-  if (navigator == null) return;
-
   final matchIdStr = payload['matchId'] as String?;
-  if (matchIdStr != null && matchIdStr.isNotEmpty) {
-    final matchId = int.tryParse(matchIdStr);
-    if (matchId != null && matchId > 0) {
-      navigator.pushNamed(
+  if (matchIdStr == null || matchIdStr.isEmpty) {
+    final context = appNavigatorKey.currentContext;
+    if (context != null) GoRouter.of(context).pushNamed('notifications');
+    return;
+  }
+
+  final matchId = int.tryParse(matchIdStr);
+  if (matchId != null && matchId > 0) {
+    final context = appNavigatorKey.currentContext;
+    if (context != null) {
+      GoRouter.of(context).pushNamed(
         'match-detail',
         pathParameters: {'matchId': '$matchId'},
       );
-      return;
     }
+    return;
   }
 
-// Fallback: open the notifications center.
-  navigator.pushNamed('notifications');
+  final context = appNavigatorKey.currentContext;
+  if (context != null) GoRouter.of(context).pushNamed('notifications');
 }
 
 /// Application entry point.

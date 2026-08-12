@@ -133,7 +133,7 @@ class _AlertTile extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: color.withValues(alpha: 0.15),
+          backgroundColor: color.withOpacity(0.15),
           child: Icon(icon, color: color),
         ),
         title: Text(alert.title),

@@ -3,7 +3,7 @@ import '../repositories/livescore_repository.dart';
 import 'usecase.dart';
 
 /// Fetches fixtures for a competition or team.
-class GetFixtures implements UseCase<List<FixtureEntity>, CompetitionIdParams> {
+class GetFixtures implements UseCase<Future<List<FixtureEntity>>, CompetitionIdParams> {
   const GetFixtures(this._repository);
   final LivescoreRepository _repository;
 

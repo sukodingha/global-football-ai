@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:global_football_ai/features/predictions/data/engine/comparison_engine.dart';
-import 'package:global_football_ai/features/predictions/domain/entities/post_match_comparison_entity.dart';
+import 'package:global_ai_prediction/features/predictions/data/engine/comparison_engine.dart';
+import 'package:global_ai_prediction/features/predictions/domain/entities/post_match_comparison_entity.dart';
 
 import 'fixtures/prediction_fixtures.dart';
 

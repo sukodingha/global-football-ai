@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../application/livescore_notifier.dart';
 import '../../application/livescore_providers.dart';
 import '../../application/livescore_state.dart';
+import '../../domain/entities/lineup_entity.dart';
 import '../widgets/fixtures_view.dart';
 import '../widgets/heatmap_view.dart';
 import '../widgets/lineups_view.dart';

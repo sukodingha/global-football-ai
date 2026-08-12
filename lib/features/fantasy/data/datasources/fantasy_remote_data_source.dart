@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../../../core/errors/exceptions.dart';
+import   '../../../../core/errors/exceptions.dart';
 import '../../domain/entities/fantasy_league_entity.dart';
 import '../../domain/entities/fantasy_player_entity.dart';
 import '../../domain/entities/fantasy_team_entity.dart';

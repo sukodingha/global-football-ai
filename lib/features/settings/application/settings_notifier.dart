@@ -8,6 +8,7 @@ import '../domain/entities/user_settings_entity.dart';
 import '../domain/repositories/settings_repository.dart';
 import '../domain/usecases/get_settings.dart';
 import '../domain/usecases/save_settings.dart';
+import '../domain/usecases/usecase.dart';
 import '../domain/usecases/watch_settings.dart';
 import 'settings_state.dart';
 

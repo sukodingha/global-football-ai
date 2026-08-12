@@ -77,7 +77,7 @@ class _EventRow extends StatelessWidget {
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.15),
+              color: color.withOpacity(0.15),
               shape: BoxShape.circle,
             ),
             child: Icon(icon, color: color, size: 20),

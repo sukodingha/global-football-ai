@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import '../../../core/errors/exceptions.dart';
-import '../../../core/services/secure_storage_service.dart';
+import '../../../../core/errors/exceptions.dart';
+import '../../../../core/services/secure_storage_service.dart';
 import '../../domain/entities/user_settings_entity.dart';
 import '../models/user_settings_model.dart';
 

@@ -4,7 +4,7 @@ import 'usecase.dart';
 
 /// Fetches the user's transaction history.
 class GetTransactionHistory
-    implements UseCase<List<TransactionEntity>, TransactionHistoryParams> {
+    implements UseCase<Future<List<TransactionEntity>>, TransactionHistoryParams> {
   const GetTransactionHistory(this._repository);
   final PaymentRepository _repository;
 

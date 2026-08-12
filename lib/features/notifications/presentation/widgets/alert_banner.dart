@@ -25,7 +25,7 @@ class AlertBanner extends StatelessWidget {
 
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      color: color.withValues(alpha: 0.12),
+      color: color.withOpacity(0.12),
       child: ListTile(
         onTap: onTap,
         leading: Icon(icon, color: color),

@@ -142,7 +142,7 @@ class _FantasyHubPageState extends ConsumerState<FantasyHubPage>
         FantasyLoaded() => _HubView(
             state: state,
             onLeagueTap: (league) => _openLeague(context, league),
-            onTeamTap: (teamId) => _openTeam(context),
+            onTeamTap: () => _openTeam(context),
           ),
       },
     );
