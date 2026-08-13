@@ -39,7 +39,9 @@ final firebaseAuthProvider = Provider<FirebaseAuth>((ref) {
 
 final googleSignInProvider = Provider<gsi.GoogleSignIn>((ref) {
   if (kIsWeb) {
-    return gsi.GoogleSignIn(clientId: 'global-ai-prediction.web.app');
+    return gsi.GoogleSignIn(
+      clientId: '107409845238-oe0s5io7s0irlpggdlmpefu005cjnbu1.apps.googleusercontent.com',
+    );
   }
   return gsi.GoogleSignIn();
 });
