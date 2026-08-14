@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
@@ -84,7 +85,12 @@ class AuthRemoteDataSource {
   /// Signs in with Google.
   Future<UserModel> signInWithGoogle() async {
     try {
-      final googleUser = await _googleSignIn.signIn();
+      final GoogleSignInAccount? googleUser;
+      if (kIsWeb) {
+        googleUser = await _googleSignIn.signInSilently();
+      } else {
+        googleUser = await _googleSignIn.signIn();
+      }
       if (googleUser == null) {
         throw const AuthenticationException('Google sign-in was cancelled.');
       }
