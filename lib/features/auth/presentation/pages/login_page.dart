@@ -6,7 +6,6 @@ import '../../../../core/constants/app_constants.dart';
 import '../../../../core/utils/validators.dart';
 import '../../../../core/widgets/app_button.dart';
 import '../../../../core/widgets/app_text_field.dart';
-import '../../application/auth_notifier.dart';
 import '../../application/auth_providers.dart';
 import '../widgets/auth_scaffold.dart';
 import '../widgets/social_auth_button.dart';
@@ -65,6 +64,8 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(error)),
         );
+      } else {
+        context.go(AppConstants.routeHome);
       }
     }
   }

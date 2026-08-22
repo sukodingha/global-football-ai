@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../features/auth/application/auth_providers.dart';
-import '../../features/auth/application/auth_state.dart';
 
 /// Splash screen shown while the session is being restored.
 class SplashScreen extends ConsumerStatefulWidget {
@@ -26,18 +24,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final authState = ref.watch(authNotifierProvider);
-
-    // After restore, the router redirect will handle navigation.
-    if (authState is AuthAuthenticated || authState is AuthUnauthenticated) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (context.mounted) {
-          final isAuthenticated = authState is AuthAuthenticated;
-          context.go(isAuthenticated ? '/home' : '/login');
-        }
-      });
-    }
-
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
       body: Center(
