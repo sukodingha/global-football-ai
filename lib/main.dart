@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'app.dart';
+import 'core/config/app_config.dart';
 import 'core/router/navigator_key.dart';
 import 'core/services/notification_service.dart';
 
@@ -67,22 +68,31 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   if (kIsWeb) {
-    const apiKey = String.fromEnvironment('FIREBASE_WEB_API_KEY');
-    const appId = String.fromEnvironment('FIREBASE_WEB_APP_ID');
+    const apiKey = String.fromEnvironment(
+      'FIREBASE_WEB_API_KEY',
+      defaultValue: AppConfig.firebaseWebApiKey,
+    );
+    const appId = String.fromEnvironment(
+      'FIREBASE_WEB_APP_ID',
+      defaultValue: AppConfig.firebaseWebAppId,
+    );
     const messagingSenderId =
-        String.fromEnvironment('FIREBASE_WEB_MESSAGING_SENDER_ID');
-    const projectId = String.fromEnvironment('FIREBASE_PROJECT_ID');
+        String.fromEnvironment(
+          'FIREBASE_WEB_MESSAGING_SENDER_ID',
+          defaultValue: AppConfig.firebaseWebMessagingSenderId,
+        );
+    const projectId = String.fromEnvironment(
+      'FIREBASE_PROJECT_ID',
+      defaultValue: AppConfig.firebaseProjectId,
+    );
 
-    if (apiKey.isEmpty ||
-        appId.isEmpty ||
-        messagingSenderId.isEmpty ||
-        projectId.isEmpty) {
+    if (apiKey.startsWith('REPLACE_WITH_') ||
+        appId.startsWith('REPLACE_WITH_') ||
+        messagingSenderId.startsWith('REPLACE_WITH_') ||
+        projectId.startsWith('REPLACE_WITH_')) {
       throw StateError(
-        'Firebase web configuration is missing. Run with '
-        '--dart-define=FIREBASE_WEB_API_KEY=... '
-        '--dart-define=FIREBASE_WEB_APP_ID=... '
-        '--dart-define=FIREBASE_WEB_MESSAGING_SENDER_ID=... '
-        '--dart-define=FIREBASE_PROJECT_ID=...',
+        'Firebase web configuration is missing. Set the Firebase web '
+        'values in lib/core/config/app_config.dart or pass --dart-define.',
       );
     }
 

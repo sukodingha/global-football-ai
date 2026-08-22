@@ -41,12 +41,16 @@ ios/Runner/GoogleService-Info.plist
 ```
 
 ### Web
-Run the web app with the values from your Firebase web app configuration and
-Google OAuth web client:
+Set the four Firebase web values and the Google OAuth client ID in
+`lib/core/config/app_config.dart`. After that, no command-line arguments are
+needed:
 ```bash
-flutter run -d chrome --dart-define=FIREBASE_WEB_API_KEY=YOUR_API_KEY --dart-define=FIREBASE_WEB_APP_ID=YOUR_APP_ID --dart-define=FIREBASE_WEB_MESSAGING_SENDER_ID=YOUR_SENDER_ID --dart-define=FIREBASE_PROJECT_ID=YOUR_PROJECT_ID --dart-define=GOOGLE_WEB_CLIENT_ID=YOUR_CLIENT_ID
+flutter run -d chrome
 ```
-The app intentionally refuses to start with placeholder Firebase values.
+For CI or deployments, the same values can still be supplied with
+`--dart-define`; those values override the local defaults. The app refuses to
+start with placeholder Firebase values instead of sending invalid signup
+requests.
 
 ## 5. Run Firebase CLI (optional)
 

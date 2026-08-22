@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart' as gsi;
 
+import '../../../core/config/app_config.dart';
 import '../../../core/services/biometric_service.dart';
 import '../../../core/services/secure_storage_service.dart';
 import '../domain/repositories/auth_repository.dart';
@@ -40,7 +41,10 @@ final googleSignInProvider = Provider<gsi.GoogleSignIn>((ref) {
   // constructed once and shared by every authentication request.
   return kIsWeb
       ? gsi.GoogleSignIn(
-          clientId: const String.fromEnvironment('GOOGLE_WEB_CLIENT_ID'),
+          clientId: const String.fromEnvironment(
+            'GOOGLE_WEB_CLIENT_ID',
+            defaultValue: AppConfig.googleWebClientId,
+          ),
         )
       : gsi.GoogleSignIn();
 });
