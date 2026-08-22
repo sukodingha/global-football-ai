@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -8,10 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'app.dart';
-import 'core/constants/app_constants.dart';
-import 'core/router/app_router.dart';
 import 'core/router/navigator_key.dart';
-import 'core/services/dependency_injection.dart';
 import 'core/services/notification_service.dart';
 
 /// Allows the background isolate to display alerts even when the Flutter
@@ -72,12 +67,31 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   if (kIsWeb) {
+    const apiKey = String.fromEnvironment('FIREBASE_WEB_API_KEY');
+    const appId = String.fromEnvironment('FIREBASE_WEB_APP_ID');
+    const messagingSenderId =
+        String.fromEnvironment('FIREBASE_WEB_MESSAGING_SENDER_ID');
+    const projectId = String.fromEnvironment('FIREBASE_PROJECT_ID');
+
+    if (apiKey.isEmpty ||
+        appId.isEmpty ||
+        messagingSenderId.isEmpty ||
+        projectId.isEmpty) {
+      throw StateError(
+        'Firebase web configuration is missing. Run with '
+        '--dart-define=FIREBASE_WEB_API_KEY=... '
+        '--dart-define=FIREBASE_WEB_APP_ID=... '
+        '--dart-define=FIREBASE_WEB_MESSAGING_SENDER_ID=... '
+        '--dart-define=FIREBASE_PROJECT_ID=...',
+      );
+    }
+
     await Firebase.initializeApp(
       options: const FirebaseOptions(
-        apiKey: 'AIzaSyDEFAULT_KEY',
-        appId: '1:000000000000:web:0000000000000000',
-        messagingSenderId: '000000000000',
-        projectId: 'global-ai-prediction',
+        apiKey: apiKey,
+        appId: appId,
+        messagingSenderId: messagingSenderId,
+        projectId: projectId,
       ),
     );
   } else {

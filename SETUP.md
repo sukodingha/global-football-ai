@@ -31,12 +31,22 @@ Download `google-services.json` from Firebase Console and place it at:
 ```
 android/app/google-services.json
 ```
+The checked-in file is a template. Replace every `REPLACE_WITH_*` value with
+the values from your Firebase project before running on Android.
 
 ### iOS
 Download `GoogleService-Info.plist` from Firebase Console and place it at:
 ```
 ios/Runner/GoogleService-Info.plist
 ```
+
+### Web
+Run the web app with the values from your Firebase web app configuration and
+Google OAuth web client:
+```bash
+flutter run -d chrome --dart-define=FIREBASE_WEB_API_KEY=YOUR_API_KEY --dart-define=FIREBASE_WEB_APP_ID=YOUR_APP_ID --dart-define=FIREBASE_WEB_MESSAGING_SENDER_ID=YOUR_SENDER_ID --dart-define=FIREBASE_PROJECT_ID=YOUR_PROJECT_ID --dart-define=GOOGLE_WEB_CLIENT_ID=YOUR_CLIENT_ID
+```
+The app intentionally refuses to start with placeholder Firebase values.
 
 ## 5. Run Firebase CLI (optional)
 

@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
@@ -19,6 +19,7 @@ class AuthRemoteDataSource {
 
   final FirebaseAuth _auth;
   final GoogleSignIn _googleSignIn;
+  Future<UserModel>? _googleSignInInProgress;
 
   /// Returns the currently signed-in Firebase user stream.
   Stream<UserModel?> get authStateChanges {
@@ -84,13 +85,27 @@ class AuthRemoteDataSource {
 
   /// Signs in with Google.
   Future<UserModel> signInWithGoogle() async {
+    final inProgress = _googleSignInInProgress;
+    if (inProgress != null) {
+      return inProgress;
+    }
+
+    final signIn = _signInWithGoogle();
+    _googleSignInInProgress = signIn;
     try {
-      final GoogleSignInAccount? googleUser;
-      if (kIsWeb) {
-        googleUser = await _googleSignIn.signInSilently();
-      } else {
-        googleUser = await _googleSignIn.signIn();
+      return await signIn;
+    } finally {
+      if (identical(_googleSignInInProgress, signIn)) {
+        _googleSignInInProgress = null;
       }
+    }
+  }
+
+  Future<UserModel> _signInWithGoogle() async {
+    try {
+      // The button represents an interactive sign-in. Silent sign-in on web
+      // can invoke FedCM without user activation and report NetworkError.
+      final googleUser = await _googleSignIn.signIn();
       if (googleUser == null) {
         throw const AuthenticationException('Google sign-in was cancelled.');
       }
@@ -105,9 +120,41 @@ class AuthRemoteDataSource {
       return UserModel.fromFirebaseUser(userCredential.user);
     } on FirebaseAuthException catch (e) {
       throw AuthenticationException(mapFirebaseAuthError(e));
+    } on PlatformException catch (e) {
+      throw AuthenticationException(_mapGoogleSignInError(e.code));
     } on ArgumentError {
-      throw const AuthenticationException('Google sign-in failed. Please try again.');
+      throw const AuthenticationException(
+        'Google sign-in is not configured correctly.',
+      );
+    } on Exception catch (e) {
+      final message = e.toString().toLowerCase();
+      if (message.contains('cancel') || message.contains('dismiss')) {
+        throw const AuthenticationException('Google sign-in was cancelled.');
+      }
+      if (message.contains('network') || message.contains('fedcm')) {
+        throw const AuthenticationException(
+          'Google sign-in could not connect. Check your internet connection and try again.',
+        );
+      }
+      throw const AuthenticationException(
+        'Google sign-in failed. Please try again.',
+      );
+    } catch (_) {
+      throw const AuthenticationException(
+        'Google sign-in failed. Please try again.',
+      );
     }
+  }
+
+  String _mapGoogleSignInError(String code) {
+    final lowerCode = code.toLowerCase();
+    if (lowerCode.contains('cancel') || lowerCode.contains('abort')) {
+      return 'Google sign-in was cancelled.';
+    }
+    if (lowerCode.contains('network') || lowerCode.contains('fedcm')) {
+      return 'Google sign-in could not connect. Check your internet connection and try again.';
+    }
+    return 'Google sign-in failed. Please try again.';
   }
 
   /// Signs in with Apple.

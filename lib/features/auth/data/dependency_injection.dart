@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -38,12 +36,13 @@ final firebaseAuthProvider = Provider<FirebaseAuth>((ref) {
 });
 
 final googleSignInProvider = Provider<gsi.GoogleSignIn>((ref) {
-  if (kIsWeb) {
-    return gsi.GoogleSignIn(
-      clientId: '107409845238-oe0s5io7s0irlpggdlmpefu005cjnbu1.apps.googleusercontent.com',
-    );
-  }
-  return gsi.GoogleSignIn();
+  // Provider instances are cached for the app lifetime, so GoogleSignIn is
+  // constructed once and shared by every authentication request.
+  return kIsWeb
+      ? gsi.GoogleSignIn(
+          clientId: const String.fromEnvironment('GOOGLE_WEB_CLIENT_ID'),
+        )
+      : gsi.GoogleSignIn();
 });
 
 /// Data sources.
