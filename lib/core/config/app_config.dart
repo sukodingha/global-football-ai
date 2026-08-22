@@ -33,7 +33,8 @@ class AppConfig {
   static const String firebaseWebMessagingSenderId = '107409845238';
 
   /// Google OAuth Web client ID used by Google Sign-In.
-  static const String googleWebClientId = 'REPLACE_WITH_WEB_CLIENT_ID';
+  static const String googleWebClientId =
+      '107409845238-oe0s5io7s0irlpggdlmpefu005cjnbu1.apps.googleusercontent.com';
 
   /// Firebase Storage Bucket.
   static const String firebaseStorageBucket = 'global-football-ai.appspot.com';
